@@ -167,6 +167,7 @@ Le corpus est encodé selon les recommandations de la Text Encoding Initiative (
 
 Structure principale du document TEI :
 
+```
 TEI
 ├── teiHeader
 │   ├── fileDesc
@@ -199,20 +200,21 @@ TEI
         │
         └── div type="letter" xml:id="stannard"
             └── structure similaire
+```
 
 Les entités nommées sont définies dans des listes d’autorité :
 
-listPerson
-listPlace
-listOrg
-listBibl
+- `listPerson`
+- `listPlace`
+- `listOrg`
+- `listBibl`
 
 Les occurrences dans le texte utilisent des références :
 
-persName ref="#pers_wilde"
-placeName ref="#place_berneval"
-orgName ref="#org_bodley_head"
-title ref="#work_mr_wh"
+- `persName ref="#pers_wilde"`
+- `placeName ref="#place_berneval"`
+- `orgName ref="#org_bodley_head"`
+- `title ref="#work_mr_wh"`
 
 Ce système permet de générer automatiquement :
 
