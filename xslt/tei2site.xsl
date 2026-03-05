@@ -376,6 +376,9 @@ son retrait progressif de la vie publique."
         <title><xsl:value-of select="$siteTitle"/> — <xsl:value-of select="$pageTitle"/></title>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="{$assetsBase}/img/favicon.png"/>
+
         <link rel="stylesheet" href="{$assetsBase}/css/style.css"/>
         <script src="{$assetsBase}/js/site.js" defer="defer"></script>
       </head>
@@ -541,7 +544,7 @@ son retrait progressif de la vie publique."
     <figure class="home-hero-image viewer">
       <img src="{$assetsBase}/img/WildeTrial1.jpg" alt="Oscar Wilde au procès"/>
       <figcaption>
-        <span class="muted">The Trial of Oscar Wilde and Alfred Taylor — Illustrated Police News, 20 avril 1895.</span>
+        <span class="muted">The Trial of Oscar Wilde and Alfred Taylor — Illustrated Police News, 20 avril 1895. </span>
         <span class="muted">Un tournant décisif qui conduit à l’incarcération (1895) puis à l’exil.</span>
       </figcaption>
     </figure>
