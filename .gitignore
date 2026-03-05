@@ -1,0 +1,9 @@
+# Environnements Python
+.venv/
+
+# Config VS Code
+.vscode/
+
+# Fichiers temporaires
+__pycache__/
+*.pyc
