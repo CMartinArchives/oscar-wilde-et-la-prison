@@ -1,0 +1,98 @@
+{
+  "image": "nelson_04.jpg",
+  "nativeW": 759,
+  "nativeH": 761,
+  "boxes": [
+    {
+      "x": 39,
+      "y": 30,
+      "w": 666,
+      "h": 56,
+      "t": "half witted lad who was flogged"
+    },
+    {
+      "x": 50,
+      "y": 74,
+      "w": 630,
+      "h": 59,
+      "t": "by the Doctor's orders. I could"
+    },
+    {
+      "x": 55,
+      "y": 128,
+      "w": 591,
+      "h": 59,
+      "t": "not have kept them out of"
+    },
+    {
+      "x": 57,
+      "y": 194,
+      "w": 627,
+      "h": 59,
+      "t": "my letter, and to have mentioned"
+    },
+    {
+      "x": 57,
+      "y": 245,
+      "w": 641,
+      "h": 64,
+      "t": "them to you might have put you"
+    },
+    {
+      "x": 54,
+      "y": 291,
+      "w": 632,
+      "h": 72,
+      "t": "in a difficult position. In your"
+    },
+    {
+      "x": 59,
+      "y": 355,
+      "w": 620,
+      "h": 63,
+      "t": "reply you might have expressed"
+    },
+    {
+      "x": 49,
+      "y": 401,
+      "w": 583,
+      "h": 73,
+      "t": "sympathy with my views - I"
+    },
+    {
+      "x": 47,
+      "y": 454,
+      "w": 612,
+      "h": 76,
+      "t": "think you would have - and then"
+    },
+    {
+      "x": 47,
+      "y": 509,
+      "w": 612,
+      "h": 69,
+      "t": "on the appearance of my public"
+    },
+    {
+      "x": 45,
+      "y": 576,
+      "w": 654,
+      "h": 61,
+      "t": "letter you might have felt as"
+    },
+    {
+      "x": 45,
+      "y": 634,
+      "w": 502,
+      "h": 62,
+      "t": "if I had, in some almost"
+    },
+    {
+      "x": 124,
+      "y": 675,
+      "w": 514,
+      "h": 62,
+      "t": "ungenerous or thoughtless"
+    }
+  ]
+}

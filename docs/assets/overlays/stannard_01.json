@@ -1,0 +1,77 @@
+{
+  "image": "stannard_01.jpg",
+  "nativeW": 3901,
+  "nativeH": 4217,
+  "boxes": [
+    {
+      "x": 1181,
+      "y": 574,
+      "w": 1816,
+      "h": 211,
+      "t": "Hotel de la Place"
+    },
+    {
+      "x": 516,
+      "y": 1224,
+      "w": 2257,
+      "h": 196,
+      "t": "Dear Mrs Stannard"
+    },
+    {
+      "x": 1496,
+      "y": 789,
+      "w": 1932,
+      "h": 201,
+      "t": "Berneval-sur-Mer"
+    },
+    {
+      "x": 755,
+      "y": 1845,
+      "w": 2740,
+      "h": 192,
+      "t": "gave me a very sympathetic"
+    },
+    {
+      "x": 813,
+      "y": 2113,
+      "w": 2271,
+      "h": 201,
+      "t": "and touching message"
+    },
+    {
+      "x": 789,
+      "y": 2390,
+      "w": 2328,
+      "h": 235,
+      "t": "from you yesterday, for"
+    },
+    {
+      "x": 794,
+      "y": 2711,
+      "w": 2356,
+      "h": 174,
+      "t": "which pray accept my"
+    },
+    {
+      "x": 736,
+      "y": 2954,
+      "w": 2544,
+      "h": 225,
+      "t": "most sincere thanks : he"
+    },
+    {
+      "x": 741,
+      "y": 3251,
+      "w": 2553,
+      "h": 191,
+      "t": "also asked me from you"
+    },
+    {
+      "x": 1506,
+      "y": 1535,
+      "w": 1979,
+      "h": 183,
+      "t": "Your kind husband"
+    }
+  ]
+}
