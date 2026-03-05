@@ -87,9 +87,7 @@ Sujet :
 - questions de copyright américain
 - stratégie éditoriale
 
-Institution conservatrice :
-
-**The Morgan Library & Museum (New York)**  
+Institution conservatrice : **The Morgan Library & Museum (New York)**  
 https://www.themorgan.org/collection/oscar-wilde/manuscripts-letters/45
 
 ---
@@ -105,9 +103,7 @@ Sujet :
 - réflexion morale sur la détention
 - critique du système carcéral
 
-Institution conservatrice :
-
-**New York Public Library**  
+Institution conservatrice : **New York Public Library**  
 https://www.nypl.org/events/exhibitions/galleries/other-peoples-mail/item/14910
 
 ---
@@ -123,10 +119,7 @@ Sujet :
 - sa solitude en France
 - l’adoption du pseudonyme **Sebastian Melmoth**
 
-Institution conservatrice :
-
-**Trinity College Dublin – Digital Collections**
-
+Institution conservatrice : **Trinity College Dublin – Digital Collections**
 https://digitalcollections.tcd.ie/concern/works/z316q211n
 
 ---
@@ -238,6 +231,7 @@ La transformation utilise notamment :
 
 Structure simplifiée du projet :
 
+```
 oscar-wilde-et-la-prison/
 ├── corpus.xml
 ├── xslt/
@@ -258,7 +252,7 @@ oscar-wilde-et-la-prison/
     ├── nelson.html
     ├── stannard.html
     └── index-entities.html
-
+```
 
 # Compétences mobilisées
 
