@@ -25,44 +25,51 @@ Le site associe :
 - une **traduction française**
 - un **index des entités nommées** (personnes, lieux, organisations, œuvres)
 
-Le corpus permet d’observer l’évolution de Wilde :
+Le corpus permet d’observer l’évolution de la situation personnelle et littéraire d’Oscar Wilde à travers trois moments distincts de sa vie.
 
-1. **Avant la prison** : stratégie éditoriale et publication de ses œuvres
-2. **Après la condamnation de 1895**
-3. **Après la libération en 1897 et l’exil en France**
+1. **Avant la prison : stratégie éditoriale et publication de ses œuvres**  
+   Avant son procès, Wilde est au sommet de sa carrière littéraire et mondaine à Londres. Il entretient une relation étroite avec plusieurs éditeurs et correspondants afin d’assurer la diffusion de ses œuvres et de contrôler leur publication. Les lettres témoignent de ses préoccupations éditoriales, de ses négociations avec les maisons d’édition et de sa place dans la vie culturelle londonienne de la fin de l’époque victorienne.
 
-Ces lettres témoignent du basculement entre la vie littéraire londonienne et l’expérience carcérale.
+2. **Après la condamnation de 1895 : emprisonnement et rupture sociale**  
+   Après sa condamnation, la situation de Wilde change radicalement. Incarcéré dans plusieurs prisons britanniques — notamment à **Reading Gaol** — il est confronté aux conditions très dures du système pénitentiaire victorien. Les lettres de cette période témoignent de son isolement, de ses difficultés matérielles et de la rupture avec le monde littéraire qui avait jusque-là soutenu sa carrière.
+
+3. **Après la libération en 1897 et l’exil en France : reconstruction et marginalisation**  
+   À sa sortie de prison, Wilde quitte l’Angleterre et s’installe principalement en France sous le pseudonyme **Sebastian Melmoth**. Cette période est marquée par l’exil, des difficultés financières et une tentative de reconstruire sa vie littéraire. Les lettres révèlent les réseaux de soutien qui subsistent et les efforts de Wilde pour continuer à écrire et publier malgré sa marginalisation sociale.
+
+Ces correspondances témoignent ainsi du basculement brutal entre la vie littéraire londonienne et l’expérience carcérale, puis de la période d’exil qui suit sa libération.
 
 ---
 
-# Contexte historique
+## Contexte historique
 
-Oscar Wilde (1854-1900) est l’un des écrivains majeurs de la fin de l’époque victorienne.
+**Oscar Wilde (1854–1900)** est l’un des écrivains majeurs de la fin de l’époque victorienne. Dramaturge, essayiste et romancier, il connaît un grand succès dans les années 1890 grâce à plusieurs comédies devenues emblématiques :
 
-Après le succès de ses comédies :
-
-- *Lady Windermere’s Fan* (1892)
-- *A Woman of No Importance* (1893)
-- *An Ideal Husband* (1895)
+- *Lady Windermere’s Fan* (1892)  
+- *A Woman of No Importance* (1893)  
+- *An Ideal Husband* (1895)  
 - *The Importance of Being Earnest* (1895)
 
-il est poursuivi en justice en 1895 pour **« gross indecency »** selon l’amendement Labouchere (Criminal Law Amendment Act, 1885).
+---
 
-Il est condamné à :
+## Pourquoi Wilde est condamné
 
-**deux ans de travaux forcés**
+En 1895, Wilde est poursuivi pour **« gross indecency »**, une infraction définie par l’amendement Labouchere du *Criminal Law Amendment Act* (1885).
 
-et incarcéré notamment à :
+Cette loi criminalise les relations sexuelles entre hommes, même lorsqu’elles ont lieu en privé.
 
-- Pentonville
-- Wandsworth
-- **Reading Gaol**
+Le procès trouve son origine dans le conflit entre Wilde et le marquis de Queensberry, père de son compagnon **Lord Alfred Douglas**. Queensberry accuse publiquement Wilde d’entretenir des relations homosexuelles. Wilde engage d’abord une action en diffamation contre lui, mais cette procédure se retourne contre lui lorsque les avocats de Queensberry produisent des témoignages concernant ses relations avec plusieurs jeunes hommes.
 
-Après sa libération en **mai 1897**, Wilde quitte l’Angleterre et s’installe en France sous le nom :
+Après deux procès retentissants en 1895, Wilde est reconnu coupable et condamné à **deux ans de travaux forcés**, la peine maximale prévue par la loi.
 
-**Sebastian Melmoth**
+Il est incarcéré successivement dans les prisons de Pentonville, Wandsworth et **Reading Gaol**.
 
-Les lettres présentées dans cette édition couvrent cette période charnière.
+---
+
+## Après la prison
+
+À sa libération en **mai 1897**, Wilde quitte l’Angleterre et s’installe principalement en France sous le nom de **Sebastian Melmoth**, où il vit jusqu’à sa mort en 1900.
+
+Les lettres présentées dans cette édition couvrent cette période charnière de sa vie, marquée par la chute sociale, l’expérience carcérale et l’exil.
 
 ---
 
@@ -73,8 +80,7 @@ Le corpus comprend trois lettres :
 ### 1 — Lettre à John Lane  
 **Worthing, août 1894**
 
-Destinataire :  
-éditeur britannique et fondateur de **The Bodley Head**.
+Destinataire : éditeur britannique et fondateur de **The Bodley Head**.
 
 Sujet :
 
@@ -93,9 +99,7 @@ https://www.themorgan.org/collection/oscar-wilde/manuscripts-letters/45
 ### 2 — Lettre au Major Nelson  
 **Berneval-sur-Mer, 28 mai 1897**
 
-Destinataire :
-
-gouverneur de **Reading Gaol**.
+Destinataire : gouverneur de **Reading Gaol**.
 
 Sujet :
 
@@ -113,9 +117,7 @@ https://www.nypl.org/events/exhibitions/galleries/other-peoples-mail/item/14910
 ### 3 — Lettre à Henrietta Stannard  
 **Berneval-sur-Mer, mai 1897**
 
-Destinataire :
-
-romancière britannique.
+Destinataire : romancière britannique.
 
 Sujet :
 
