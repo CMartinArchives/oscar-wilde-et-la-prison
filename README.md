@@ -28,15 +28,15 @@ Le site associe :
 Le corpus permet d’observer l’évolution de la situation personnelle et littéraire d’Oscar Wilde à travers trois moments distincts de sa vie.
 
 1. **Avant la prison : stratégie éditoriale et publication de ses œuvres**  
-   Avant son procès, Wilde est au sommet de sa carrière littéraire et mondaine à Londres. Il entretient une relation étroite avec plusieurs éditeurs et correspondants afin d’assurer la diffusion de ses œuvres et de contrôler leur publication. Les lettres témoignent de ses préoccupations éditoriales, de ses négociations avec les maisons d’édition et de sa place dans la vie culturelle londonienne de la fin de l’époque victorienne.
+   La lettre de 1894 témoigne de la période où Wilde est au sommet de sa carrière littéraire et mondaine à Londres. Il entretient des relations suivies avec ses éditeurs et correspondants afin d’assurer la diffusion de ses œuvres et de contrôler leur publication. Cette correspondance reflète ses préoccupations éditoriales et sa place dans la vie culturelle londonienne de la fin de l’époque victorienne.
 
-2. **Après la condamnation de 1895 : emprisonnement et rupture sociale**  
-   Après sa condamnation, la situation de Wilde change radicalement. Incarcéré dans plusieurs prisons britanniques — notamment à **Reading Gaol** — il est confronté aux conditions très dures du système pénitentiaire victorien. Les lettres de cette période témoignent de son isolement, de ses difficultés matérielles et de la rupture avec le monde littéraire qui avait jusque-là soutenu sa carrière.
+2. **La rupture de 1895 : condamnation et emprisonnement**  
+   L’arrestation et la condamnation de Wilde en 1895 marquent une rupture brutale dans sa trajectoire personnelle et littéraire. Bien que le corpus ne contienne pas de lettre écrite pendant l’incarcération, cet événement constitue le point de bascule historique qui sépare la période de succès littéraire de la période d’exil et de marginalisation.
 
 3. **Après la libération en 1897 et l’exil en France : reconstruction et marginalisation**  
-   À sa sortie de prison, Wilde quitte l’Angleterre et s’installe principalement en France sous le pseudonyme **Sebastian Melmoth**. Cette période est marquée par l’exil, des difficultés financières et une tentative de reconstruire sa vie littéraire. Les lettres révèlent les réseaux de soutien qui subsistent et les efforts de Wilde pour continuer à écrire et publier malgré sa marginalisation sociale.
+   Les lettres postérieures à sa libération témoignent de la situation de Wilde après son emprisonnement. Installé principalement en France sous le pseudonyme **Sebastian Melmoth**, il tente de reconstruire sa vie littéraire malgré l’isolement social et les difficultés matérielles. Ces correspondances reflètent la transformation de sa position dans le monde littéraire après le scandale et la prison.
 
-Ces correspondances témoignent ainsi du basculement brutal entre la vie littéraire londonienne et l’expérience carcérale, puis de la période d’exil qui suit sa libération.
+Ces lettres permettent ainsi d’observer le contraste entre la période de succès précédant le procès et la situation de Wilde après sa libération.
 
 ---
 
@@ -49,9 +49,8 @@ Ces correspondances témoignent ainsi du basculement brutal entre la vie littér
 - *An Ideal Husband* (1895)  
 - *The Importance of Being Earnest* (1895)
 
----
 
-## Pourquoi Wilde est condamné
+### Pourquoi Wilde est condamné
 
 En 1895, Wilde est poursuivi pour **« gross indecency »**, une infraction définie par l’amendement Labouchere du *Criminal Law Amendment Act* (1885).
 
@@ -63,13 +62,12 @@ Après deux procès retentissants en 1895, Wilde est reconnu coupable et condamn
 
 Il est incarcéré successivement dans les prisons de Pentonville, Wandsworth et **Reading Gaol**.
 
----
 
-## Après la prison
+### Après la prison
 
 À sa libération en **mai 1897**, Wilde quitte l’Angleterre et s’installe principalement en France sous le nom de **Sebastian Melmoth**, où il vit jusqu’à sa mort en 1900.
 
-Les lettres présentées dans cette édition couvrent cette période charnière de sa vie, marquée par la chute sociale, l’expérience carcérale et l’exil.
+Les lettres présentées dans cette édition couvrent cette période charnière de sa vie, entre succès littéraire, condamnation judiciaire et exil.
 
 ---
 
