@@ -1,0 +1,91 @@
+{
+  "image": "nelson_02.jpg",
+  "nativeW": 759,
+  "nativeH": 761,
+  "boxes": [
+    {
+      "x": 57,
+      "y": 57,
+      "w": 672,
+      "h": 55,
+      "t": "for your kindness and gentleness"
+    },
+    {
+      "x": 55,
+      "y": 99,
+      "w": 571,
+      "h": 64,
+      "t": "to me in prison, and for the"
+    },
+    {
+      "x": 60,
+      "y": 149,
+      "w": 612,
+      "h": 69,
+      "t": "real care that you took of me"
+    },
+    {
+      "x": 64,
+      "y": 199,
+      "w": 670,
+      "h": 73,
+      "t": "at the end, when I was mentally"
+    },
+    {
+      "x": 60,
+      "y": 254,
+      "w": 631,
+      "h": 70,
+      "t": "upset and in a state of very"
+    },
+    {
+      "x": 33,
+      "y": 281,
+      "w": 696,
+      "h": 123,
+      "t": "terrible nervous excitement. You"
+    },
+    {
+      "x": 71,
+      "y": 366,
+      "w": 628,
+      "h": 65,
+      "t": "must not mind my using the"
+    },
+    {
+      "x": 61,
+      "y": 424,
+      "w": 598,
+      "h": 65,
+      "t": "word 'gratitude.' I used to"
+    },
+    {
+      "x": 53,
+      "y": 475,
+      "w": 582,
+      "h": 74,
+      "t": "think gratitude a burden to"
+    },
+    {
+      "x": 54,
+      "y": 529,
+      "w": 588,
+      "h": 82,
+      "t": "carry. Now I know that is is"
+    },
+    {
+      "x": 50,
+      "y": 596,
+      "w": 617,
+      "h": 75,
+      "t": "something that makes the heart"
+    },
+    {
+      "x": 78,
+      "y": 662,
+      "w": 595,
+      "h": 66,
+      "t": "lighter. The ungrateful man"
+    }
+  ]
+}

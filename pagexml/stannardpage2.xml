@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15">
+    <Metadata>
+        <Creator>Transkribus</Creator>
+        <Created>2026-02-04T19:59:14.522+01:00</Created>
+        <LastChange>2026-02-04T20:09:18.133+01:00</LastChange>
+    </Metadata>
+    <Page imageFilename="stannard_02.jpg" imageWidth="4016" imageHeight="4236">
+        <TextRegion id="r" custom="readingOrder {index:0;}">
+            <Coords points="407,433 3096,433 3096,681 407,681"/>
+            <TextLine id="l" custom="readingOrder {index:0;}">
+                <Coords points="408,679 3096,630 3086,433 423,492 408,679 438,681 450,520 3059,462 3066,602 407,649"/>
+                <Baseline points="408,679 3096,630 3086,433 423,492 408,679"/>
+                <TextEquiv>
+                    <Unicode>to call, a privilege of</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_1" custom="readingOrder {index:1;}">
+            <Coords points="526,694 3066,694 3066,955 526,955"/>
+            <TextLine id="l_1" custom="readingOrder {index:0;}">
+                <Coords points="527,955 3066,906 3061,694 546,773 532,950 562,952 573,801 3033,723 3037,878 526,925"/>
+                <Baseline points="527,955 3066,906 3061,694 546,773 532,950"/>
+                <TextEquiv>
+                    <Unicode>which I hope to avail</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_2" custom="readingOrder {index:2;}">
+            <Coords points="477,1029 3357,1029 3357,1270 477,1270"/>
+            <TextLine id="l_2" custom="readingOrder {index:0;}">
+                <Coords points="487,1270 3357,1211 3342,1038 477,1029 487,1260 517,1259 506,1057 3316,1067 3327,1184 486,1240"/>
+                <Baseline points="487,1270 3357,1211 3342,1038 477,1029 487,1260"/>
+                <TextEquiv>
+                    <Unicode>myself, tomorrow afternoon.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_3" custom="readingOrder {index:1;}">
+                <Coords points="1122,1545 3140,1403 3115,1235 1107,1334 1117,1540 1147,1539 1137,1361 3090,1265 3108,1377 1120,1515"/>
+                <Baseline points="1122,1545 3140,1403 3115,1235 1107,1334 1117,1540"/>
+                <TextEquiv>
+                    <Unicode>Of course I have</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_3" custom="readingOrder {index:3;}">
+            <Coords points="575,1511 3017,1511 3017,1836 575,1836"/>
+            <TextLine id="l_4" custom="readingOrder {index:0;}">
+                <Coords points="576,1836 3017,1737 2982,1511 591,1629 576,1831 606,1833 618,1657 2958,1541 2985,1711 575,1806"/>
+                <Baseline points="576,1836 3017,1737 2982,1511 591,1629 576,1831"/>
+                <TextEquiv>
+                    <Unicode>passed through a very</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_4" custom="readingOrder {index:4;}">
+            <Coords points="603,1757 3273,1757 3273,2106 603,2106"/>
+            <TextLine id="l_5" custom="readingOrder {index:0;}">
+                <Coords points="605,2106 3273,1969 3233,1757 605,1924 605,2102 635,2102 634,1951 3209,1787 3240,1943 603,2076"/>
+                <Baseline points="605,2106 3273,1969 3233,1757 605,1924 605,2102"/>
+                <TextEquiv>
+                    <Unicode>terrible punishment - and</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_6" custom="readingOrder {index:1;}">
+                <Coords points="596,2426 3091,2274 3061,2042 586,2254 586,2421 616,2421 615,2280 3036,2073 3060,2248 594,2396"/>
+                <Baseline points="596,2426 3091,2274 3061,2042 586,2254 586,2421"/>
+                <TextEquiv>
+                    <Unicode>have suffered the very</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_5" custom="readingOrder {index:5;}">
+            <Coords points="581,2264 3509,2264 3509,2697 581,2697"/>
+            <TextLine id="l_7" custom="readingOrder {index:0;}">
+                <Coords points="586,2697 3509,2540 3489,2264 591,2525 581,2692 611,2694 618,2552 3463,2295 3479,2513 584,2667"/>
+                <Baseline points="586,2697 3509,2540 3489,2264 591,2525 581,2692"/>
+                <TextEquiv>
+                    <Unicode>pitch of anguish and despair</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_8" custom="readingOrder {index:1;}">
+                <Coords points="610,2963 3248,2761 3263,2594 635,2791 610,2968 640,2972 660,2818 3233,2624 3221,2734 608,2933"/>
+                <Baseline points="610,2963 3248,2761 3263,2594 635,2791 610,2968"/>
+                <TextEquiv>
+                    <Unicode>Sill I am conscious that</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_6" custom="readingOrder {index:6;}">
+            <Coords points="576,2864 3332,2864 3332,3266 576,3266"/>
+            <TextLine id="l_9" custom="readingOrder {index:0;}">
+                <Coords points="581,3253 3327,3091 3332,2864 596,3056 576,3263 606,3266 622,3083 3304,2894 3299,3064 579,3223"/>
+                <Baseline points="581,3253 3327,3091 3332,2864 596,3056 576,3263"/>
+                <TextEquiv>
+                    <Unicode>I was leading a life quite</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_10" custom="readingOrder {index:1;}">
+                <Coords points="669,3494 3253,3371 3233,3165 659,3317 669,3499 699,3497 689,3344 3207,3195 3222,3344 668,3464"/>
+                <Baseline points="669,3494 3253,3371 3233,3165 659,3317 669,3499"/>
+                <TextEquiv>
+                    <Unicode>unworthy of an artist in</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+    </Page>
+</PcGts>

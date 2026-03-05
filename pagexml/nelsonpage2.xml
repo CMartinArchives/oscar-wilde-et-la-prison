@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15">
+    <Metadata>
+        <Creator>Transkribus</Creator>
+        <Created>2026-02-03T15:37:36.626+01:00</Created>
+        <LastChange>2026-02-15T19:32:30.185+01:00</LastChange>
+    </Metadata>
+    <Page imageFilename="nelson_02.jpg" imageWidth="759" imageHeight="761">
+        <TextRegion id="r" custom="readingOrder {index:0;}">
+            <Coords points="57,57 729,57 729,112 57,112"/>
+            <TextLine id="l" custom="readingOrder {index:0;}">
+                <Coords points="58,111 729,90 719,57 57,70 57,112 87,112 85,98 698,87 694,65 57,81"/>
+                <Baseline points="58,111 729,90 719,57 57,70 57,112"/>
+                <TextEquiv>
+                    <Unicode>for your kindness and gentleness</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_1" custom="readingOrder {index:1;}">
+                <Coords points="56,160 626,135 626,99 60,119 56,160 86,163 86,147 598,128 598,108 55,130"/>
+                <Baseline points="56,160 626,135 626,99 60,119 56,160"/>
+                <TextEquiv>
+                    <Unicode>to me in prison, and for the</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_1" custom="readingOrder {index:1;}">
+            <Coords points="60,149 672,149 672,218 60,218"/>
+            <TextLine id="l_2" custom="readingOrder {index:0;}">
+                <Coords points="61,217 672,189 672,149 64,173 60,215 90,218 90,201 644,178 643,162 60,187"/>
+                <Baseline points="61,217 672,189 672,149 64,173 60,215"/>
+                <TextEquiv>
+                    <Unicode>real care that you took of me</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_2" custom="readingOrder {index:2;}">
+            <Coords points="64,199 734,199 734,272 64,272"/>
+            <TextLine id="l_3" custom="readingOrder {index:0;}">
+                <Coords points="65,272 733,241 734,199 64,227 65,269 95,268 93,254 705,228 705,214 64,242"/>
+                <Baseline points="65,272 733,241 734,199 64,227 65,269"/>
+                <TextEquiv>
+                    <Unicode>at the end, when I was mentally</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_4" custom="readingOrder {index:1;}">
+                <Coords points="62,324 691,291 686,254 64,288 64,321 94,321 93,315 661,284 659,265 60,294"/>
+                <Baseline points="62,324 691,291 686,254 64,288 64,321"/>
+                <TextEquiv>
+                    <Unicode>upset and in a state of very</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_3" custom="readingOrder {index:3;}">
+            <Coords points="33,281 729,281 729,404 33,404"/>
+            <TextLine id="l_5" custom="readingOrder {index:0;}">
+                <Coords points="698,351 64,374 66,338 699,311 698,352 728,353 729,281 37,308 33,404 699,381"/>
+                <Baseline points="698,351 64,374 66,338 699,311 698,352"/>
+                <TextEquiv>
+                    <Unicode>terrible nervous excitement. You</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_6" custom="readingOrder {index:1;}">
+                <Coords points="72,429 699,409 694,366 74,393 72,429 102,431 101,421 669,396 668,382 71,399"/>
+                <Baseline points="72,429 699,409 694,366 74,393 72,429"/>
+                <TextEquiv>
+                    <Unicode>must not mind my using the</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_4" custom="readingOrder {index:4;}">
+            <Coords points="61,424 659,424 659,489 61,489"/>
+            <TextLine id="l_7" custom="readingOrder {index:0;}">
+                <Coords points="65,489 659,461 658,424 61,438 64,487 94,485 91,465 630,453 630,434 64,459"/>
+                <Baseline points="65,489 659,461 658,424 61,438 64,487"/>
+                <TextEquiv>
+                    <Unicode>word 'gratitude.' I used to</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_8" custom="readingOrder {index:1;}">
+                <Coords points="55,548 635,511 630,475 57,508 56,548 86,549 85,535 605,505 603,485 53,518"/>
+                <Baseline points="55,548 635,511 630,475 57,508 56,548"/>
+                <TextEquiv>
+                    <Unicode>think gratitude a burden to</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_5" custom="readingOrder {index:5;}">
+            <Coords points="54,529 642,529 642,611 54,611"/>
+            <TextLine id="l_9" custom="readingOrder {index:0;}">
+                <Coords points="56,611 642,572 635,529 57,576 56,610 86,611 85,603 611,560 610,546 54,581"/>
+                <Baseline points="56,611 642,572 635,529 57,576 56,610"/>
+                <TextEquiv>
+                    <Unicode>carry. Now I know that is is</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_6" custom="readingOrder {index:6;}">
+            <Coords points="50,596 667,596 667,671 50,671"/>
+            <TextLine id="l_10" custom="readingOrder {index:0;}">
+                <Coords points="51,668 654,648 667,596 52,621 51,670 81,671 80,648 633,624 631,620 50,638"/>
+                <Baseline points="51,668 654,648 667,596 52,621 51,670"/>
+                <TextEquiv>
+                    <Unicode>something that makes the heart</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_7" custom="readingOrder {index:7;}">
+            <Coords points="78,662 673,662 673,728 78,728"/>
+            <TextLine id="l_11" custom="readingOrder {index:0;}">
+                <Coords points="79,726 673,709 672,662 80,677 78,727 108,728 107,705 644,691 644,681 78,696"/>
+                <Baseline points="79,726 673,709 672,662 80,677 78,727"/>
+                <TextEquiv>
+                    <Unicode>lighter. The ungrateful man</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+    </Page>
+</PcGts>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15">
+    <Metadata>
+        <Creator>Transkribus</Creator>
+        <Created>2026-02-03T15:37:36.816+01:00</Created>
+        <LastChange>2026-02-03T16:17:08.660+01:00</LastChange>
+    </Metadata>
+    <Page imageFilename="nelson_04.jpg" imageWidth="759" imageHeight="761">
+        <TextRegion id="r" custom="readingOrder {index:0;}">
+            <Coords points="39,30 705,30 705,86 39,86"/>
+            <TextLine id="l" custom="readingOrder {index:0;}">
+                <Coords points="40,82 705,70 705,30 45,42 40,82 70,86 71,70 677,59 677,42 39,52"/>
+                <Baseline points="40,82 705,70 705,30 45,42 40,82"/>
+                <TextEquiv>
+                    <Unicode>half witted lad who was flogged</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_1" custom="readingOrder {index:1;}">
+                <Coords points="51,132 680,111 675,74 53,88 50,131 80,133 80,116 650,103 648,84 50,102"/>
+                <Baseline points="51,132 680,111 675,74 53,88 50,131"/>
+                <TextEquiv>
+                    <Unicode>by the Doctor's orders. I could</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_1" custom="readingOrder {index:1;}">
+            <Coords points="55,128 646,128 646,187 55,187"/>
+            <TextLine id="l_2" custom="readingOrder {index:0;}">
+                <Coords points="58,186 646,167 642,128 57,152 55,185 85,187 84,180 616,158 615,140 57,156"/>
+                <Baseline points="58,186 646,167 642,128 57,152 55,185"/>
+                <TextEquiv>
+                    <Unicode>not have kept them out of</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_2" custom="readingOrder {index:2;}">
+            <Coords points="57,194 684,194 684,253 57,253"/>
+            <TextLine id="l_3" custom="readingOrder {index:0;}">
+                <Coords points="61,247 684,223 682,194 61,203 57,251 87,253 87,231 655,223 654,196 60,217"/>
+                <Baseline points="61,247 684,223 682,194 61,203 57,251"/>
+                <TextEquiv>
+                    <Unicode>my letter, and to have mentioned</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_3" custom="readingOrder {index:3;}">
+            <Coords points="57,245 698,245 698,309 57,309"/>
+            <TextLine id="l_4" custom="readingOrder {index:0;}">
+                <Coords points="58,306 698,282 684,245 61,264 57,306 87,309 87,292 664,275 661,258 57,276"/>
+                <Baseline points="58,306 698,282 684,245 61,264 57,306"/>
+                <TextEquiv>
+                    <Unicode>them to you might have put you</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_5" custom="readingOrder {index:1;}">
+                <Coords points="57,357 686,331 683,291 57,326 54,360 84,363 84,353 657,321 656,304 56,327"/>
+                <Baseline points="57,357 686,331 683,291 57,326 54,360"/>
+                <TextEquiv>
+                    <Unicode>in a difficult position. In your</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_4" custom="readingOrder {index:4;}">
+            <Coords points="59,355 679,355 679,418 59,418"/>
+            <TextLine id="l_6" custom="readingOrder {index:0;}">
+                <Coords points="61,418 679,398 670,355 59,381 61,414 91,412 89,408 647,385 646,372 60,388"/>
+                <Baseline points="61,418 679,398 670,355 59,381 61,414"/>
+                <TextEquiv>
+                    <Unicode>reply you might have expressed</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_7" custom="readingOrder {index:1;}">
+                <Coords points="51,473 632,443 628,401 53,438 50,471 80,474 80,465 602,431 601,417 49,443"/>
+                <Baseline points="51,473 632,443 628,401 53,438 50,471"/>
+                <TextEquiv>
+                    <Unicode>sympathy with my views - I</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_5" custom="readingOrder {index:5;}">
+            <Coords points="47,454 659,454 659,530 47,530"/>
+            <TextLine id="l_8" custom="readingOrder {index:0;}">
+                <Coords points="49,527 659,492 655,454 51,487 47,527 77,530 77,514 629,484 628,466 47,497"/>
+                <Baseline points="49,527 659,492 655,454 51,487 47,527"/>
+                <TextEquiv>
+                    <Unicode>think you would have - and then</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_9" custom="readingOrder {index:1;}">
+                <Coords points="50,576 659,566 651,509 47,543 49,578 79,576 77,570 626,539 627,539 50,546"/>
+                <Baseline points="50,576 659,566 651,509 47,543 49,578"/>
+                <TextEquiv>
+                    <Unicode>on the appearance of my public</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_6" custom="readingOrder {index:6;}">
+            <Coords points="45,576 699,576 699,637 45,637"/>
+            <TextLine id="l_10" custom="readingOrder {index:0;}">
+                <Coords points="46,637 699,622 695,576 45,592 49,637 79,634 75,619 669,605 669,595 45,607"/>
+                <Baseline points="46,637 699,622 695,576 45,592 49,637"/>
+                <TextEquiv>
+                    <Unicode>letter you might have felt as</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_11" custom="readingOrder {index:1;}">
+                <Coords points="46,694 547,671 538,634 45,651 45,696 75,696 73,678 515,664 513,646 45,664"/>
+                <Baseline points="46,694 547,671 538,634 45,651 45,696"/>
+                <TextEquiv>
+                    <Unicode>if I had, in some almost</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_7" custom="readingOrder {index:7;}">
+            <Coords points="124,675 638,675 638,737 124,737"/>
+            <TextLine id="l_12" custom="readingOrder {index:0;}">
+                <Coords points="128,737 638,720 636,675 124,700 125,737 155,736 153,727 609,705 609,693 127,707"/>
+                <Baseline points="128,737 638,720 636,675 124,700 125,737"/>
+                <TextEquiv>
+                    <Unicode>ungenerous or thoughtless</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+    </Page>
+</PcGts>

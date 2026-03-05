@@ -1,0 +1,91 @@
+{
+  "image": "nelson_05.jpg",
+  "nativeW": 759,
+  "nativeH": 761,
+  "boxes": [
+    {
+      "x": 58,
+      "y": 71,
+      "w": 582,
+      "h": 56,
+      "t": "way, procured you private"
+    },
+    {
+      "x": 47,
+      "y": 121,
+      "w": 628,
+      "h": 65,
+      "t": "opinion on official things, for"
+    },
+    {
+      "x": 53,
+      "y": 174,
+      "w": 422,
+      "h": 53,
+      "t": "use as corroboration."
+    },
+    {
+      "x": 125,
+      "y": 223,
+      "w": 512,
+      "h": 62,
+      "t": "I longed to speak to you"
+    },
+    {
+      "x": 49,
+      "y": 272,
+      "w": 506,
+      "h": 66,
+      "t": "about these things on the"
+    },
+    {
+      "x": 49,
+      "y": 326,
+      "w": 618,
+      "h": 75,
+      "t": "evening of my departure, but I"
+    },
+    {
+      "x": 47,
+      "y": 390,
+      "w": 599,
+      "h": 80,
+      "t": "felt that in my position as a"
+    },
+    {
+      "x": 47,
+      "y": 438,
+      "w": 581,
+      "h": 88,
+      "t": "prisoner it would have been"
+    },
+    {
+      "x": 28,
+      "y": 473,
+      "w": 659,
+      "h": 152,
+      "t": "wrong of me to do so, and that"
+    },
+    {
+      "x": 59,
+      "y": 552,
+      "w": 608,
+      "h": 82,
+      "t": "it would, or might have put"
+    },
+    {
+      "x": 61,
+      "y": 612,
+      "w": 567,
+      "h": 86,
+      "t": "you in a difficult position"
+    },
+    {
+      "x": 97,
+      "y": 674,
+      "w": 579,
+      "h": 68,
+      "t": "afterwards, as well as at the"
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15">
+    <Metadata>
+        <Creator>Transkribus</Creator>
+        <Created>2026-02-03T15:37:36.513+01:00</Created>
+        <LastChange>2026-02-03T15:48:23.788+01:00</LastChange>
+    </Metadata>
+    <Page imageFilename="nelson_01.jpg" imageWidth="759" imageHeight="761">
+        <TextRegion id="r_4" custom="readingOrder {index:0;}">
+            <Coords points="235,68 654,68 654,116 235,116"/>
+            <TextLine id="l_5" custom="readingOrder {index:0;}">
+                <Coords points="236,114 654,107 652,68 240,73 236,113 266,116 266,101 625,97 624,79 235,84"/>
+                <Baseline points="236,114 654,107 652,68 240,73 236,113"/>
+                <TextEquiv>
+                    <Unicode>Hotel de la Plage</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_5" custom="readingOrder {index:1;}">
+            <Coords points="283,126 700,126 700,172 283,172"/>
+            <TextLine id="l_6" custom="readingOrder {index:0;}">
+                <Coords points="284,170 700,159 697,126 288,132 284,169 314,172 314,160 671,155 669,132 283,140"/>
+                <Baseline points="284,170 700,159 697,126 288,132 284,169"/>
+                <TextEquiv>
+                    <Unicode>Berneval-sur-Mer.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r" custom="readingOrder {index:2;}">
+            <Coords points="13,6 261,6 261,43 13,43"/>
+            <TextLine id="l" custom="readingOrder {index:0;}">
+                <Coords points="14,38 261,34 261,10 16,12 13,40 43,43 42,41 233,38 233,6 14,8"/>
+                <Baseline points="14,38 261,34 261,10 16,12 13,40"/>
+                <TextEquiv>
+                    <Unicode>My name is here,</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_1" custom="readingOrder {index:1;}">
+                <Coords points="53,65 566,57 562,29 51,39 54,65 84,62 82,66 537,58 534,30 53,35"/>
+                <Baseline points="53,65 566,57 562,29 51,39 54,65"/>
+                <TextEquiv>
+                    <Unicode>Mons. Sebastian Melmoth.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_7" custom="readingOrder {index:3;}">
+            <Coords points="43,254 465,254 465,315 43,315"/>
+            <TextLine id="l_8" custom="readingOrder {index:0;}">
+                <Coords points="44,309 465,297 463,254 51,264 44,310 74,315 76,292 436,283 436,270 43,279"/>
+                <Baseline points="44,309 465,297 463,254 51,264 44,310"/>
+                <TextEquiv>
+                    <Unicode>Dear Major Nelson,</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_9" custom="readingOrder {index:1;}">
+                <Coords points="276,352 636,341 630,306 286,310 274,353 303,361 308,339 606,335 604,315 275,322"/>
+                <Baseline points="276,352 636,341 630,306 286,310 274,353"/>
+                <TextEquiv>
+                    <Unicode>I had of course</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_8" custom="readingOrder {index:4;}">
+            <Coords points="28,319 692,319 692,423 28,423"/>
+            <TextLine id="l_10" custom="readingOrder {index:0;}">
+                <Coords points="663,382 58,393 59,354 662,349 661,380 691,381 692,319 30,324 28,423 664,412"/>
+                <Baseline points="663,382 58,393 59,354 662,349 661,380"/>
+                <TextEquiv>
+                    <Unicode>intended to write to you as</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_11" custom="readingOrder {index:1;}">
+                <Coords points="57,450 700,437 690,393 61,408 58,451 88,453 88,436 667,423 666,411 56,420"/>
+                <Baseline points="57,450 700,437 690,393 61,408 58,451"/>
+                <TextEquiv>
+                    <Unicode>soon as I had safely reached</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_9" custom="readingOrder {index:5;}">
+            <Coords points="60,439 726,439 726,502 60,502"/>
+            <TextLine id="l_12" custom="readingOrder {index:0;}">
+                <Coords points="61,501 726,472 714,439 64,460 60,499 90,502 90,488 694,469 690,448 60,471"/>
+                <Baseline points="61,501 726,472 714,439 64,460 60,499"/>
+                <TextEquiv>
+                    <Unicode>French soil, to express, however</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_13" custom="readingOrder {index:1;}">
+                <Coords points="63,560 692,540 690,486 68,512 62,563 92,567 94,540 663,515 663,513 62,530"/>
+                <Baseline points="63,560 692,540 690,486 68,512 62,563"/>
+                <TextEquiv>
+                    <Unicode>inadequately, my real feelings</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_10" custom="readingOrder {index:6;}">
+            <Coords points="75,559 630,559 630,616 75,616"/>
+            <TextLine id="l_14" custom="readingOrder {index:0;}">
+                <Coords points="76,616 630,592 630,559 75,575 75,615 105,615 103,603 602,588 602,565 75,586"/>
+                <Baseline points="76,616 630,592 630,559 75,575 75,615"/>
+                <TextEquiv>
+                    <Unicode>of what you must let me</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_15" custom="readingOrder {index:1;}">
+                <Coords points="73,670 654,643 653,603 82,632 72,672 101,679 105,660 626,633 625,616 72,640"/>
+                <Baseline points="73,670 654,643 653,603 82,632 72,672"/>
+                <TextEquiv>
+                    <Unicode>term, not merely sincere, but</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_11" custom="readingOrder {index:7;}">
+            <Coords points="78,660 659,660 659,731 78,731"/>
+            <TextLine id="l_16" custom="readingOrder {index:0;}">
+                <Coords points="79,727 659,698 654,660 82,690 78,728 108,731 108,718 629,690 627,672 78,697"/>
+                <Baseline points="79,727 659,698 654,660 82,690 78,728"/>
+                <TextEquiv>
+                    <Unicode>affectionate gratitude to you</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_6" custom="readingOrder {index:8;}">
+            <Coords points="329,180 640,180 640,238 329,238"/>
+            <TextLine id="l_7" custom="readingOrder {index:0;}">
+                <Coords points="331,233 640,217 639,187 337,180 332,235 362,238 363,209 611,215 611,190 329,203"/>
+                <Baseline points="331,233 640,217 639,187 337,180 332,235"/>
+                <TextEquiv>
+                    <Unicode>près de Dieppe</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+    </Page>
+</PcGts>

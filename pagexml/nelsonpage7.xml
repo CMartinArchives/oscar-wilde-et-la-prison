@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15">
+    <Metadata>
+        <Creator>Transkribus</Creator>
+        <Created>2026-02-03T15:37:37.674+01:00</Created>
+        <LastChange>2026-02-03T16:27:49.629+01:00</LastChange>
+    </Metadata>
+    <Page imageFilename="nelson_07.jpg" imageWidth="759" imageHeight="761">
+        <TextRegion id="r" custom="readingOrder {index:0;}">
+            <Coords points="77,39 717,39 717,102 77,102"/>
+            <TextLine id="l" custom="readingOrder {index:0;}">
+                <Coords points="79,95 717,81 712,39 83,63 77,97 107,102 108,91 687,69 686,54 78,65"/>
+                <Baseline points="79,95 717,81 712,39 83,63 77,97"/>
+                <TextEquiv>
+                    <Unicode>made for me. Such exceptional</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_1" custom="readingOrder {index:1;}">
+                <Coords points="79,146 707,129 698,94 79,106 79,145 109,145 107,134 676,123 673,103 78,116"/>
+                <Baseline points="79,146 707,129 698,94 79,106 79,145"/>
+                <TextEquiv>
+                    <Unicode>treatment as I received was by</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_1" custom="readingOrder {index:1;}">
+            <Coords points="82,142 673,142 673,207 82,207"/>
+            <TextLine id="l_2" custom="readingOrder {index:0;}">
+                <Coords points="83,203 673,180 670,142 90,156 83,202 113,207 115,184 644,171 643,153 82,173"/>
+                <Baseline points="83,203 673,180 670,142 90,156 83,202"/>
+                <TextEquiv>
+                    <Unicode>order of the Commissioners. You</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_3" custom="readingOrder {index:1;}">
+                <Coords points="89,258 661,225 647,196 92,212 88,259 118,262 118,240 629,226 622,202 87,228"/>
+                <Baseline points="89,258 661,225 647,196 92,212 88,259"/>
+                <TextEquiv>
+                    <Unicode>gave me the same kindness as</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_2" custom="readingOrder {index:2;}">
+            <Coords points="82,248 696,248 696,320 82,320"/>
+            <TextLine id="l_4" custom="readingOrder {index:0;}">
+                <Coords points="86,316 696,284 686,248 88,273 82,316 112,320 113,301 664,278 661,259 84,286"/>
+                <Baseline points="86,316 696,284 686,248 88,273 82,316"/>
+                <TextEquiv>
+                    <Unicode>you gave to everyone. Of course</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_5" custom="readingOrder {index:1;}">
+                <Coords points="68,359 641,329 633,298 70,331 67,360 97,363 96,358 611,328 607,304 66,329"/>
+                <Baseline points="68,359 641,329 633,298 70,331 67,360"/>
+                <TextEquiv>
+                    <Unicode>I made more demands, but</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_3" custom="readingOrder {index:3;}">
+            <Coords points="62,354 718,354 718,417 62,417"/>
+            <TextLine id="l_6" custom="readingOrder {index:0;}">
+                <Coords points="63,412 718,389 713,354 69,376 63,412 93,417 94,404 688,384 686,362 62,382"/>
+                <Baseline points="63,412 718,389 713,354 69,376 63,412"/>
+                <TextEquiv>
+                    <Unicode>then I think I had really more</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_7" custom="readingOrder {index:1;}">
+                <Coords points="79,467 715,437 700,406 78,432 78,468 108,468 106,459 682,436 676,414 78,437"/>
+                <Baseline points="79,467 715,437 700,406 78,432 78,468"/>
+                <TextEquiv>
+                    <Unicode>needs than others - and I lacked</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_4" custom="readingOrder {index:4;}">
+            <Coords points="79,469 730,469 730,533 79,533"/>
+            <TextLine id="l_8" custom="readingOrder {index:0;}">
+                <Coords points="81,533 730,498 722,469 81,481 81,533 111,533 109,509 700,498 695,473 79,503"/>
+                <Baseline points="81,533 730,498 722,469 81,481 81,533"/>
+                <TextEquiv>
+                    <Unicode>often their cheerful acquiescence. -</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_9" custom="readingOrder {index:1;}">
+                <Coords points="188,573 670,556 666,513 185,536 187,572 217,570 215,563 640,543 639,529 187,543"/>
+                <Baseline points="188,573 670,556 666,513 185,536 187,572"/>
+                <TextEquiv>
+                    <Unicode>Of course I side with</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_5" custom="readingOrder {index:5;}">
+            <Coords points="80,564 674,564 674,634 80,634"/>
+            <TextLine id="l_10" custom="readingOrder {index:0;}">
+                <Coords points="82,628 674,600 671,564 89,589 80,627 109,634 112,617 645,594 644,573 81,598"/>
+                <Baseline points="82,628 674,600 671,564 89,589 80,627"/>
+                <TextEquiv>
+                    <Unicode>the prisoners - I was one, and</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="l_11" custom="readingOrder {index:1;}">
+                <Coords points="81,688 704,647 700,605 79,639 82,688 112,686 109,666 674,635 673,621 79,658"/>
+                <Baseline points="81,688 704,647 700,605 79,639 82,688"/>
+                <TextEquiv>
+                    <Unicode>I belong to their class now -</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_6" custom="readingOrder {index:6;}">
+            <Coords points="76,654 707,654 707,725 76,725"/>
+            <TextLine id="l_12" custom="readingOrder {index:0;}">
+                <Coords points="77,719 707,709 705,654 81,692 76,720 106,725 106,720 678,684 678,681 77,689"/>
+                <Baseline points="77,719 707,709 705,654 81,692 76,720"/>
+                <TextEquiv>
+                    <Unicode>I am not a scrap ashamed of</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+    </Page>
+</PcGts>

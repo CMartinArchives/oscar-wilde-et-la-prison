@@ -1,0 +1,1637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng"
+ schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="wilde_letters_corpus">
+
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title xml:lang="en">Corpus of three TEI-encoded letters by Oscar Wilde</title>
+        <title xml:lang="fr">Corpus de trois lettres d’Oscar Wilde encodées en TEI</title>
+        <author>Oscar Wilde</author>
+
+        <respStmt>
+          <resp xml:lang="en">Transcription</resp>
+          <resp xml:lang="fr">Transcription</resp>
+          <name>Clara Martin</name>
+        </respStmt>
+
+        <respStmt>
+          <resp xml:lang="en">TEI encoding</resp>
+          <resp xml:lang="fr">Encodage TEI</resp>
+          <name>Clara Martin</name>
+        </respStmt>
+      </titleStmt>
+
+      <publicationStmt>
+        <publisher>École nationale des chartes</publisher>
+        <pubPlace>Paris</pubPlace>
+        <date when="2025">2025</date>
+        <availability>
+          <p xml:lang="en">
+            TEI encoding © 2025 by Clara Martin.
+            This corpus aggregates three TEI-XML letters encoded for teaching and research.
+            Rights and reuse conditions for the underlying manuscript images remain those of the holding institutions
+            (The Morgan Library; The New York Public Library; Trinity College Dublin).
+          </p>
+          <p xml:lang="fr">
+            Encodage TEI © 2025 Clara Martin.
+            Ce corpus rassemble trois lettres en TEI-XML encodées à des fins d’enseignement et de recherche.
+            Les droits et conditions de réutilisation des images des manuscrits restent ceux des institutions de conservation
+            (The Morgan Library; The New York Public Library; Trinity College Dublin).
+          </p>
+        </availability>
+      </publicationStmt>
+
+      <sourceDesc>
+
+        <!-- ===================================================== -->
+        <!-- SOURCES MANUSCRITES : 3 LETTRES -->
+        <!-- ===================================================== -->
+
+        <!-- Source 1: Lane letter (The Morgan Library & Museum) -->
+        <msDesc xml:id="ms_lane_morgan">
+          <msIdentifier>
+            <country>USA</country>
+            <settlement>New York</settlement>
+            <repository>The Morgan Library &amp; Museum</repository>
+            <collection>Oscar Wilde Papers</collection>
+            <idno>MA 7258.14</idno>
+          </msIdentifier>
+
+          <msContents>
+            <msItem>
+              <title xml:lang="en">Letter to John Lane</title>
+              <title xml:lang="fr">Lettre à John Lane</title>
+              <author>Oscar Wilde</author>
+
+              <note xml:lang="en">
+                Autograph letter to <persName ref="#pers_lane">John Lane</persName>, written from
+                <placeName ref="#place_worthing">Worthing</placeName>, discussing corrected proofs,
+                publication details, pricing, United States copyright, and the production of several works,
+                including <title type="work" rend="italic" ref="#work_woman_no_importance">A Woman of No Importance</title> and
+                <title type="work" rend="italic" ref="#work_mr_wh">The Portrait of Mr. W. H.</title>.
+              </note>
+              <note xml:lang="fr">
+                Lettre autographe à <persName ref="#pers_lane">John Lane</persName>, écrite depuis
+                <placeName ref="#place_worthing">Worthing</placeName>, portant sur des épreuves corrigées,
+                des détails de publication, le prix, le copyright aux États-Unis et la préparation de plusieurs œuvres,
+                dont <title type="work" rend="italic" ref="#work_woman_no_importance">A Woman of No Importance</title> et
+                <title type="work" rend="italic" ref="#work_mr_wh">The Portrait of Mr. W. H.</title>.
+              </note>
+
+              <textLang mainLang="en" otherLangs="fr">English</textLang>
+            </msItem>
+          </msContents>
+
+          <physDesc>
+            <objectDesc form="letter">
+              <supportDesc>
+                <support>
+                  <p xml:lang="en">
+                    Autograph letter written in ink on paper, headed with printed
+                    “16, Tite Street, Chelsea S.W.” and handwritten “5 Esplanade, Worthing”.
+                  </p>
+                  <p xml:lang="fr">
+                    Lettre autographe à l’encre sur papier, avec en-tête imprimé
+                    « 16, Tite Street, Chelsea S.W. » et adresse manuscrite « 5 Esplanade, Worthing ».
+                  </p>
+                </support>
+              </supportDesc>
+              <layoutDesc>
+                <layout>
+                  <p xml:lang="en">Single column; original line breaks are preserved in this transcription.</p>
+                  <p xml:lang="fr">Une seule colonne ; les retours à la ligne d’origine sont conservés dans cette transcription.</p>
+                </layout>
+              </layoutDesc>
+            </objectDesc>
+
+            <handDesc>
+              <handNote scope="major">
+                <p xml:lang="en">Autograph hand of Oscar Wilde.</p>
+                <p xml:lang="fr">Écriture autographe d’Oscar Wilde.</p>
+              </handNote>
+              <handNote scope="minor">
+                <p xml:lang="en">Modern pencil annotation in another hand.</p>
+                <p xml:lang="fr">Annotation moderne au crayon, d’une autre main.</p>
+              </handNote>
+            </handDesc>
+          </physDesc>
+
+          <history>
+            <origin>
+              <p xml:lang="en">
+                Written at <placeName ref="#place_worthing">Worthing</placeName> in
+                <date when="1894-08">August 1894</date>, and addressed to
+                <persName ref="#pers_lane">John Lane</persName>.
+              </p>
+              <p xml:lang="fr">
+                Écrite à <placeName ref="#place_worthing">Worthing</placeName> en
+                <date when="1894-08">août 1894</date>, et adressée à
+                <persName ref="#pers_lane">John Lane</persName>.
+              </p>
+            </origin>
+          </history>
+        </msDesc>
+
+        <!-- Source 2: Nelson letter (NYPL) -->
+        <msDesc xml:id="ms_nelson_nypl">
+          <msIdentifier>
+            <country>USA</country>
+            <settlement>New York</settlement>
+            <repository>The New York Public Library</repository>
+            <collection>Oscar Wilde collection of papers</collection>
+            <idno>Berg Coll MSS Wilde</idno>
+          </msIdentifier>
+
+          <msContents>
+            <msItem>
+              <title xml:lang="en">Letter to Major J. O. Nelson</title>
+              <title xml:lang="fr">Lettre au Major J. O. Nelson</title>
+              <author>Oscar Wilde</author>
+
+              <note xml:lang="en">
+                Autograph letter to <persName ref="#pers_nelson">Major J. O. Nelson</persName>, governor of
+                <placeName ref="#place_reading_gaol">Reading Gaol</placeName>, expressing gratitude for his kindness in prison and
+                reflecting on suffering, prison life, and the possibility of reforming the system.
+              </note>
+              <note xml:lang="fr">
+                Lettre autographe à <persName ref="#pers_nelson">Major J. O. Nelson</persName>, gouverneur de
+                <placeName ref="#place_reading_gaol">Reading Gaol</placeName>, exprimant sa gratitude pour sa bonté en prison et
+                réfléchissant à la souffrance, à la vie carcérale et à la possibilité de réformer le système.
+              </note>
+
+              <textLang mainLang="en">English</textLang>
+            </msItem>
+          </msContents>
+
+          <physDesc>
+            <objectDesc form="letter">
+              <supportDesc>
+                <support>
+                  <p xml:lang="en">
+                    Autograph letter written in ink on paper, comprising four leaves, headed
+                    “Hotel de la Plage, Berneval-sur-Mer, Près de Dieppe”.
+                  </p>
+                  <p xml:lang="fr">
+                    Lettre autographe à l’encre sur papier, composée de quatre feuillets, avec en-tête
+                    « Hotel de la Plage, Berneval-sur-Mer, Près de Dieppe ».
+                  </p>
+                </support>
+              </supportDesc>
+              <layoutDesc>
+                <layout>
+                  <p xml:lang="en">Single column of prose; line breaks preserved in this transcription.</p>
+                  <p xml:lang="fr">Une seule colonne de prose ; les retours à la ligne sont conservés dans cette transcription.</p>
+                </layout>
+              </layoutDesc>
+            </objectDesc>
+
+            <handDesc>
+              <handNote scope="major">
+                <p xml:lang="en">Autograph hand of Oscar Wilde.</p>
+                <p xml:lang="fr">Écriture autographe d’Oscar Wilde.</p>
+              </handNote>
+              <handNote scope="minor">
+                <p xml:lang="en">Modern archival annotations and identifiers in another hand (repository marks, order numbers).</p>
+                <p xml:lang="fr">Annotations et identifiants d’archives modernes d’une autre main (marques du dépôt, numéros d’ordre).</p>
+              </handNote>
+            </handDesc>
+          </physDesc>
+
+          <history>
+            <origin>
+              <p xml:lang="en">
+                Written at <placeName ref="#place_berneval">Berneval-sur-Mer</placeName> on
+                <date when="1897-05-28">28 May 1897</date>, after Wilde’s release from
+                <placeName ref="#place_reading_gaol">Reading Gaol</placeName>, and addressed to
+                <persName ref="#pers_nelson">Major J. O. Nelson</persName>, governor of the prison.
+              </p>
+              <p xml:lang="fr">
+                Écrite à <placeName ref="#place_berneval">Berneval-sur-Mer</placeName> le
+                <date when="1897-05-28">28 mai 1897</date>, après la libération de Wilde de
+                <placeName ref="#place_reading_gaol">Reading Gaol</placeName>, et adressée à
+                <persName ref="#pers_nelson">Major J. O. Nelson</persName>, gouverneur de la prison.
+              </p>
+            </origin>
+          </history>
+        </msDesc>
+
+        <!-- Source 3: Stannard letter (Trinity College Dublin) -->
+        <msDesc xml:id="ms_stannard_tcd">
+          <msIdentifier>
+            <country>Ireland</country>
+            <settlement>Dublin</settlement>
+            <repository>Trinity College Dublin</repository>
+            <collection>Julia Rosenthal Oscar Wilde Collection</collection>
+            <idno>IE TCD MS 11437/1/1/5</idno>
+          </msIdentifier>
+
+          <msContents>
+            <msItem>
+              <title xml:lang="en">Letter to Mrs Henrietta Stannard</title>
+              <title xml:lang="fr">Lettre à Mme Henrietta Stannard</title>
+              <author>Oscar Wilde</author>
+
+              <note xml:lang="en">
+                Autograph letter to <persName ref="#pers_stannard">Henrietta Stannard</persName>, thanking her
+                for her sympathy, reflecting on his punishment and former life, and explaining his adoption
+                of the pseudonym <persName type="pseudonym" ref="#pers_wilde">Monsieur Sebastian Melmoth</persName>
+                while living quietly in exile at <placeName ref="#place_berneval">Berneval-sur-Mer</placeName>.
+              </note>
+              <note xml:lang="fr">
+                Lettre autographe à <persName ref="#pers_stannard">Henrietta Stannard</persName> : Wilde la remercie
+                de sa sympathie, revient sur sa peine et sa vie passée, et explique l’adoption du pseudonyme
+                <persName type="pseudonym" ref="#pers_wilde">Monsieur Sebastian Melmoth</persName>
+                durant son exil à <placeName ref="#place_berneval">Berneval-sur-Mer</placeName>.
+              </note>
+
+              <textLang mainLang="en">English</textLang>
+            </msItem>
+          </msContents>
+
+          <physDesc>
+            <objectDesc form="letter">
+              <supportDesc>
+                <support>
+                  <p xml:lang="en">
+                    Autograph letter written in ink on paper, headed
+                    “Hotel de la Plage, Berneval-sur-Mer”.
+                  </p>
+                  <p xml:lang="fr">
+                    Lettre autographe à l’encre sur papier, avec l’en-tête
+                    « Hotel de la Plage, Berneval-sur-Mer ».
+                  </p>
+                </support>
+              </supportDesc>
+              <layoutDesc>
+                <layout>
+                  <p xml:lang="en">Single column; original line breaks are preserved in this transcription.</p>
+                  <p xml:lang="fr">Une seule colonne ; les retours à la ligne d’origine sont conservés dans cette transcription.</p>
+                </layout>
+              </layoutDesc>
+            </objectDesc>
+
+            <handDesc>
+              <handNote scope="major">
+                <p xml:lang="en">Autograph hand of Oscar Wilde.</p>
+                <p xml:lang="fr">Écriture autographe d’Oscar Wilde.</p>
+              </handNote>
+              <handNote scope="minor">
+                <p xml:lang="en">Modern pencil annotations and shelfmark added in another hand by the repository staff.</p>
+                <p xml:lang="fr">Annotations modernes au crayon et cote ajoutées par le personnel du dépôt, d’une autre main.</p>
+              </handNote>
+            </handDesc>
+
+            <additions>
+              <p xml:lang="en">Repository reference “IE TCD MS 11437/1/1/5” written in pencil at the top of the first page.</p>
+              <p xml:lang="fr">Référence de conservation « IE TCD MS 11437/1/1/5 » inscrite au crayon en haut de la première page.</p>
+              <note type="marginal" resp="encoder" cert="low" xml:lang="en">
+                Illegible pencil annotation in the margin, not in Wilde’s hand.
+              </note>
+              <note type="marginal" resp="encoder" cert="low" xml:lang="fr">
+                Annotation au crayon illisible dans la marge, pas de la main de Wilde.
+              </note>
+            </additions>
+          </physDesc>
+
+          <history>
+            <origin>
+              <p xml:lang="en">
+                Written at <placeName ref="#place_berneval">Berneval-sur-Mer</placeName> between
+                <date when="1897-05-28">28 May 1897</date>,
+                after Wilde’s release from <placeName ref="#place_reading_gaol">Reading Gaol</placeName>,
+                and addressed to <persName ref="#pers_stannard">Henrietta Stannard</persName>.
+              </p>
+              <p xml:lang="fr">
+                Écrite à <placeName ref="#place_berneval">Berneval-sur-Mer</placeName> entre
+                <date notBefore="1897-05" notAfter="1897-09">mai et septembre 1897</date>,
+                après la libération de Wilde de <placeName ref="#place_reading_gaol">Reading Gaol</placeName>,
+                et adressée à <persName ref="#pers_stannard">Henrietta Stannard</persName>.
+              </p>
+            </origin>
+          </history>
+        </msDesc>
+
+<!-- ===================================================== -->
+<!-- CONTEXTE BIBLIOGRAPHIQUE (HARMONISÉ) -->
+<!-- ===================================================== -->
+
+<listBibl>
+
+  <!-- ========================= -->
+  <!-- ŒUVRES CITÉES DANS LES LETTRES -->
+  <!-- ========================= -->
+
+  <bibl xml:id="work_mr_wh">
+    <title xml:lang="en" type="work" rend="italic">The Portrait of Mr. W. H.</title>
+    <title xml:lang="fr" type="work" rend="italic">Le Portrait de M. W. H.</title>
+    <author ref="#pers_wilde">Oscar Wilde</author>
+    <date when="1889">1889</date>
+
+    <note xml:lang="fr">
+      Nouvelle publiée en 1889 dans <title type="periodical">Blackwood’s Edinburgh Magazine</title>,
+      puis remaniée et augmentée en volume en 1891. Le récit met en scène une enquête
+      littéraire autour de l’identité mystérieuse du « Mr. W. H. » auquel seraient dédiés
+      les Sonnets de Shakespeare. Plusieurs personnages défendent l’hypothèse selon laquelle
+      ces poèmes auraient été adressés à un jeune acteur élisabéthain nommé Willie Hughes.
+      Leur démonstration repose sur la découverte supposée d’un portrait ancien représentant
+      ce personnage. L’intrigue révèle progressivement que cette preuve est en réalité une
+      falsification, ce qui transforme l’enquête en réflexion sur la relation entre
+      érudition, imagination critique et désir esthétique. Dans la lettre adressée à
+      <persName ref="#pers_lane">John Lane</persName> en août 1894, Wilde évoque la possibilité
+      d’une édition distincte de ce texte et discute les modalités d’un tirage limité
+      ainsi que les questions de prix et de diffusion.
+    </note>
+
+    <note xml:lang="en">
+      Novella first published in <title type="periodical">Blackwood’s Edinburgh Magazine</title>
+      in 1889 and expanded in book form in 1891. The narrative follows a literary
+      investigation into the identity of the mysterious “Mr. W. H.” believed to be
+      the dedicatee of Shakespeare’s Sonnets. Several characters argue that the
+      poems were addressed to a young Elizabethan actor named Willie Hughes and
+      rely on the supposed discovery of an old portrait to support this claim.
+      The portrait eventually proves to be a forgery, turning the story into a
+      reflection on the relationship between scholarship, imagination, and aesthetic
+      belief. In his August 1894 letter to <persName ref="#pers_lane">John Lane</persName>,
+      Wilde refers to the possibility of issuing a separate edition of the work
+      with a limited print run.
+    </note>
+  </bibl>
+
+
+  <bibl xml:id="work_woman_no_importance">
+    <title xml:lang="en" type="work" rend="italic">A Woman of No Importance</title>
+    <title xml:lang="fr" type="work" rend="italic">Une femme sans importance</title>
+    <author ref="#pers_wilde">Oscar Wilde</author>
+    <date when="1893">1893</date>
+
+    <note xml:lang="fr">
+      Comédie en quatre actes créée au Haymarket Theatre de Londres en avril 1893.
+      L’action se déroule dans la haute société anglaise et suit Gerald Arbuthnot,
+      jeune homme ambitieux auquel Lord Illingworth propose un poste prestigieux.
+      La mère de Gerald, Mrs Arbuthnot, refuse cette offre lorsqu’elle reconnaît
+      en Illingworth l’homme qui l’a séduite et abandonnée dans sa jeunesse et qui
+      est en réalité le père de son fils. La révélation de ce secret met en lumière
+      les contradictions morales de la société victorienne, où la réputation d’une
+      femme peut être détruite alors que les hommes échappent aux mêmes jugements.
+      La pièce mêle satire mondaine, intrigue familiale et critique sociale des
+      doubles standards moraux. Wilde mentionne cette œuvre dans sa correspondance
+      avec <persName ref="#pers_lane">John Lane</persName> à propos des démarches
+      nécessaires pour assurer la protection du copyright lors de la publication
+      aux États-Unis.
+    </note>
+
+    <note xml:lang="en">
+      Four-act society comedy first staged at the Haymarket Theatre in London
+      in April 1893. The plot centres on Gerald Arbuthnot, a young man who
+      receives a promising professional offer from the aristocratic Lord
+      Illingworth. Gerald’s mother, Mrs Arbuthnot, opposes the arrangement
+      when she recognises Illingworth as the man who seduced and abandoned
+      her years earlier and who is in fact Gerald’s father. The revelation
+      exposes the moral contradictions of Victorian society, where women
+      were judged far more harshly than men. Combining social satire with
+      family drama, the play criticises the double standards governing
+      reputation and gender relations. Wilde refers to the work in his
+      letter to <persName ref="#pers_lane">John Lane</persName> when
+      discussing American copyright arrangements.
+    </note>
+  </bibl>
+
+
+  <bibl xml:id="work_lady_windermere">
+    <title xml:lang="en" type="work" rend="italic">Lady Windermere’s Fan</title>
+    <title xml:lang="fr" type="work" rend="italic">L’Éventail de Lady Windermere</title>
+    <author ref="#pers_wilde">Oscar Wilde</author>
+    <date when="1892">1892</date>
+
+    <note xml:lang="fr">
+      Comédie créée au St James’s Theatre de Londres en février 1892.
+      L’intrigue commence lorsque Lady Windermere soupçonne son mari
+      d’entretenir une relation secrète avec Mrs Erlynne, femme compromise
+      dans la haute société londonienne. Persuadée d’être trahie, elle
+      envisage de quitter son foyer. La situation se renverse lorsque
+      Mrs Erlynne révèle qu’elle est en réalité la mère de Lady Windermere,
+      autrefois rejetée par la société et contrainte de vivre sous une
+      identité différente. Elle se sacrifie alors pour préserver la
+      réputation de sa fille et sauver son mariage. La pièce explore
+      les thèmes de la respectabilité sociale, de la faute et du pardon,
+      tout en offrant une satire brillante des conventions victoriennes.
+    </note>
+
+    <note xml:lang="en">
+      Comedy first performed at the St James’s Theatre in London in 1892.
+      The plot begins when Lady Windermere suspects her husband of maintaining
+      a secret relationship with Mrs Erlynne, a socially disgraced woman.
+      Convinced that she has been betrayed, she considers leaving him.
+      The situation changes when Mrs Erlynne is revealed to be Lady
+      Windermere’s long-lost mother, who sacrifices her own reputation
+      in order to protect her daughter’s marriage and social standing.
+      The play explores themes of reputation, morality, and forgiveness
+      while offering a satirical portrait of late Victorian society.
+    </note>
+  </bibl>
+
+
+  <bibl xml:id="work_oscariana">
+    <title xml:lang="en" type="work" rend="italic">Oscariana</title>
+    <title xml:lang="fr" type="work" rend="italic">Oscariana</title>
+    <author ref="#pers_constance_wilde">Constance Wilde</author>
+    <date when="1895">1895</date>
+
+    <note xml:lang="fr">
+      Recueil d’aphorismes et d’extraits tirés des œuvres d’Oscar Wilde,
+      compilé par Constance Wilde et publié en 1895. L’ouvrage rassemble
+      des passages caractéristiques du style paradoxal et spirituel de
+      l’auteur, provenant notamment de ses pièces de théâtre, essais et
+      dialogues. En isolant ces formules brillantes, le livre contribue
+      à diffuser l’image publique de Wilde comme maître de l’épigramme
+      et figure majeure du mouvement esthète. La correspondance avec
+      <persName ref="#pers_lane">John Lane</persName> évoque ce projet
+      éditorial à propos du choix des extraits et des autorisations
+      nécessaires à la publication.
+    </note>
+
+    <note xml:lang="en">
+      Anthology of aphorisms and quotations drawn from Oscar Wilde’s
+      writings, compiled by Constance Wilde and published in 1895.
+      The volume gathers characteristic epigrams from his plays,
+      essays, and dialogues, presenting them as a series of
+      self-contained reflections. By isolating these witty
+      formulations, the book reinforced Wilde’s public image
+      as a master of paradox and a central figure of the
+      Aesthetic movement.
+    </note>
+  </bibl>
+
+
+  <bibl xml:id="bibl_warder_martin">
+    <title xml:lang="en" type="work" rend="italic">The Case of Warder Martin: Some Cruelties of Prison Life</title>
+    <author ref="#pers_wilde">Oscar Wilde</author>
+    <date when="1896">1896</date>
+    <pubPlace>London</pubPlace>
+
+    <note xml:lang="fr">
+      Brochure publiée anonymement en 1896 dénonçant certaines
+      pratiques du système pénitentiaire britannique. Le texte
+      décrit les conditions de détention et critique la dureté
+      du régime disciplinaire appliqué aux prisonniers. Il
+      s’inscrit dans les débats contemporains sur la réforme
+      des prisons et constitue un arrière-plan important pour
+      comprendre la lettre adressée par Wilde à
+      <persName ref="#pers_nelson">Major Nelson</persName>
+      après sa libération de
+      <placeName ref="#place_reading_gaol">Reading Gaol</placeName>.
+    </note>
+
+    <note xml:lang="en">
+      Pamphlet published anonymously in 1896 criticizing aspects
+      of the British prison system. The text describes prison
+      conditions and denounces certain disciplinary practices
+      and institutional abuses. It forms part of contemporary
+      debates on prison reform and provides context for Wilde’s
+      letter to <persName ref="#pers_nelson">Major Nelson</persName>
+      after his release from
+      <placeName ref="#place_reading_gaol">Reading Gaol</placeName>.
+    </note>
+  </bibl>
+
+
+  <!-- ========================= -->
+  <!-- ŒUVRES CONTEXTUELLES -->
+  <!-- ========================= -->
+
+  <bibl xml:id="work_de_profundis">
+    <title xml:lang="en" type="work" rend="italic">De Profundis</title>
+    <title xml:lang="fr" type="work" rend="italic">De Profundis</title>
+    <author ref="#pers_wilde">Oscar Wilde</author>
+    <date when="1897">1897</date>
+
+    <note xml:lang="fr">
+      Longue lettre rédigée par Wilde à
+      <placeName ref="#place_reading_gaol">Reading Gaol</placeName>
+      en 1897 et adressée à Lord Alfred Douglas.
+      Le texte mêle confession personnelle,
+      réflexion spirituelle et analyse critique
+      de la relation qui liait les deux hommes
+      avant les procès de 1895. Wilde y médite
+      sur la souffrance, la responsabilité
+      individuelle et la possibilité d’une
+      transformation intérieure à travers
+      l’expérience de la prison. L’œuvre,
+      publiée partiellement en 1905 par
+      <persName ref="#pers_ross">Robert Ross</persName>,
+      constitue le témoignage le plus important
+      de l’expérience carcérale de l’auteur.
+    </note>
+
+    <note xml:lang="en">
+      Long letter written by Wilde in
+      <placeName ref="#place_reading_gaol">Reading Gaol</placeName>
+      in 1897 and addressed to Lord Alfred Douglas.
+      The text combines personal confession,
+      spiritual reflection, and a critical
+      reassessment of the relationship that
+      had preceded Wilde’s trials. It reflects
+      on suffering, responsibility, and the
+      possibility of moral transformation
+      through adversity. Partially published
+      in 1905 by <persName ref="#pers_ross">Robert Ross</persName>,
+      it stands as the major literary document
+      of Wilde’s imprisonment.
+    </note>
+  </bibl>
+
+
+  <bibl xml:id="work_ballad_reading_gaol">
+    <title xml:lang="en" type="work" rend="italic">The Ballad of Reading Gaol</title>
+    <title xml:lang="fr" type="work" rend="italic">La Ballade de la geôle de Reading</title>
+    <author ref="#pers_wilde">Oscar Wilde</author>
+    <date when="1898">1898</date>
+
+    <note xml:lang="fr">
+      Poème narratif publié en 1898 sous la signature
+      « C.3.3. », numéro matricule de Wilde à
+      <placeName ref="#place_reading_gaol">Reading Gaol</placeName>.
+      L’œuvre raconte l’exécution d’un prisonnier
+      condamné pour meurtre et décrit la vie
+      quotidienne dans l’univers carcéral.
+      Le texte transforme l’expérience de
+      l’incarcération en méditation poétique
+      sur la culpabilité, la souffrance
+      et la justice pénale.
+    </note>
+
+    <note xml:lang="en">
+      Narrative poem published in 1898 under the
+      signature “C.3.3.”, Wilde’s prison number
+      at <placeName ref="#place_reading_gaol">Reading Gaol</placeName>.
+      The poem recounts the execution of a fellow
+      prisoner convicted of murder and depicts
+      the harsh conditions of prison life.
+      It transforms Wilde’s experience of
+      incarceration into a meditation on
+      guilt, suffering, and the moral
+      implications of capital punishment.
+    </note>
+  </bibl>
+
+</listBibl>
+
+      </sourceDesc>
+    </fileDesc>
+
+    <encodingDesc>
+      <projectDesc>
+        <p xml:lang="en">
+          This TEI file aggregates three letters by Oscar Wilde encoded
+          for the course “Modelling Humanities Data with TEI-XML” at the École
+          nationale des chartes.
+        </p>
+        <p xml:lang="fr">
+          Ce fichier TEI rassemble trois lettres d’Oscar Wilde encodées
+          dans le cadre du cours « Modelling Humanities Data with TEI-XML » à l’École
+          nationale des chartes.
+        </p>
+      </projectDesc>
+
+      <editorialDecl>
+        <p xml:lang="en">
+          Diplomatic transcription following original spelling, punctuation, and
+          lineation. No normalisation has been applied. Obvious editorial interventions
+          (such as supplied punctuation) are encoded using &lt;supplied&gt;; obvious abbreviations
+          (such as “Mons.”) are encoded with &lt;choice&gt;, &lt;abbr&gt;, and &lt;expan&gt;.
+          Foreign expressions are marked with &lt;foreign&gt;.
+        </p>
+        <p xml:lang="fr">
+          Transcription diplomatique respectant l’orthographe, la ponctuation et la mise en lignes d’origine.
+          Aucune normalisation n’a été appliquée. Les interventions éditoriales évidentes
+          (par ex. une ponctuation ajoutée) sont encodées avec &lt;supplied&gt; ; les abréviations évidentes
+          (par ex. « Mons. ») sont encodées avec &lt;choice&gt;, &lt;abbr&gt; et &lt;expan&gt;.
+          Les expressions étrangères sont balisées avec &lt;foreign&gt;.
+        </p>
+      </editorialDecl>
+    </encodingDesc>
+
+    <profileDesc>
+      <langUsage>
+        <language ident="en">English</language>
+        <language ident="fr">French</language>
+      </langUsage>
+
+      <particDesc>
+
+        <listPerson>
+
+          <!-- ========================= -->
+          <!-- PERSONNES -->
+          <!-- ========================= -->
+
+          <person xml:id="pers_wilde">
+            <persName>
+              <forename>Oscar</forename>
+              <surname>Wilde</surname>
+              <addName type="alias">alias Sebastian Melmoth</addName>
+            </persName>
+
+            <idno type="wikidata">Q30875</idno>
+            <idno type="viaf">34464414</idno>
+
+            <state type="occupation">
+              <p xml:lang="fr">Dramaturge, romancier, essayiste et poète irlandais, associé au mouvement esthète de la fin de l’époque victorienne.</p>
+            </state>
+
+            <note xml:lang="fr">
+              Oscar Wilde (1854–1900) est un écrivain irlandais formé au Trinity College de Dublin puis à Oxford.
+              Figure marquante de la vie littéraire londonienne des années 1890, il connaît un succès considérable grâce à ses comédies
+              de mœurs (<title type="work" rend="italic">Lady Windermere’s Fan</title>, <title type="work" rend="italic">A Woman of No Importance</title>,
+              <title type="work" rend="italic">An Ideal Husband</title>, <title type="work" rend="italic">The Importance of Being Earnest</title>)
+              ainsi qu’à son roman <title type="work" rend="italic">The Picture of Dorian Gray</title> (1890–1891).
+              Son œuvre se distingue par un usage élaboré de l’ironie, une critique des normes morales et sociales victoriennes et une
+              conception de l’art comme valeur autonome.
+              En 1895, il est poursuivi et condamné pour « gross indecency », qualification juridique introduite par le Criminal Law
+              Amendment Act (1885) visant les relations sexuelles entre hommes. Il est condamné à deux ans de travaux forcés et incarcéré
+              notamment à <placeName ref="#place_reading_gaol">Reading Gaol</placeName>. Après sa libération en 1897, il s’exile en France
+              sous le nom de Sebastian Melmoth. Les lettres ici éditées s’inscrivent dans la période précédant et suivant son emprisonnement.
+            </note>
+
+            <note xml:lang="en">
+              Irish playwright and novelist; convicted in 1895 under the Criminal Law Amendment Act (1885) and exiled in France after his
+              release in 1897.
+            </note>
+          </person>
+
+          <person xml:id="pers_lane">
+            <persName>John Lane</persName>
+            <note xml:lang="fr">
+              John Lane (1854–1925) est un éditeur britannique, cofondateur en 1887, avec Elkin Mathews,
+              de la maison d’édition londonienne <orgName ref="#org_bodley_head">The Bodley Head</orgName>.
+              Cette maison devient un acteur central de la diffusion de la littérature esthète et décadente dans les années 1890.
+              Lane publie notamment Oscar Wilde, Aubrey Beardsley, W. B. Yeats et Ernest Dowson.
+              Après la séparation d’avec Mathews en 1894, il conserve le nom et le catalogue de <orgName ref="#org_bodley_head">The Bodley Head</orgName>
+              et développe une ligne éditoriale marquée par une forte attention à la matérialité du livre (typographie, illustration, mise en page).
+              Dans la correspondance de 1894, il intervient comme éditeur de Wilde pour la correction d’épreuves, la fixation des prix,
+              les modalités de tirage et les questions de copyright international.
+            </note>
+            <note xml:lang="en">
+              British publisher, co-founder of The Bodley Head; Wilde’s correspondent in 1894.
+            </note>
+          </person>
+
+          <person xml:id="pers_nelson">
+            <persName>Major J. O. Nelson</persName>
+            <note xml:lang="fr">
+              Major J. O. Nelson est gouverneur de <placeName ref="#place_reading_gaol">Reading Gaol</placeName> au moment de l’incarcération
+              d’Oscar Wilde (1895–1897). En tant que responsable administratif de l’établissement, il supervise l’application du régime disciplinaire
+              et du travail forcé. La lettre adressée à Nelson en mai 1897, après la libération de Wilde, exprime une gratitude personnelle pour
+              certaines marques de bienveillance et constitue un témoignage rare sur les relations entre détenu et autorité pénitentiaire dans
+              le système carcéral victorien.
+            </note>
+            <note xml:lang="en">
+              Governor of Reading Gaol; recipient of Wilde’s letter of gratitude after his release.
+            </note>
+          </person>
+
+          <person xml:id="pers_stannard">
+            <persName>Henrietta Stannard</persName>
+            <note xml:lang="fr">
+              Henrietta Stannard (1836–1911), écrivaine britannique connue sous le pseudonyme de « John Strange Winter », est une romancière
+              populaire de la fin du XIXe siècle. Son œuvre, souvent centrée sur les milieux militaires et les valeurs patriotiques, connaît un
+              large succès éditorial. La lettre que Wilde lui adresse en 1897 témoigne d’un réseau de sociabilités littéraires et d’un soutien moral
+              reçu durant son exil en France. Elle éclaire également la circulation des solidarités dans le champ littéraire victorien après le scandale
+              de 1895.
+            </note>
+            <note xml:lang="en">
+              Writer and correspondent; recipient of a letter written during Wilde’s exile in France.
+            </note>
+          </person>
+
+          <person xml:id="pers_ross">
+            <persName>Robert Ross</persName>
+            <note xml:lang="fr">
+              Robert Baldwin Ross (1869–1918) est un journaliste et critique d’art canadien, proche d’Oscar Wilde.
+              Ami intime et soutien constant durant le procès et l’emprisonnement, il joue un rôle essentiel dans la préservation et la publication
+              posthume de l’œuvre de Wilde. Après la mort de ce dernier en 1900, Ross devient son exécuteur littéraire et contribue à stabiliser le
+              texte de plusieurs œuvres et à défendre sa mémoire face aux polémiques morales de l’époque.
+            </note>
+            <note xml:lang="en">
+              Friend and supporter of Wilde; later his literary executor.
+            </note>
+          </person>
+
+          <person xml:id="pers_constance_wilde">
+            <persName>
+              <forename>Constance</forename>
+              <surname>Wilde</surname>
+            </persName>
+            <note xml:lang="fr">
+              Constance Lloyd, dite Constance Wilde (1859–1898), est l’épouse d’Oscar Wilde depuis 1884.
+              Elle participe activement à la vie intellectuelle et littéraire londonienne et publie notamment des ouvrages pour la jeunesse.
+              Après la condamnation de son mari en 1895, elle s’installe sur le continent européen avec leurs deux fils et adopte le nom de Constance
+              Holland afin de se distancier du scandale. Elle est mentionnée dans la correspondance en lien avec des projets éditoriaux et anthologiques.
+            </note>
+            <note xml:lang="en">
+              Oscar Wilde’s wife; writer and editor of children’s books.
+            </note>
+          </person>
+
+          <person xml:id="pers_ricketts">
+            <persName>Charles Ricketts</persName>
+            <note xml:lang="fr">
+              Charles Ricketts (1866–1931) est un artiste, illustrateur, typographe et éditeur britannique associé au mouvement décadent.
+              Proche d’Oscar Wilde, il participe à l’esthétique du livre fin-de-siècle et cofonde la Vale Press, spécialisée dans l’édition soignée
+              de textes littéraires. Son intérêt pour la mise en page, la typographie et l’ornementation contribue à l’essor du livre comme objet d’art
+              dans les années 1890.
+            </note>
+            <note xml:lang="en">
+              Artist, designer and associate of Wilde; involved in late Victorian book design.
+            </note>
+          </person>
+
+          <person xml:id="pers_mathews">
+            <persName>Charles Elkin Mathews</persName>
+            <note xml:lang="fr">
+              Elkin Mathews (1851–1921) est un éditeur britannique, cofondateur avec John Lane de
+              <orgName ref="#org_bodley_head">The Bodley Head</orgName> en 1887.
+              Après leur séparation en 1894, il poursuit une activité éditoriale indépendante, publiant de nombreux poètes associés au mouvement décadent
+              et symboliste. Son nom apparaît dans la correspondance de Wilde en lien avec des arrangements éditoriaux et des négociations commerciales.
+            </note>
+            <note xml:lang="en">
+              British publisher; co-founder of The Bodley Head with John Lane.
+            </note>
+          </person>
+
+          <person xml:id="pers_jane_wilde">
+            <persName>
+              <forename>Jane</forename>
+              <surname>Wilde</surname>
+            </persName>
+            <note xml:lang="fr">
+              Jane Francesca Wilde (1821–1896), connue sous le pseudonyme « Speranza », est une poétesse et nationaliste irlandaise, mère d’Oscar Wilde.
+              Engagée dans le mouvement du Young Ireland, elle publie des poèmes et des articles politiques. Son influence intellectuelle et culturelle sur
+              son fils est fréquemment soulignée par les biographes. Elle est évoquée dans la correspondance comme figure familiale et morale dans le contexte
+              des épreuves traversées par Wilde.
+            </note>
+            <note xml:lang="en">
+              Irish poet and nationalist; Oscar Wilde’s mother.
+            </note>
+          </person>
+
+        </listPerson>
+
+        <listOrg>
+
+          <org xml:id="org_bodley_head">
+            <orgName type="official">The Bodley Head</orgName>
+
+            <location>
+              <settlement>London</settlement>
+              <country>United Kingdom</country>
+            </location>
+
+            <state type="foundation">
+              <p>
+                <date when="1887">1887</date>
+              </p>
+              <p xml:lang="en">Founded in London by John Lane and Charles Elkin Mathews.</p>
+              <p xml:lang="fr">Fondée à Londres en 1887 par John Lane et Charles Elkin Mathews.</p>
+            </state>
+
+            <state type="activity">
+              <p xml:lang="fr">
+                Maison d’édition londonienne active dans les dernières décennies de l’époque victorienne,
+                <orgName>The Bodley Head</orgName> joue un rôle central dans la diffusion de la littérature esthète,
+                décadente et symboliste des années 1890. Elle se distingue par une attention marquée à la matérialité
+                du livre — typographie, illustration, qualité du papier, tirages limités — participant à la redéfinition
+                du livre comme objet d’art.
+              </p>
+              <p xml:lang="en">
+                London publishing house active during the late Victorian period, <orgName>The Bodley Head</orgName>
+                played a significant role in disseminating Aesthetic and Decadent literature in the 1890s.
+                The firm was noted for its emphasis on book design, typography, illustration, and limited editions,
+                contributing to the conception of the book as an aesthetic object.
+              </p>
+            </state>
+
+            <note xml:lang="fr">
+              Après la séparation de Lane et Mathews en 1894, John Lane conserve le nom et développe seul la maison d’édition.
+              <orgName>The Bodley Head</orgName> publie notamment Oscar Wilde, Aubrey Beardsley, W. B. Yeats, Ernest Dowson et d’autres
+              figures associées aux cercles esthètes londoniens. Dans la lettre adressée à John Lane depuis
+              <placeName ref="#place_worthing">Worthing</placeName> (août 1894), Wilde évoque explicitement
+              <orgName>The Bodley Head</orgName> comme cadre éditorial privilégié pour la publication de ses pièces,
+              en insistant sur la cohérence de la série dramatique et sur les questions de tirage, de prix et de copyright international.
+              L’association entre Wilde et <orgName>The Bodley Head</orgName> s’inscrit dans un moment de forte visibilité publique de l’auteur,
+              antérieur au scandale de 1895, et témoigne des enjeux économiques et symboliques de l’édition fin-de-siècle.
+            </note>
+
+            <note xml:lang="en">
+              Following the separation of Lane and Mathews in 1894, John Lane retained control of <orgName>The Bodley Head</orgName>.
+              The firm published works by Oscar Wilde, Aubrey Beardsley, W. B. Yeats, Ernest Dowson, and other writers associated with the
+              Aesthetic and Decadent movements. In the letter written from <placeName ref="#place_worthing">Worthing</placeName> in August 1894,
+              Wilde explicitly refers to <orgName>The Bodley Head</orgName> as the appropriate publishing framework for his dramatic works,
+              emphasizing the importance of maintaining a coherent series and discussing print runs, pricing, and American copyright arrangements.
+            </note>
+          </org>
+
+        </listOrg>
+
+      </particDesc>
+
+      <settingDesc>
+        <listPlace>
+
+          <!-- ========================= -->
+          <!-- LIEUX -->
+          <!-- ========================= -->
+
+          <place xml:id="place_worthing">
+  <placeName>Worthing</placeName>
+  <location>
+    <country>United Kingdom</country>
+    <region>West Sussex</region>
+  </location>
+  <note xml:lang="fr">
+    Ville côtière du West Sussex, sur la Manche. À la fin du XIXe siècle, Worthing devient une station balnéaire prisée par une clientèle londonienne. Wilde y séjourne à l’été 1894 (5 Esplanade). Il y rédige en août 1894 sa lettre à John Lane au sujet des épreuves, des modalités de publication et des droits.
+  </note>
+  <note xml:lang="en">
+    Seaside town in West Sussex on the English Channel. In the late nineteenth century, Worthing developed as a fashionable resort for London visitors. Wilde stayed there in August 1894 (5 Esplanade). He wrote to John Lane from Worthing about proofs, publication arrangements, and copyright.
+  </note>
+</place>
+
+<place xml:id="place_berneval">
+  <placeName>Berneval-sur-Mer</placeName>
+  <location>
+    <country>France</country>
+    <region>Normandie</region>
+  </location>
+  <note xml:lang="fr">
+    Localité littorale de Seine-Maritime, près de Dieppe. Wilde s’y installe après sa libération de <placeName ref="#place_reading_gaol">Reading Gaol</placeName> (mai 1897). Il loge notamment à l’Hôtel de la Plage. Ce séjour ouvre son exil continental et l’usage du nom « Sebastian Melmoth ». Les lettres à Major Nelson et à Henrietta Stannard y sont rédigées.
+  </note>
+  <note xml:lang="en">
+    Coastal locality in Seine-Maritime, Normandy, near Dieppe. Wilde settled there after his release from <placeName ref="#place_reading_gaol">Reading Gaol</placeName> (May 1897). He stayed at the Hôtel de la Plage and later at the Hôtel de la Place. The stay marks the beginning of his continental exile and his use of the name “Sebastian Melmoth”. The letters to Major Nelson and Henrietta Stannard were written there.
+  </note>
+</place>
+
+<place xml:id="place_dieppe">
+  <placeName>Dieppe</placeName>
+  <location>
+    <country>France</country>
+    <region>Normandie</region>
+  </location>
+  <note xml:lang="fr">
+    Port normand sur la Manche, lié aux circulations transmanche. Dans la lettre à Nelson, la mention « Près de Dieppe » sert de repère pour situer le lieu de séjour de Wilde en 1897.
+  </note>
+  <note xml:lang="en">
+    Norman port on the English Channel, long associated with cross-Channel travel. In the letter to Nelson, “Près de Dieppe” functions as a geographical marker for Wilde’s temporary residence in 1897.
+  </note>
+</place>
+
+<place xml:id="place_reading_gaol">
+  <placeName>Reading Gaol</placeName>
+  <location>
+    <country>United Kingdom</country>
+    <region>Berkshire</region>
+    <settlement>Reading</settlement>
+  </location>
+  <note xml:lang="fr">
+    Prison ouverte en 1844 à Reading (Berkshire). Wilde y est détenu de novembre 1895 à mai 1897 après sa condamnation pour « gross indecency ». L’incarcération à Reading marque un tournant durable. Elle nourrit ensuite <title type="work" rend="italic" ref="#work_de_profundis">De Profundis</title> et <title type="work" rend="italic" ref="#work_ballad_reading_gaol">The Ballad of Reading Gaol</title>.
+  </note>
+  <note xml:lang="en">
+    Prison opened in 1844 in Reading, Berkshire. Wilde was held there from November 1895 to May 1897 after his conviction for “gross indecency”. His imprisonment at Reading became a lasting turning point. It later informed <title type="work" rend="italic" ref="#work_de_profundis">De Profundis</title> and <title type="work" rend="italic" ref="#work_ballad_reading_gaol">The Ballad of Reading Gaol</title>.
+  </note>
+</place>
+
+<place xml:id="place_france">
+  <placeName>France</placeName>
+  <note xml:lang="fr">
+    Pays où Wilde se réfugie après sa libération. La France lui offre un cadre d’exil et une distance avec la presse britannique. Il y séjourne surtout en Normandie, puis à Paris (1897–1900).
+  </note>
+  <note xml:lang="en">
+    Country where Wilde sought refuge after his release. France offered exile and distance from the British press. He lived mainly in Normandy and later in Paris (1897–1900).
+  </note>
+</place>
+
+<place xml:id="place_america">
+  <placeName>United States of America</placeName>
+  <note xml:lang="fr">
+    Les États-Unis sont mentionnés à propos de la protection du droit d’auteur. À la fin du XIXe siècle, l’enregistrement du copyright américain représente un enjeu financier, car il limite les éditions non autorisées.
+  </note>
+  <note xml:lang="en">
+    The United States is mentioned in connection with copyright protection. In the late nineteenth century, securing American copyright mattered financially because it curtailed unauthorized editions.
+  </note>
+</place>
+
+<place xml:id="place_newyork">
+  <placeName>New York</placeName>
+  <location>
+    <country>United States</country>
+    <settlement>New York City</settlement>
+  </location>
+  <note xml:lang="fr">
+    Grand centre éditorial américain à la fin du XIXe siècle. L’envoi d’épreuves à New York vise à assurer l’enregistrement du copyright avant la diffusion.
+  </note>
+  <note xml:lang="en">
+    Major American publishing centre in the late nineteenth century. Proofs were sent to New York to secure copyright registration before circulation.
+  </note>
+</place>
+
+<place xml:id="place_liverpool">
+  <placeName>Liverpool</placeName>
+  <location>
+    <country>United Kingdom</country>
+    <region>Merseyside</region>
+  </location>
+  <note xml:lang="fr">
+    Ville portuaire majeure du nord-ouest de l’Angleterre. Wilde cite Liverpool à propos de la réception de <title type="work" rend="italic" ref="#work_woman_no_importance">A Woman of No Importance</title>. Il évoque des conférences et des sermons polémiques, ce qui signale l’écho moral et social de sa pièce hors de Londres.
+  </note>
+  <note xml:lang="en">
+    Major port city in north-west England. Wilde mentions Liverpool in relation to the reception of <title type="work" rend="italic" ref="#work_woman_no_importance">A Woman of No Importance</title>. He alludes to lectures and controversial sermons, which points to the moral and social impact of his play beyond London.
+  </note>
+</place>
+      </listPlace>
+      </settingDesc>
+    </profileDesc>
+
+    <revisionDesc>
+      <change when="2025-11-16">
+        <name>Clara Martin</name>
+        <desc xml:lang="en">Creation of a single TEI corpus file aggregating three encoded letters.</desc>
+        <desc xml:lang="fr">Création d’un fichier TEI de corpus rassemblant trois lettres encodées.</desc>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+
+  <text xml:lang="en">
+    <body>
+
+      <!-- ========================= -->
+      <!-- Letter 1: LANE (corrected) -->
+      <!-- ========================= -->
+      <div type="letter" xml:id="lane-letter">
+
+        <!-- Letterhead(s): encoded as fw to avoid “note-styled” rendering in many XSLT/CETEIcean setups -->
+        <fw type="letterhead" subtype="printed" place="top">
+            16, Tite Street,<lb/>
+            Chelsea. S.W.
+        </fw>
+
+        <fw type="letterhead" subtype="address" place="top">
+          5 Esplanade<lb/>
+          <placeName ref="#place_worthing">Worthing</placeName>
+        </fw>
+
+        <opener>
+          <salute>Dear <persName ref="#pers_lane">Sir</persName></salute>
+        </opener>
+
+        <p rend="indentation">
+          I return<lb/>
+          corrected proofs <pc>—</pc><lb/>
+          the title page,<lb/>
+          dedication, <seg type="compound">play<pc>-</pc>bill</seg><lb/>
+          etc. have not yet<lb/>
+          come <pc>—</pc> please<lb/>
+          send them. I<lb/>
+          will not<lb/>
+          require any<lb/>
+          more proofs of<lb/>
+          the play, but I<lb/>
+          wish that the<lb/>
+          reader
+          <choice>
+            <abbr>w[oul]d.</abbr>
+            <expan>would</expan>
+          </choice> go<lb/>
+          through the play<lb/>
+          once and correct<lb/>
+          any slips in the<lb/>
+          use of “will”<lb/>
+          and “shall” <pc>—</pc><lb/>
+          my use of the<lb/>
+          words is <term type="ethno-linguistic">Celtic</term><lb/>
+          not <term type="ethno-linguistic">Saxon</term>.
+        </p>
+
+        <p rend="indentation">
+          With regard<lb/>
+          to future arrangements<lb/>
+          I think the plays<lb/>
+          better remain with<lb/>
+          <persName ref="#pers_lane">Mr. Lane</persName> <pc>—</pc> at<lb/>
+          <orgName ref="#org_bodley_head">The Bodley Head</orgName> <pc>—</pc> as<lb/>
+          they form a series<lb/>
+          that should not<lb/>
+          be broken <pc>—</pc><lb/>
+          <persName ref="#pers_mathews">Mr. Mathews</persName> might<lb/>
+          have “<title type="work" rend="italic" ref="#work_mr_wh">
+            The Portrait<lb/> of Mr. W.H.
+          </title>” <pc>—</pc> and<lb/>
+          this
+          <choice>
+            <abbr>w[oul]d.</abbr>
+            <expan>would</expan>
+          </choice> give an<lb/>
+          opportunity of<lb/>
+          making some alterations<lb/>
+          in the issue and<lb/>
+          price <pc>—</pc> 300 or 250 <pc>—</pc><lb/>
+          and 50 large paper<lb/>
+          <choice>
+            <abbr>w[oul]d</abbr>
+            <expan>would</expan>
+          </choice> be better. Also<lb/>
+          the book
+          <choice>
+            <abbr>sh[oul]d.</abbr>
+            <expan>should</expan>
+          </choice> be a<lb/>
+          guinea. These, at<lb/>
+          least, are<lb/>
+          <persName ref="#pers_ricketts">Mr. Ricketts</persName>' views.<lb/>
+          This book should be<lb/>
+          out by end of<lb/>
+          October.
+        </p>
+
+        <p rend="indentation">
+          I have to get<lb/>
+          <title type="work" rend="italic" ref="#work_woman_no_importance">
+            The Woman of No<lb/>
+            Importance
+          </title> copyrighted<lb/>
+          simultaneously in<lb/>
+          <placeName ref="#place_america">America</placeName> (please<lb/>
+          mark copyright<lb/>
+          as in <title type="work" rend="italic" ref="#work_lady_windermere">Lady Windermere</title>:<lb/>
+          this is most<lb/>
+          important) <pc>—</pc> and<lb/>
+          am sending proofs<lb/>
+          to <placeName ref="#place_newyork">New York</placeName>. I<lb/>
+          think the book can<lb/>
+          be out by <date when="1894-09-15">Sept. 15.</date><lb/>
+          when the play goes<lb/>
+          on tour. I shall<lb/>
+          tell my American<lb/>
+          agent to wire<lb/>
+          to me as soon as<lb/>
+          copyright is<lb/>
+          secured, so as to<lb/>
+          have no delay.
+        </p>
+
+        <p rend="indentation">
+          The play
+          <choice>
+            <abbr>sh[oul]d</abbr>
+            <expan>should</expan>
+          </choice><lb/>
+          have a good sale<lb/>
+          at <placeName ref="#place_liverpool">Liverpool</placeName> <pc>—</pc><lb/>
+          where it has been<lb/>
+          lectured on, and<lb/>
+          formed a text<lb/>
+          for reckless<lb/>
+          sermons.
+        </p>
+
+        <p rend="indentation">
+          I have to thank<lb/>
+          you for allowing<lb/>
+          my <persName ref="#pers_constance_wilde">wife</persName> to make<lb/>
+          selections of phrases<lb/>
+          for her <title type="work" rend="italic" ref="#work_oscariana">anthology</title>.
+        </p>
+
+        <closer>
+          <salute>I remain<lb/>truly</salute>
+          <signed><persName ref="#pers_wilde">Oscar Wilde</persName>.</signed>
+        </closer>
+
+      </div>
+
+      <!-- TRADUCTION FR (Lane) : révisée -->
+      <div type="translation" xml:id="lane-letter-fr" xml:lang="fr" corresp="#lane-letter">
+        <opener>
+          <salute>Cher <persName ref="#pers_lane">Monsieur</persName>,</salute>
+        </opener>
+
+        <p rend="indentation">
+          Je vous renvoie<lb/>
+          les épreuves corrigées <pc>—</pc><lb/>
+          la page de titre,<lb/>
+          la dédicace, le <seg type="compound">programme<pc>-</pc>affiche</seg><lb/>
+          etc. ne sont pas encore<lb/>
+          arrivés <pc>—</pc> veuillez<lb/>
+          me les envoyer. Je<lb/>
+          n’aurai pas<lb/>
+          besoin d’autres<lb/>
+          épreuves de<lb/>
+          la pièce, mais je<lb/>
+          voudrais qu’un<lb/>
+          lecteur la relise<lb/>
+          une fois et corrige<lb/>
+          toute inadvertance<lb/>
+          dans l’usage de « will »<lb/>
+          et de « shall » <pc>—</pc><lb/>
+          mon usage de ces<lb/>
+          mots est <term type="ethno-linguistic">celtique</term><lb/>
+          et non <term type="ethno-linguistic">saxon</term>.
+        </p>
+
+        <p rend="indentation">
+          En ce qui concerne<lb/>
+          les dispositions futures,<lb/>
+          je pense qu’il vaut mieux<lb/>
+          que les pièces restent chez<lb/>
+          <persName ref="#pers_lane">M. Lane</persName> <pc>—</pc> à<lb/>
+          <orgName ref="#org_bodley_head">The Bodley Head</orgName> <pc>—</pc> car<lb/>
+          elles forment une série<lb/>
+          qu’il ne faudrait pas<lb/>
+          briser <pc>—</pc><lb/>
+          <persName ref="#pers_mathews">M. Mathews</persName> pourrait<lb/>
+          avoir « <title type="work" rend="italic" ref="#work_mr_wh">
+              Le Portrait<lb/> de M. W. H.
+            </title> » <pc>—</pc> et<lb/>
+          cela donnerait<lb/>
+          l’occasion de<lb/>
+          modifier quelque peu<lb/>
+          l’édition et<lb/>
+          le prix <pc>—</pc> 300 ou 250 <pc>—</pc><lb/>
+          et 50 exemplaires sur grand papier<lb/>
+          seraient mieux. De plus,<lb/>
+          le livre devrait<lb/>
+          coûter une guinée. Tels sont,<lb/>
+          du moins, les<lb/>
+          avis de <persName ref="#pers_ricketts">M. Ricketts</persName>.<lb/>
+          Ce livre devrait<lb/>
+          paraître d’ici la fin<lb/>
+          d’octobre.
+        </p>
+
+        <p rend="indentation">
+          Je dois faire<lb/>
+          protéger par copyright<lb/>
+          <title type="work" rend="italic" ref="#work_woman_no_importance">
+              Une femme sans<lb/>
+              importance
+            </title> simultanément<lb/>
+          en <placeName ref="#place_america">Amérique</placeName> (je vous prie<lb/>
+          d’indiquer le copyright<lb/>
+          comme dans <title type="work" rend="italic" ref="#work_lady_windermere">Lady Windermere</title> :<lb/>
+          ceci est d’une extrême<lb/>
+          importance) <pc>—</pc> et<lb/>
+          j’envoie des épreuves<lb/>
+          à <placeName ref="#place_newyork">New York</placeName>. Je<lb/>
+          pense que le livre peut<lb/>
+          paraître vers le <date when="1894-09-15">15 septembre</date><lb/>
+          lorsque la pièce partira<lb/>
+          en tournée. Je<lb/>
+          dirai à mon agent<lb/>
+          américain de me<lb/>
+          télégraphier dès que<lb/>
+          le copyright sera<lb/>
+          assuré, afin de<lb/>
+          n’avoir aucun retard.
+        </p>
+
+        <p rend="indentation">
+          La pièce devrait<lb/>
+          bien se vendre<lb/>
+          à <placeName ref="#place_liverpool">Liverpool</placeName> <pc>—</pc><lb/>
+          où l’on a fait des<lb/>
+          conférences à son sujet et<lb/>
+          où elle a servi de texte<lb/>
+          à des sermons<lb/>
+          inconsidérés.
+        </p>
+
+        <p rend="indentation">
+          Je dois vous remercier<lb/>
+          d’avoir permis à ma <persName ref="#pers_constance_wilde">femme</persName> de<lb/>
+          sélectionner des phrases<lb/>
+          pour son <title type="work" rend="italic" ref="#work_oscariana">anthologie</title>.
+        </p>
+
+        <closer>
+          <!-- évite l’effet “ligne vide” selon beaucoup de rendus -->
+          <salute>Je demeure, bien à vous</salute>
+          <signed><persName ref="#pers_wilde">Oscar Wilde</persName>.</signed>
+        </closer>
+      </div>
+
+      <!-- =========================== -->
+      <!-- Letter 2: "nelson_tei.xml"  -->
+      <!-- =========================== -->
+      <div type="letter" xml:id="nelson-letter">
+
+        <!-- Même contenu, mais en fw + suppression du double <lb/> (souvent rendu comme “gros blanc”) -->
+        <fw type="letterhead" place="top">
+          
+            My name is here,<lb/>
+            <persName type="pseudonym">
+              <hi rend="underline">
+                <choice>
+                  <abbr>Mons.</abbr>
+                  <expan>Monsieur</expan>
+                </choice>
+                Sebastian Melmoth
+              </hi>
+            </persName><lb/>
+            Hotel de la Plage<lb/>
+            <placeName ref="#place_berneval">Berneval-sur-Mer</placeName>.<lb/>
+            <foreign xml:lang="fr">Près de</foreign> <placeName ref="#place_dieppe">Dieppe</placeName>
+          
+        </fw>
+
+        <opener>
+          <salute>Dear <persName ref="#pers_nelson">Major Nelson</persName>,</salute>
+        </opener>
+
+        <p rend="indentation">
+          I had of course<lb/>
+          intended to write to you as<lb/>
+          soon as I had safely reached<lb/>
+          French soil, to express, however<lb/>
+          inadequately, my real feelings<lb/>
+          of what you must let me<lb/>
+          term, not merely sincere, but<lb/>
+          <hi rend="underline">affectionate</hi> gratitude to you<lb/>
+          for your kindness and gentleness<lb/>
+          to me in <placeName ref="#place_reading_gaol">prison</placeName>, and for the real<lb/>
+          care that you took of me<lb/>
+          at the end, when I was mentally<lb/>
+          upset and in a state of very<lb/>
+          terrible nervous excitement. You<lb/>
+          must not mind my using the<lb/>
+          word ‘gratitude.’ I used to<lb/>
+          think gratitude a burden to<lb/>
+          carry. Now I know that it is<lb/>
+          something that makes the heart<lb/>
+          lighter. The ungrateful man<lb/>
+          is one who walks slowly with<lb/>
+          feet and heart of lead. But<lb/>
+          when one knows the strange<lb/>
+          joy of gratitude to God and<lb/>
+          man the earth becomes lovelier<lb/>
+          to one, and it is a pleasure<lb/>
+          to count up, not one’s wealth<lb/>
+          but one’s debts, not the little<lb/>
+          that one possesses, but the<lb/>
+          much that one owes.
+        </p>
+
+        <p rend="indentation">
+          I abstained from writing,<lb/>
+          however, because I was haunted by<lb/>
+          the memory of the little<lb/>
+          children, &amp; the wretched<lb/>
+          half witted lad who was flogged<lb/>
+          by the Doctor’s orders. I could<lb/>
+          not have kept them out of<lb/>
+          my letter, and to have mentioned<lb/>
+          them to you might have put <hi rend="underline">you</hi><lb/>
+          in a difficult position. In your<lb/>
+          reply you <hi rend="underline">might</hi> have expressed<lb/>
+          sympathy with my views <pc>—</pc> I<lb/>
+          think you would have <pc>—</pc> and then<lb/>
+          on the appearance of my public<lb/>
+          letter you might have felt as<lb/>
+          I had, in some almost<lb/>
+          ungenerous or thoughtless<lb/>
+          way, procured your private<lb/>
+          opinion on official things, for<lb/>
+          use as corroboration.
+        </p>
+
+        <p rend="indentation">
+          I longed to speak to you<lb/>
+          about these things on the<lb/>
+          evening of my departure, but I<lb/>
+          felt that in my position as a<lb/>
+          prisoner it would have been<lb/>
+          wrong of me to do so, and that<lb/>
+          it would, or might have put<lb/>
+          you in a difficult position<lb/>
+          afterwards, as well as at the<lb/>
+          time. I only hear of my<lb/>
+          letter being published by a<lb/>
+          telegram from <persName ref="#pers_ross">Mr. Ross</persName>, but<lb/>
+          I hope they have printed it in<lb/>
+          full, as I tried to express<lb/>
+          in it my appreciation and<lb/>
+          admiration of your own humane<lb/>
+          spirit and affectionate interest<lb/>
+          in <hi rend="underline">all</hi> the prisoners under<lb/>
+          your charge. I did not wish<lb/>
+          people to think that any<lb/>
+          exception had been specially<lb/>
+          made for me. Such exceptional<lb/>
+          treatment as I received was by<lb/>
+          order of the Commissioners. You<lb/>
+          gave me the same kindness as<lb/>
+          you gave to everyone. Of course<lb/>
+          I made more demands, but<lb/>
+          then I think I had really more<lb/>
+          needs than others <pc>—</pc> and I lacked<lb/>
+          often their cheerful acquiescence <pc>—</pc>
+        </p>
+
+        <p rend="indentation">
+          Of course I side with<lb/>
+          the prisoners <pc>—</pc> I was one, and<lb/>
+          I belong to their class now <pc>—</pc><lb/>
+          I am not a scrap ashamed of<lb/>
+          having been in <placeName ref="#place_reading_gaol">prison</placeName>. I am<lb/>
+          horribly ashamed of the materialism<lb/>
+          of the life that brought me<lb/>
+          there. It was quite unworthy of an<lb/>
+          artist.
+        </p>
+
+        <p rend="indentation">
+          Of <ref target="#bibl_warder_martin">Martin</ref>, and the subjects<lb/>
+          of my letter I of course say<lb/>
+          nothing at all, except that<lb/>
+          the man who could change the<lb/>
+          system <pc>—</pc> if any one man can<lb/>
+          do so <pc>—</pc> is yourself. At present<lb/>
+          I write to ask you to allow<lb/>
+          me to sign myself, once at any<lb/>
+          rate in life,
+        </p>
+
+        <closer>
+          <salute>your sincere and grateful friend,</salute>
+          <signed><persName ref="#pers_wilde">Oscar Wilde</persName>.</signed>
+        </closer>
+
+      </div>
+
+      <!-- TRADUCTION FR (Nelson) : révisée -->
+      <div type="translation" xml:id="nelson-letter-fr" xml:lang="fr" corresp="#nelson-letter">
+        <opener>
+          <salute>Cher <persName ref="#pers_nelson">Major Nelson</persName>,</salute>
+        </opener>
+
+        <p rend="indentation">
+          J’avais, bien entendu,<lb/>
+          l’intention de vous écrire dès<lb/>
+          que j’aurais atteint sans encombre<lb/>
+          le sol français, afin d’exprimer,<lb/>
+          si maladroitement que ce soit, ce que je ressens<lb/>
+          et ce que vous devez me permettre d’appeler,<lb/>
+          non seulement une gratitude sincère,<lb/>
+          mais une gratitude <hi rend="underline">affectueuse</hi>, pour votre bonté et votre douceur<lb/>
+          envers moi en <placeName ref="#place_reading_gaol">prison</placeName>, et pour le soin réel<lb/>
+          que vous avez pris de moi à la fin,<lb/>
+          lorsque j’étais mentalement bouleversé et dans un état<lb/>
+          d’effroyable surexcitation nerveuse. Vous<lb/>
+          ne devez pas vous offenser de me voir employer le mot « gratitude ».<lb/>
+          Jadis, je croyais la gratitude un fardeau<lb/>
+          à porter. Je sais maintenant qu’elle est<lb/>
+          ce qui allège le cœur. L’ingrat<lb/>
+          marche lentement, les pieds<lb/>
+          et le cœur de plomb. Mais<lb/>
+          lorsqu’on connaît l’étrange joie de la gratitude envers Dieu et envers<lb/>
+          les hommes, la terre devient plus aimable à nos yeux,<lb/>
+          et c’est un plaisir de faire le compte, non de sa richesse,<lb/>
+          mais de ses dettes, non du peu que l’on possède, mais<lb/>
+          de tout ce que l’on doit.
+        </p>
+
+        <p rend="indentation">
+          Je me suis pourtant abstenu de vous écrire,<lb/>
+          car j’étais hanté par le souvenir des petits<lb/>
+          enfants, et de ce malheureux<lb/>
+          garçon à demi idiot que l’on a fouetté<lb/>
+          sur l’ordre du médecin. Je<lb/>
+          n’aurais pas pu les laisser hors de<lb/>
+          ma lettre, et le fait de vous les mentionner aurait pu vous mettre, <hi rend="underline">vous</hi>,<lb/>
+          dans une position difficile. Dans votre<lb/>
+          réponse, vous <hi rend="underline">auriez pu</hi> exprimer de la<lb/>
+          sympathie pour mes idées <pc>—</pc> je<lb/>
+          crois que vous l’auriez fait <pc>—</pc> et ensuite,<lb/>
+          à la parution de ma lettre publique,<lb/>
+          vous auriez pu avoir le sentiment que j’avais, d’une manière presque<lb/>
+          indélicate ou irréfléchie, sollicité votre opinion privée sur des questions officielles,<lb/>
+          afin de m’en servir comme d’une confirmation.
+        </p>
+
+        <p rend="indentation">
+          Je brûlais de vous parler<lb/>
+          de ces choses le soir de mon départ, mais je<lb/>
+          sentais que, dans ma position de<lb/>
+          prisonnier, il m’aurait été<lb/>
+          coupable de le faire, et que<lb/>
+          cela aurait, ou aurait pu, vous mettre<lb/>
+          dans une position difficile plus tard,<lb/>
+          autant que sur le moment. Je n’ai appris<lb/>
+          la publication de ma lettre que par un<lb/>
+          télégramme de <persName ref="#pers_ross">M. Ross</persName>, mais<lb/>
+          j’espère qu’ils l’ont imprimée intégralement,<lb/>
+          car j’ai essayé d’y exprimer<lb/>
+          mon estime et mon admiration pour votre esprit humain<lb/>
+          et votre intérêt affectueux pour <hi rend="underline">tous</hi> les prisonniers placés<lb/>
+          sous votre responsabilité. Je ne voulais pas<lb/>
+          que l’on croie qu’une exception<lb/>
+          avait été faite spécialement pour moi. Le traitement exceptionnel<lb/>
+          que j’ai reçu l’a été par<lb/>
+          ordre des Commissaires. Vous<lb/>
+          m’avez accordé la même bonté que<lb/>
+          celle que vous accordiez à chacun. Bien sûr,<lb/>
+          j’ai formulé davantage de demandes, mais<lb/>
+          je crois aussi que j’avais réellement plus de<lb/>
+          besoins que les autres <pc>—</pc> et il me manquait<lb/>
+          souvent leur joyeuse résignation <pc>—</pc>
+        </p>
+
+        <p rend="indentation">
+          Bien entendu, je prends parti pour<lb/>
+          les prisonniers <pc>—</pc> j’en étais un, et<lb/>
+          j’appartiens maintenant à leur classe <pc>—</pc><lb/>
+          je ne suis pas le moins du monde honteux<lb/>
+          d’avoir été en <placeName ref="#place_reading_gaol">prison</placeName>. J’ai<lb/>
+          terriblement honte du matérialisme<lb/>
+          de la vie qui m’y a conduit.<lb/>
+          C’était <pc>—</pc><lb/>
+          tout à fait indigne d’un<lb/>
+          artiste.
+        </p>
+
+        <p rend="indentation">
+          Au sujet de <ref target="#bibl_warder_martin">Martin</ref>, et des thèmes<lb/>
+          de ma lettre, je ne dis bien sûr<lb/>
+          absolument rien, sinon que<lb/>
+          l’homme qui pourrait changer le<lb/>
+          système <pc>—</pc> si un seul homme peut<lb/>
+          le faire <pc>—</pc> c’est vous. Pour l’heure,<lb/>
+          je vous écris pour vous demander de bien vouloir<lb/>
+          me permettre de me signer, une fois du moins dans ma vie,
+        </p>
+
+        <closer>
+          <salute>votre ami sincère et reconnaissant,</salute>
+          <signed><persName ref="#pers_wilde">Oscar Wilde</persName>.</signed>
+        </closer>
+      </div>
+
+      <!-- ============================== -->
+      <!-- Letter 3: "stannard_tei.xml"   -->
+      <!-- ============================== -->
+      <div type="letter" xml:id="stannard-letter">
+
+        <fw type="letterhead" subtype="address" place="top">
+          Hotel de la Plage<lb/>
+            <placeName ref="#place_berneval">Berneval-sur-Mer</placeName>.
+        </fw>
+
+        <opener>
+          <salute>Dear <persName ref="#pers_stannard">Mrs Stannard</persName></salute>
+        </opener>
+
+        <p rend="indentation">
+          Your kind husband<lb/>
+          gave me a very sympathetic<lb/>
+          and touching message<lb/>
+          from you yesterday, for<lb/>
+          which pray accept my<lb/>
+          most sincere thanks: he<lb/>
+          also asked me from you<lb/>
+          to call, a privilege of<lb/>
+          which I hope to avail<lb/>
+          myself tomorrow afternoon.
+        </p>
+
+        <p rend="indentation">
+          Of course I have<lb/>
+          passed through a very<lb/>
+          terrible punishment <pc>—</pc> and<lb/>
+          have suffered the very<lb/>
+          pitch of anguish and despair<supplied reason="punct">.</supplied><lb/>
+          Still I am conscious that<lb/>
+          I was leading a life quite<lb/>
+          unworthy of an artist in<lb/>
+          every way, and unworthy of a<lb/>
+          son of <persName ref="#pers_jane_wilde">my dear mother</persName> whose<lb/>
+          nobility of soul and intellect<lb/>
+          you always appreciated, and<lb/>
+          who was herself always one of<lb/>
+          your warmest and most<lb/>
+          enthusiastic admirers.
+        </p>
+
+        <p rend="indentation">
+          I am living quietly in<lb/>
+          a little <hi rend="underline"><foreign xml:lang="fr">auberge</foreign></hi> by the sea, and<lb/>
+          for the moment am quite alone.<lb/>
+          <placeName ref="#place_france">France</placeName> has been charming to<lb/>
+          me and about me during all<lb/>
+          my imprisonment, and has now<lb/>
+          <pc>—</pc> mother of all artists as she is <pc>—</pc><lb/>
+          given me <hi rend="underline"><foreign xml:lang="fr">asile</foreign></hi>. To escape the<lb/>
+          foolish tongue and prying eye<lb/>
+          I have for the moment taken the<lb/>
+          name of<lb/>
+          <seg type="indentation">
+            <persName ref="#pers_wilde">
+              <addName type="honorific">Monsieur</addName>
+              <addName type="pseudonym">Sebastian Melmoth</addName>
+            </persName> <pc>—</pc><lb/>
+            a curious name which I’ll<lb/>
+            explain to you tomorrow.
+          </seg>
+        </p>
+
+        <p rend="indentation">
+          Pray let my name and place of<lb/>
+          <foreign xml:lang="fr">séjour</foreign> be quite a secret to<lb/>
+          all. I hope to live in solitude<lb/>
+          and peace. Accept these few<lb/>
+          verses as a slight token of my<lb/>
+          gratitude.
+        </p>
+
+        <closer>
+          <salute>Believe me yours</salute>
+          <signed><persName ref="#pers_wilde">Oscar Wilde</persName></signed>
+        </closer>
+
+      </div>
+
+      <!-- TRADUCTION FR (Stannard) : révisée -->
+      <div type="translation" xml:id="stannard-letter-fr" xml:lang="fr" corresp="#stannard-letter">
+        <opener>
+          <salute>Chère <persName ref="#pers_stannard">Madame Stannard</persName>,</salute>
+        </opener>
+
+        <p rend="indentation">
+          Votre aimable mari<lb/>
+          m’a transmis hier un message<lb/>
+          de votre part, très plein de sympathie<lb/>
+          et très touchant, pour<lb/>
+          lequel je vous prie d’accepter mes<lb/>
+          remerciements les plus sincères : il<lb/>
+          m’a aussi demandé, de votre part,<lb/>
+          de passer vous voir, privilège dont<lb/>
+          j’espère profiter demain après-midi.
+        </p>
+
+        <p rend="indentation">
+          J’ai, bien entendu,<lb/>
+          traversé un châtiment<lb/>
+          des plus terribles <pc>—</pc> et<lb/>
+          j’ai souffert jusqu’au<lb/>
+          comble de l’angoisse et du désespoir<supplied reason="punct">.</supplied><lb/>
+          Pourtant, j’ai conscience que<lb/>
+          je menais une vie, à tous égards,<lb/>
+          tout à fait indigne d’un artiste,<lb/>
+          et indigne d’un<lb/>
+          fils de <persName ref="#pers_jane_wilde">ma chère mère</persName>, dont<lb/>
+          vous avez toujours apprécié la noblesse d’âme et d’intelligence,<lb/>
+          et qui fut elle-même toujours l’une de<lb/>
+          vos admiratrices les plus chaleureuses et les plus<lb/>
+          enthousiastes.
+        </p>
+
+        <p rend="indentation">
+          Je vis tranquillement<lb/>
+          dans une petite <hi rend="underline"><foreign xml:lang="fr">auberge</foreign></hi> au bord de la mer, et<lb/>
+          pour le moment je suis tout à fait seul.<lb/>
+          <placeName ref="#place_france">La France</placeName> a été charmante pour<lb/>
+          moi et à mon sujet pendant toute<lb/>
+          mon incarcération, et elle m’a maintenant<lb/>
+          <pc>—</pc> mère de tous les artistes qu’elle est <pc>—</pc><lb/>
+          donné <hi rend="underline"><foreign xml:lang="fr">asile</foreign></hi>. Pour échapper aux<lb/>
+          langues indiscrètes et aux regards indiscrets,<lb/>
+          j’ai, pour le moment, pris le<lb/>
+          nom de<lb/>
+          <seg type="indentation">
+            <persName ref="#pers_wilde">
+              <addName type="honorific">Monsieur</addName>
+              <addName type="pseudonym">Sebastian Melmoth</addName>
+            </persName> <pc>—</pc><lb/>
+            curieux nom que je vous<lb/>
+            expliquerai demain.
+          </seg>
+        </p>
+
+        <p rend="indentation">
+          Je vous prie de garder mon nom et mon lieu de<lb/>
+          <foreign xml:lang="fr">séjour</foreign> absolument secrets<lb/>
+          pour tous. J’espère vivre dans la solitude<lb/>
+          et la paix. Recevez ces quelques<lb/>
+          vers comme un léger témoignage de ma<lb/>
+          gratitude.
+        </p>
+
+        <closer>
+          <salute>Veuillez croire à mes sentiments dévoués</salute>
+          <signed><persName ref="#pers_wilde">Oscar Wilde</persName></signed>
+        </closer>
+      </div>
+
+    </body>
+  </text>
+
+</TEI>

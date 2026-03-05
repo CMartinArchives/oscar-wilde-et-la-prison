@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15">
+    <Metadata>
+        <Creator>Transkribus</Creator>
+        <Created>2026-02-04T19:59:14.395+01:00</Created>
+        <LastChange>2026-02-04T20:07:34.325+01:00</LastChange>
+    </Metadata>
+    <Page imageFilename="stannard_01.jpg" imageWidth="3901" imageHeight="4217">
+        <TextRegion id="r" custom="readingOrder {index:0;}">
+            <Coords points="1181,574 2997,574 2997,785 1181,785"/>
+            <TextLine id="l" custom="readingOrder {index:0;}">
+                <Coords points="1181,784 2997,760 2997,574 1190,588 1181,784 1211,785 1217,616 2969,602 2969,732 1181,754"/>
+                <Baseline points="1181,784 2997,760 2997,574 1190,588 1181,784"/>
+                <TextEquiv>
+                    <Unicode>Hotel de la Place</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_2" custom="readingOrder {index:1;}">
+            <Coords points="516,1224 2773,1224 2773,1420 516,1420"/>
+            <TextLine id="l_2" custom="readingOrder {index:0;}">
+                <Coords points="521,1420 2773,1391 2768,1224 516,1248 531,1420 561,1417 546,1276 2740,1253 2744,1363 521,1390"/>
+                <Baseline points="521,1420 2773,1391 2768,1224 516,1248 531,1420"/>
+                <TextEquiv>
+                    <Unicode>Dear Mrs Stannard</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_1" custom="readingOrder {index:2;}">
+            <Coords points="1496,789 3428,789 3428,990 1496,990"/>
+            <TextLine id="l_1" custom="readingOrder {index:0;}">
+                <Coords points="1506,990 3428,956 3409,789 1496,813 1506,990 1536,988 1526,841 3383,818 3397,929 1505,960"/>
+                <Baseline points="1506,990 3428,956 3409,789 1496,813 1506,990"/>
+                <TextEquiv>
+                    <Unicode>Berneval-sur-Mer</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_4" custom="readingOrder {index:3;}">
+            <Coords points="755,1845 3495,1845 3495,2037 755,2037"/>
+            <TextLine id="l_4" custom="readingOrder {index:0;}">
+                <Coords points="755,2037 3495,2027 3476,1845 779,1855 760,2022 790,2025 805,1884 3450,1874 3464,1999 755,2007"/>
+                <Baseline points="755,2037 3495,2027 3476,1845 779,1855 760,2022"/>
+                <TextEquiv>
+                    <Unicode>gave me a very sympathetic</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_5" custom="readingOrder {index:4;}">
+            <Coords points="813,2113 3084,2113 3084,2314 813,2314"/>
+            <TextLine id="l_5" custom="readingOrder {index:0;}">
+                <Coords points="822,2304 3084,2314 3074,2147 813,2113 817,2295 847,2294 842,2142 3047,2175 3054,2286 822,2274"/>
+                <Baseline points="822,2304 3084,2314 3074,2147 813,2113 817,2295"/>
+                <TextEquiv>
+                    <Unicode>and touching message</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_6" custom="readingOrder {index:5;}">
+            <Coords points="789,2390 3117,2390 3117,2625 789,2625"/>
+            <TextLine id="l_6" custom="readingOrder {index:0;}">
+                <Coords points="789,2605 3117,2582 3098,2390 822,2433 789,2620 819,2625 846,2462 3072,2419 3086,2555 789,2575"/>
+                <Baseline points="789,2605 3117,2582 3098,2390 822,2433 789,2620"/>
+                <TextEquiv>
+                    <Unicode>from you yesterday, for</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_7" custom="readingOrder {index:6;}">
+            <Coords points="794,2711 3150,2711 3150,2885 794,2885"/>
+            <TextLine id="l_7" custom="readingOrder {index:0;}">
+                <Coords points="808,2883 3150,2878 3127,2715 832,2711 794,2878 823,2885 855,2740 3102,2744 3118,2851 808,2853"/>
+                <Baseline points="808,2883 3150,2878 3127,2715 832,2711 794,2878"/>
+                <TextEquiv>
+                    <Unicode>which pray accept my</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_8" custom="readingOrder {index:7;}">
+            <Coords points="736,2954 3280,2954 3280,3179 736,3179"/>
+            <TextLine id="l_8" custom="readingOrder {index:0;}">
+                <Coords points="751,3174 3280,3107 3236,2954 779,3026 736,3170 765,3179 801,3054 3214,2984 3245,3081 750,3144"/>
+                <Baseline points="751,3174 3280,3107 3236,2954 779,3026 736,3170"/>
+                <TextEquiv>
+                    <Unicode>most sincere thanks : he</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_9" custom="readingOrder {index:8;}">
+            <Coords points="741,3251 3294,3251 3294,3442 741,3442"/>
+            <TextLine id="l_9" custom="readingOrder {index:0;}">
+                <Coords points="741,3442 3294,3409 3270,3251 746,3275 741,3437 771,3438 774,3303 3245,3280 3262,3382 741,3412"/>
+                <Baseline points="741,3442 3294,3409 3270,3251 746,3275 741,3437"/>
+                <TextEquiv>
+                    <Unicode>also asked me from you</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+        <TextRegion id="r_3" custom="readingOrder {index:9;}">
+            <Coords points="1506,1535 3485,1535 3485,1718 1506,1718"/>
+            <TextLine id="l_3" custom="readingOrder {index:0;}">
+                <Coords points="1520,1716 3485,1692 3480,1535 1520,1544 1506,1716 1536,1718 1546,1573 3452,1564 3456,1664 1520,1686"/>
+                <Baseline points="1520,1716 3485,1692 3480,1535 1520,1544 1506,1716"/>
+                <TextEquiv>
+                    <Unicode>Your kind husband</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+    </Page>
+</PcGts>
