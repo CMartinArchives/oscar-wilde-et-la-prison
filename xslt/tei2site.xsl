@@ -23,7 +23,7 @@
   <xsl:param name="outDir" select="'out/'"/>
 
   <!-- Chemin vers les assets (css/js/img) relatif aux pages générées -->
-  <xsl:param name="assetsBase" select="'../assets'"/>
+  <xsl:param name="assetsBase" select="'assets'"/>
 
   <!-- Identité du site -->
   <xsl:variable name="siteTitle" select="'OSCAR WILDE'"/>
@@ -377,7 +377,7 @@ son retrait progressif de la vie publique."
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
         <!-- favicon -->
-        <link rel="icon" type="image/png" href="{$assetsBase}/img/favicon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="{$assetsBase}/img/favicon32.png"/>
 
         <link rel="stylesheet" href="{$assetsBase}/css/style.css"/>
         <script src="{$assetsBase}/js/site.js" defer="defer"></script>
