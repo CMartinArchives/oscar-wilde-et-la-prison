@@ -500,6 +500,122 @@
 
 
   // =========================================================
+  // ✅ AJOUTS (sans rien supprimer) : fonctions manquantes
+  // =========================================================
+
+  // =========================
+  // ACTIVE NAV (global exact match)
+  // -------------------------
+  // Ajoute la classe .nav-link--active au lien du menu principal
+  // correspondant à la page en cours.
+  // =========================
+  function initActiveNav() {
+    const current = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    $$(".nav-link").forEach((a) => {
+      const href = (a.getAttribute("href") || "").toLowerCase();
+      if (href && href === current) a.classList.add("nav-link--active");
+    });
+  }
+
+  // =========================
+  // INDEX UX (recherche + état actif)
+  // -------------------------
+  // Active la recherche dynamique uniquement sur la page index-entities.
+  // Ton HTML (XSLT) injecte déjà la structure .entity-item / .entity-title / .entity-note.
+  // =========================
+  function initIndexUX() {
+    const isEntities = location.pathname.includes("index-entities");
+    if (!isEntities) return;
+
+    const normalize = (s) =>
+      (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+    // barre de recherche : si elle existe déjà, on la réutilise.
+    // sinon, on l’injecte juste après .index-toplinks ou après la première carte.
+    const topLinks = $(".index-toplinks");
+    const firstCard = $(".card");
+
+    if (!$("#indexSearch")) {
+      const searchWrap = document.createElement("div");
+      searchWrap.className = "index-search";
+      searchWrap.innerHTML = `
+        <label class="index-search__label smallcaps" for="indexSearch">Recherche</label>
+        <input class="index-search__input" id="indexSearch" type="search"
+               placeholder="Tape un nom, un lieu, une œuvre…" autocomplete="off"/>
+        <button class="index-search__clear" type="button" aria-label="Effacer">×</button>
+      `;
+
+      if (topLinks?.parentElement) topLinks.parentElement.insertBefore(searchWrap, topLinks.nextSibling);
+      else if (firstCard?.parentElement) firstCard.parentElement.insertBefore(searchWrap, firstCard.nextSibling);
+    }
+
+    const input = $("#indexSearch");
+    const clearBtn = $(".index-search__clear");
+    const items = $$(".entity-item");
+
+    // cache = pré-calcul des textes à chercher (titre + note)
+    const cache = items.map((li) => {
+      const title = normalize($(".entity-title", li)?.textContent);
+      const note  = normalize($(".entity-note", li)?.textContent);
+      return { li, haystack: (title + " " + note).trim() };
+    });
+
+    const applyFilter = (q) => {
+      const query = normalize(q);
+      cache.forEach(({ li, haystack }) => {
+        li.style.display = (!query || haystack.includes(query)) ? "" : "none";
+      });
+    };
+
+    input?.addEventListener("input", () => applyFilter(input.value));
+    clearBtn?.addEventListener("click", () => {
+      if (!input) return;
+      input.value = "";
+      input.focus();
+      applyFilter("");
+    });
+
+    // pills active (hash : #persons / #places / #orgs / #works)
+    const pills = $$(".index-toplinks .pill");
+    const setActivePill = () => {
+      const hash = (location.hash || "#persons").toLowerCase();
+      pills.forEach((a) => {
+        const isActive = (a.getAttribute("href") || "").toLowerCase() === hash;
+        if (isActive) a.setAttribute("aria-current", "true");
+        else a.removeAttribute("aria-current");
+      });
+    };
+    window.addEventListener("hashchange", setActivePill);
+    setActivePill();
+  }
+
+  // =========================
+  // DROP CAP PATCH (JS -> .no-dropcap)
+  // -------------------------
+  // Ajoute la classe .no-dropcap sur certains paragraphes
+  // pour empêcher une lettrine sur :
+  // - une adresse qui commence par un nombre
+  // - quelques débuts exacts (si besoin)
+  // =========================
+  function initNoDropcap() {
+    const paras = $$(".tei-text p");
+    if (!paras.length) return;
+
+    const exactStarts = ["My name is here,", "Hotel de la Plage"];
+
+    paras.forEach((p) => {
+      const t = (p.textContent || "").trim();
+      if (!t) return;
+
+      const isNumberAddress = /^\d+\s*,\s*/.test(t) || /^\d+\s+\w+/.test(t);
+      const isExact = exactStarts.some((s) => t.startsWith(s));
+
+      if (isNumberAddress || isExact) p.classList.add("no-dropcap");
+    });
+  }
+
+
+  // =========================================================
   // DOM READY
   // =========================================================
 
