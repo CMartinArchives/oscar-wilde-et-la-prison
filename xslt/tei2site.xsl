@@ -20,7 +20,7 @@
   <!-- ========================================================= -->
 
   <!-- Dossier de sortie (où seront écrits index.html, lane.html, etc.) -->
-  <xsl:param name="outDir" select="'out/'"/>
+  <xsl:param name="outDir" select="'docs/'"/>
 
   <!-- Chemin vers les assets (css/js/img) relatif aux pages générées -->
   <xsl:param name="assetsBase" select="'assets'"/>
@@ -376,6 +376,21 @@ son retrait progressif de la vie publique."
         <title><xsl:value-of select="$siteTitle"/> — <xsl:value-of select="$pageTitle"/></title>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
+        <!-- Open Graph : aperçu quand on partage le lien -->
+        <meta property="og:title" content="Oscar Wilde — Lettres autour de la prison (1894–1897)"/>
+        <meta property="og:description" content="Édition numérique TEI des lettres d’Oscar Wilde autour de son emprisonnement."/>
+        <meta property="og:image" content="https://cmartinarchives.github.io/oscar-wilde-et-la-prison/assets/img/social-preview.png"/>
+        <meta property="og:image:width" content="1200"/>
+        <meta property="og:image:height" content="630"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://cmartinarchives.github.io/oscar-wilde-et-la-prison/"/>
+
+        <!-- Twitter / X preview -->
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content="Oscar Wilde — Lettres autour de la prison (1894–1897)"/>
+        <meta name="twitter:description" content="Édition numérique TEI des lettres d’Oscar Wilde autour de son emprisonnement."/>
+        <meta name="twitter:image" content="https://cmartinarchives.github.io/oscar-wilde-et-la-prison/assets/img/social-preview.png"/>
+
         <!-- favicon -->
         <link rel="icon" type="image/png" sizes="32x32" href="{$assetsBase}/img/favicon32.png"/>
 
@@ -494,17 +509,31 @@ son retrait progressif de la vie publique."
       </p>
 
       <p>
-        En 1895, Wilde est condamné à deux ans de travaux forcés après une série de procès qui font de lui
-        une figure publique de l’infamie et du scandale. L’épreuve de la prison — d’abord à Pentonville et Wandsworth,
-        puis à Reading Gaol — transforme durablement sa santé, sa situation matérielle, et sa manière d’écrire.
-        À sa libération, il quitte l’Angleterre et s’efforce de disparaître du regard social, notamment en France,
-        sous le nom de <em>Sebastian Melmoth</em>.
+        En 1895, Oscar Wilde est poursuivi et condamné pour <em>gross indecency</em>,
+        une infraction introduite dans le droit britannique par l’amendement Labouchere
+        du <em>Criminal Law Amendment Act</em> de 1885. Cette disposition criminalise
+        les relations sexuelles entre hommes, même lorsqu’elles relèvent de la sphère privée.
+      </p>
+
+      <p>
+        À l’issue d’une série de procès très médiatisés, Wilde est condamné à
+        deux ans de travaux forcés. La prison — d’abord à Pentonville et Wandsworth,
+        puis à Reading Gaol — transforme durablement sa santé, sa situation matérielle
+        et sa manière d’écrire.
+      </p>
+
+      <p>
+        À sa libération en 1897, il quitte l’Angleterre et s’installe en France
+        sous le nom de <em>Sebastian Melmoth</em>, cherchant à se soustraire
+        à la stigmatisation sociale qui suit sa condamnation.
       </p>
 
       <p>
         Le projet propose une lecture “au plus près” des documents :
-        <strong>fac-similés</strong> des manuscrits, <strong>transcription</strong> et <strong>traduction</strong>,
-        avec un <strong>index d’entités nommées</strong> (personnes, lieux, organisations, œuvres) pour circuler dans le corpus.
+        <strong>fac-similés</strong> des manuscrits, <strong>transcription</strong>
+        et <strong>traduction</strong>, accompagnés d’un <strong>index d’entités nommées</strong>
+        (personnes, lieux, organisations, œuvres) permettant de naviguer dans les réseaux
+        biographiques et culturels évoqués dans les lettres.
       </p>
 
       <div class="home-actions" role="navigation" aria-label="Accès rapides">
@@ -522,7 +551,7 @@ son retrait progressif de la vie publique."
       </p>
 
       <p>
-        Ces lettres dessinent un arc narratif très clair :
+        Ces lettres dessinent un arc narratif :
         <em>avant</em> la prison (logiques éditoriales, stratégie de publication),
         puis <em>après</em> (gratitude, lucidité, solitude, besoin d’anonymat).
         Elles montrent aussi la manière dont Wilde se situe face à ses proches, à ses soutiens,
@@ -545,7 +574,7 @@ son retrait progressif de la vie publique."
       <img src="{$assetsBase}/img/WildeTrial1.jpg" alt="Oscar Wilde au procès"/>
       <figcaption>
         <span class="muted">The Trial of Oscar Wilde and Alfred Taylor — Illustrated Police News, 20 avril 1895. </span>
-        <span class="muted">Un tournant décisif qui conduit à l’incarcération (1895) puis à l’exil.</span>
+        <span class="muted caption-sub">Un tournant décisif qui conduit à l’incarcération (1895) puis à l’exil.</span>
       </figcaption>
     </figure>
 

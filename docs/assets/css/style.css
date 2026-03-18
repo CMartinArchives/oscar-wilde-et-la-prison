@@ -1,362 +1,372 @@
 /* ============================================================
-   OSCAR WILDE — CSS COMPLET
+   OSCAR WILDE — FEUILLE DE STYLE COMPLÈTE
+   ------------------------------------------------------------
+   Cette feuille de style organise l’apparence du site :
+   - structure générale
+   - navigation
+   - page d’accueil
+   - pages lettres
+   - fac-similés et overlays
+   - index des entités
+   - responsive
+   ------------------------------------------------------------
+   Principes :
+   - conserver une esthétique sobre, lisible et cohérente
+   - centraliser les valeurs importantes dans :root
+   - utiliser un langage CSS simple et stable
    ============================================================ */
 
-/* =========================
-   1) Variables globales (thème “papier”)
-   =========================
-   :root = variables disponibles partout.
-   Ici je définis toute la palette (fonds, encres, lignes), les ombres,
-   les rayons (arrondis), les largeurs de container, les polices, etc.
-*/
+
+/* ============================================================
+   1) VARIABLES GLOBALES
+   ------------------------------------------------------------
+   Toutes les valeurs principales du site sont définies ici :
+   couleurs, tailles, polices, ombres, largeurs, etc.
+   Cela facilite la maintenance et rend le code plus lisible.
+   ============================================================ */
 :root{
-  /* Couleurs principales */
-  --bg:#f8f5ee;          /* fond général de la page (extérieur) */
-  --paper:#fff;          /* “papier” principal des cartes/panneaux */
-  --paper2:#fbf8f1;      /* variante papier pour dégradés */
+  /* ---------- Couleurs de fond ---------- */
+  --bg:#f8f5ee;             /* fond général de la page */
+  --paper:#ffffff;          /* fond principal des cartes */
+  --paper2:#fbf8f1;         /* second fond, utilisé dans les dégradés */
 
-  --ink:#1f1b16;         /* couleur du texte (encre) */
-  --muted:#5f5851;       /* texte secondaire */
-  --muted2:#8e877f;      /* texte encore plus discret */
+  /* ---------- Couleurs de texte ---------- */
+  --ink:#1f1b16;            /* couleur principale du texte */
+  --muted:#5f5851;          /* couleur du texte secondaire */
+  --muted2:#8e877f;         /* couleur du texte plus discret */
 
-  --line:#e2dbd1;        /* couleur de bordure fine */
-  --line2:#d6cdbf;       /* bordure un peu plus marquée */
+  /* ---------- Bordures ---------- */
+  --line:#e2dbd1;           /* bordure principale */
+  --line2:#d6cdbf;          /* bordure un peu plus marquée */
 
-  /* Accent (liens, dropcap, etc.) */
-  --accent:#6a4f2a;
-  --accent2:#a07a46;
+  /* ---------- Couleurs d’accent ---------- */
+  --accent:#6a4f2a;         /* couleur d’accent (liens, lettrine, etc.) */
+  --accent2:#a07a46;        /* accent secondaire */
 
-  /* Ombres (cartes, menus, etc.) */
-  --shadow:0 8px 26px rgba(0,0,0,.07);
-  --shadow2:0 14px 40px rgba(0,0,0,.10);
+  /* ---------- Ombres ---------- */
+  --shadow:0 8px 26px rgba(0,0,0,.07);   /* ombre standard des cartes */
+  --shadow2:0 14px 40px rgba(0,0,0,.10); /* ombre plus forte */
 
-  /* Arrondis */
-  --radius:14px;
-  --radius2:18px;
+  /* ---------- Rayons d’arrondi ---------- */
+  --radius:14px;            /* arrondi standard */
+  --radius2:18px;           /* arrondi plus large */
 
-  /* Largeurs max : container normal vs “letter/manuscript” plus large */
-  --container:min(1120px,92vw);
-  --container-letter:min(1480px,96vw);
+  /* ---------- Largeurs maximales ---------- */
+  --container:min(1120px,92vw);         /* largeur du site en page normale */
+  --container-letter:min(1480px,96vw);  /* largeur plus grande pour pages lettres */
 
-  /* Polices (serif / display / smallcaps) */
-  --font-serif:"EB Garamond","Garamond","Adobe Garamond Pro","Cormorant Garamond","Georgia","Times New Roman",serif;
-  --font-display:"Garamond","EB Garamond","Adobe Garamond Pro","Cormorant Garamond","Georgia","Times New Roman",serif;
-  --font-smallcaps:"Garamond","EB Garamond","Adobe Garamond Pro","Cormorant Garamond","Georgia","Times New Roman",serif;
+  /* ---------- Polices ---------- */
+  --font-serif:"EB Garamond","Garamond","Adobe Garamond Pro","Cormorant Garamond","Georgia","Times New Roman",serif; /* texte courant */
+  --font-display:"Garamond","EB Garamond","Adobe Garamond Pro","Cormorant Garamond","Georgia","Times New Roman",serif; /* titres */
+  --font-smallcaps:"Garamond","EB Garamond","Adobe Garamond Pro","Cormorant Garamond","Georgia","Times New Roman",serif; /* petites capitales */
 
-  /* UI (nav, boutons) */
-  --ui-radius:10px;
-  --ui-padY:8px;
-  --ui-padX:12px;
+  /* ---------- UI / navigation ---------- */
+  --ui-radius:10px;         /* arrondi des boutons/lien de nav */
+  --ui-padY:8px;            /* padding vertical des liens UI */
+  --ui-padX:12px;           /* padding horizontal des liens UI */
 
-  /* Dropcap (lettrine) */
-  --dropcap-size:3.3em;
-  --dropcap-gap:.14em;
+  /* ---------- Lettrine ---------- */
+  --dropcap-size:3.3em;     /* taille de la lettrine */
+  --dropcap-gap:.14em;      /* espace entre lettrine et texte */
 
-  /* Intensité du grain “papier” */
-  --grain-opacity:.09;
+  /* ---------- Texture papier ---------- */
+  --grain-opacity:.09;      /* intensité visuelle de la texture de fond */
 
-  /* Couleurs de la barre header */
-  --bar-bg:#efe3d2;
-  --bar-bg2:#e6d4bc;
-  --bar-ink:#231c14;
+  /* ---------- Header / footer ---------- */
+  --bar-bg:#efe3d2;         /* fond principal de la barre haute/basse */
+  --bar-bg2:#e6d4bc;        /* seconde couleur du dégradé */
+  --bar-ink:#231c14;        /* couleur du texte dans la barre */
 
-  /* Palette bouton/pills */
-  --btn-bg:#f1e3cf;
-  --btn-bg2:#ecdcc5;
-  --btn-border:#dcc9ad;
-  --btn-hover:#e6d2b6;
+  /* ---------- Boutons / pills ---------- */
+  --btn-bg:#f1e3cf;         /* fond principal des pills */
+  --btn-bg2:#ecdcc5;        /* second fond des pills */
+  --btn-border:#dcc9ad;     /* bordure des pills */
+  --btn-hover:#e6d2b6;      /* fond au survol */
 }
 
-/* =========================
-   2) Variables du thème “night”
-   =========================
-   Quand :root ou body a data-theme="night", j'écrase les variables.
-   => tout le site change de look sans réécrire toutes les règles.
-*/
-:root[data-theme="night"],body[data-theme="night"]{
-  --bg:#0f0d0b;
-  --paper:#171310;
-  --paper2:#1b1612;
 
-  --ink:#f2eadf;
-  --muted:#c8bfb3;
-  --muted2:#a99f93;
-
-  --line:#2a241e;
-  --line2:#3a3128;
-
-  --accent:#d7b27b;
-  --accent2:#e2c89f;
-
-  --shadow:0 10px 28px rgba(0,0,0,.35);
-  --shadow2:0 16px 48px rgba(0,0,0,.45);
-
-  --grain-opacity:.14;
-
-  --bar-bg:#1c1712;
-  --bar-bg2:#15110e;
-  --bar-ink:#f2eadf;
-
-  --btn-bg:#241d16;
-  --btn-bg2:#1e1812;
-  --btn-border:#3a2f24;
-  --btn-hover:#2b221a;
+/* ============================================================
+   2) RESET ET BASE TYPOGRAPHIQUE
+   ------------------------------------------------------------
+   On pose ici les règles globales de base :
+   - box-sizing
+   - suppression des marges par défaut
+   - police
+   - taille de texte
+   - comportement des images et des liens
+   ============================================================ */
+*{
+  box-sizing:border-box; /* les padding et bordures entrent dans la largeur totale */
 }
 
-/* =========================
-   3) Reset + base typographique
-   =========================
-   - box-sizing global (plus simple pour les tailles)
-   - styles par défaut html/body : police, taille, interligne, couleurs
-   - img responsive
-   - liens + sélection de texte
-*/
-*{box-sizing:border-box}
-
-html,body{
-  margin:0;
-  padding:0;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:var(--font-serif);
-  font-size:17px;
-  line-height:1.85;
-  text-rendering:optimizeLegibility;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale
+html,
+body{
+  margin:0;                              /* retire les marges par défaut du navigateur */
+  padding:0;                             /* retire les padding par défaut */
+  background:var(--bg);                  /* applique le fond général */
+  color:var(--ink);                      /* applique la couleur principale du texte */
+  font-family:var(--font-serif);         /* police de lecture principale */
+  font-size:18px;                        /* taille de base légèrement augmentée pour tout le site */
+  line-height:1.85;                      /* interligne généreux pour la lecture */
+  text-rendering:optimizeLegibility;     /* améliore le rendu typographique */
+  -webkit-font-smoothing:antialiased;    /* lissage du texte sur moteurs WebKit */
+  -moz-osx-font-smoothing:grayscale;     /* lissage du texte sur Firefox/macOS */
 }
 
-img{max-width:100%;height:auto}
+img{
+  max-width:100%; /* empêche une image de dépasser son conteneur */
+  height:auto;    /* conserve les proportions */
+}
 
-a{color:var(--accent);text-decoration:none}
+a{
+  color:var(--accent);      /* couleur des liens */
+  text-decoration:none;     /* retire le soulignement par défaut */
+}
 
-/* Hover de lien : underline + couleur adaptée au thème */
 a:hover{
-  text-decoration:underline;
-  text-decoration-color:rgba(106,79,42,.55)
-}
-:root[data-theme="night"] a:hover,body[data-theme="night"] a:hover{
-  text-decoration-color:rgba(215,178,123,.55)
+  text-decoration:underline;                         /* souligne au survol */
+  text-decoration-color:rgba(106,79,42,.55);        /* couleur du soulignement */
 }
 
-/* Sélection (quand je surligne du texte) */
-::selection{background:rgba(106,79,42,.22)}
-:root[data-theme="night"] ::selection,body[data-theme="night"] ::selection{
-  background:rgba(215,178,123,.22)
+::selection{
+  background:rgba(106,79,42,.22); /* couleur de la sélection de texte */
 }
 
-/* petites utilitaires de texte */
-.muted{color:var(--muted)}
+/* ---------- Utilitaires typographiques ---------- */
+.muted{
+  color:var(--muted); /* texte secondaire */
+}
+
 .lead{
-  font-size:1.05rem;
-  color:color-mix(in oklab,var(--ink) 86%,var(--muted) 14%)
+  font-size:1.05rem; /* texte d’introduction légèrement plus grand */
+  color:color-mix(in oklab,var(--ink) 86%,var(--muted) 14%); /* teinte un peu adoucie */
 }
 
-/* =========================
-   4) Grain “papier”
-   =========================
-   body::before ajoute une couche fixe (position:fixed) qui couvre tout,
-   avec plusieurs gradients + lignes répétées => effet texture.
-   pointer-events:none => n'intercepte pas les clics.
-   z-index:0 => passe derrière le contenu (que je mets en z-index:1).
-*/
-body{position:relative}
+
+/* ============================================================
+   3) TEXTURE DE FOND “PAPIER”
+   ------------------------------------------------------------
+   Une couche fixe est ajoutée derrière tout le contenu pour
+   simuler une matière légère de papier.
+   ============================================================ */
+body{
+  position:relative; /* permet de positionner correctement la pseudo-couche */
+}
 
 body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:0;
+  content:"";                /* pseudo-élément décoratif */
+  position:fixed;            /* reste fixe pendant le scroll */
+  inset:0;                   /* couvre tout l’écran */
+  pointer-events:none;       /* ne bloque jamais les clics */
+  z-index:0;                 /* placé derrière le contenu */
 
-  /* Multiples couches => texture complexe */
   background:
-    radial-gradient(circle at 15% 18%,rgba(0,0,0,.045),transparent 55%),
-    radial-gradient(circle at 78% 34%,rgba(0,0,0,.035),transparent 60%),
-    radial-gradient(circle at 55% 78%,rgba(0,0,0,.030),transparent 55%),
-    repeating-linear-gradient(0deg,rgba(0,0,0,.015) 0,rgba(0,0,0,.015) 1px,transparent 2px,transparent 6px),
-    repeating-linear-gradient(90deg,rgba(0,0,0,.012) 0,rgba(0,0,0,.012) 1px,transparent 2px,transparent 7px);
+    radial-gradient(circle at 15% 18%,rgba(0,0,0,.045),transparent 55%), /* tache légère 1 */
+    radial-gradient(circle at 78% 34%,rgba(0,0,0,.035),transparent 60%), /* tache légère 2 */
+    radial-gradient(circle at 55% 78%,rgba(0,0,0,.030),transparent 55%), /* tache légère 3 */
+    repeating-linear-gradient(0deg,rgba(0,0,0,.015) 0,rgba(0,0,0,.015) 1px,transparent 2px,transparent 6px), /* fines lignes horizontales */
+    repeating-linear-gradient(90deg,rgba(0,0,0,.012) 0,rgba(0,0,0,.012) 1px,transparent 2px,transparent 7px); /* fines lignes verticales */
 
-  /* multiply => “salit” comme une texture sur papier */
-  mix-blend-mode:multiply;
-  opacity:var(--grain-opacity)
+  mix-blend-mode:multiply;   /* mélange la texture au fond */
+  opacity:var(--grain-opacity); /* intensité contrôlée par variable */
 }
 
-/* En mode night : texture inversée (blanc) + screen pour éclaircir */
-:root[data-theme="night"] body::before,body[data-theme="night"]::before{
-  background:
-    radial-gradient(circle at 15% 18%,rgba(255,255,255,.06),transparent 55%),
-    radial-gradient(circle at 78% 34%,rgba(255,255,255,.05),transparent 60%),
-    radial-gradient(circle at 55% 78%,rgba(255,255,255,.04),transparent 55%),
-    repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0,rgba(255,255,255,.025) 1px,transparent 2px,transparent 6px),
-    repeating-linear-gradient(90deg,rgba(255,255,255,.020) 0,rgba(255,255,255,.020) 1px,transparent 2px,transparent 7px);
-  mix-blend-mode:screen;
-  opacity:var(--grain-opacity)
+/* le contenu réel passe au-dessus de la texture */
+.site-header,
+main,
+footer{
+  position:relative;
+  z-index:1;
 }
 
-/* Je force le contenu principal à passer au-dessus de la texture */
-.site-header,main,footer{position:relative;z-index:1}
 
-/* =========================
-   5) Layout / containers
-   =========================
-   .container : largeur max et centrage
-   :has(.ms-layout) => si main contient un layout manuscrit, j'élargis
-*/
+/* ============================================================
+   4) CONTENEURS PRINCIPAUX
+   ------------------------------------------------------------
+   La classe .container gère la largeur utile du site.
+   Certaines pages lettres ont besoin d’une largeur plus grande.
+   ============================================================ */
 .container{
-  width:var(--container);
-  margin:0 auto;
-  padding:16px 0 56px
+  width:var(--container); /* largeur maximale normale */
+  margin:0 auto;          /* centre horizontalement */
+  padding:16px 0 56px;    /* espace en haut et en bas */
 }
 
-/* :has() = CSS moderne : “si main contient .ms-layout alors…” */
-main.container:has(.ms-layout),main.container:has(.manuscript-layout){
-  width:var(--container-letter)
+main.container:has(.ms-layout),
+main.container:has(.manuscript-layout){
+  width:var(--container-letter); /* élargit automatiquement si page manuscrit */
 }
 
-/* variante via class sur body */
-body.letter-page main.container{width:var(--container-letter)}
+body.letter-page main.container{
+  width:var(--container-letter); /* variante supplémentaire si le body porte cette classe */
+}
 
-/* =========================
-   6) Cards + titres
-   =========================
-   .card = bloc “papier” avec dégradé, bordure, ombre, arrondis.
-*/
+
+/* ============================================================
+   5) CARTES ET TITRES
+   ------------------------------------------------------------
+   Les cartes sont les blocs principaux du site.
+   Elles ont un fond clair, une bordure, une ombre et des coins
+   arrondis pour rappeler un feuillet/panneau.
+   ============================================================ */
 .card{
-  background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%);
-  border:1px solid var(--line);
-  border-radius:var(--radius2);
-  box-shadow:var(--shadow);
-  padding:18px;
-  margin:14px 0
+  background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%); /* fond légèrement nuancé */
+  border:1px solid var(--line);      /* bordure discrète */
+  border-radius:var(--radius2);      /* arrondi assez doux */
+  box-shadow:var(--shadow);          /* ombre légère */
+  padding:18px;                      /* espace intérieur */
+  margin:14px 0;                     /* espace entre les cartes */
 }
 
-/* titres généraux (hero + pages) */
-.hero-title,.page-title{
-  font-family:var(--font-display);
-  font-size:1.62rem;
-  letter-spacing:.03em;
-  margin:0 0 10px
+.hero-title,
+.page-title{
+  font-family:var(--font-display); /* police de titre */
+  font-size:1.85rem;               /* taille du grand titre */
+  letter-spacing:.03em;            /* léger espacement */
+  margin:0 0 10px;                 /* espace sous le titre */
 }
 
-/* hiérarchie typographique */
 h2{
-  font-family:var(--font-display);
-  margin:0 0 10px;
-  font-size:1.18rem;
-  letter-spacing:.02em
+  font-family:var(--font-display); /* police de sous-titre */
+  margin:0 0 10px;                 /* espace sous le titre */
+  font-size:1.32rem;               /* taille augmentée pour harmoniser avec le reste */
+  letter-spacing:.02em;            /* léger espacement */
 }
-h3{font-family:var(--font-display);margin:0 0 10px}
 
-/* small caps “bibliophile” */
+h3{
+  font-family:var(--font-display); /* police intermédiaire */
+  margin:0 0 10px;                 /* espace sous le titre */
+  font-size:1.1rem;                /* taille intermédiaire */
+}
+
 .smallcaps{
-  font-family:var(--font-smallcaps);
-  font-variant:small-caps;
-  letter-spacing:.08em
+  font-family:var(--font-smallcaps); /* police utilisée pour les petites capitales */
+  font-variant:small-caps;           /* active les petites capitales */
+  letter-spacing:.08em;              /* espacement plus large */
 }
 
-/* =========================
-   7) Header / navigation
-   =========================
-   - sticky => reste collé en haut
-   - dégradé + bordure + blur
-*/
+
+/* ============================================================
+   6) HEADER ET NAVIGATION
+   ------------------------------------------------------------
+   Le header reste collé en haut pendant le défilement.
+   Il contient la signature, le titre du site et la navigation.
+   ============================================================ */
 .site-header{
-  position:sticky;
-  top:0;
-  z-index:20;
+  position:sticky; /* reste visible en haut */
+  top:0;           /* collé en haut de la fenêtre */
+  z-index:20;      /* au-dessus des autres éléments */
 
-  background:linear-gradient(180deg,var(--bar-bg) 0%,var(--bar-bg2) 100%);
-  border-bottom:1px solid color-mix(in oklab,var(--line) 55%,#000 45%);
-  backdrop-filter:blur(10px)
+  background:linear-gradient(180deg,var(--bar-bg) 0%,var(--bar-bg2) 100%); /* fond de barre */
+  border-bottom:1px solid color-mix(in oklab,var(--line) 55%,#000 45%);    /* ligne de séparation */
+  backdrop-filter:blur(10px); /* léger flou si contenu derrière */
 }
 
-/* partie “branding” */
-.masthead{padding:14px 0 8px}
+/* ---------- Bloc signature + titres ---------- */
+.masthead{
+  padding:14px 0 8px; /* espace intérieur haut et bas */
+}
+
 .brand{
-  display:grid;
-  justify-items:center;
-  gap:8px;
-  text-decoration:none
+  display:grid;           /* organisation verticale */
+  justify-items:center;   /* centre horizontalement */
+  gap:8px;                /* espace entre signature et titres */
+  text-decoration:none;   /* pas de soulignement */
 }
-.sig{height:44px;width:auto;opacity:.95}
-.brand-titles{text-align:center}
+
+.sig{
+  height:44px;   /* hauteur de l’image de signature */
+  width:auto;    /* largeur automatique */
+  opacity:.95;   /* très légère atténuation */
+}
+
+.brand-titles{
+  text-align:center; /* centre les titres */
+}
+
 .brand-title{
-  font-family:var(--font-display);
-  font-weight:700;
-  letter-spacing:.18em;
-  font-variant:small-caps;
-  font-size:1.25rem;
-  color:var(--bar-ink)
+  font-family:var(--font-display); /* police de titre */
+  font-weight:700;                 /* graisse forte */
+  letter-spacing:.18em;            /* espacement marqué */
+  font-variant:small-caps;         /* petites capitales */
+  font-size:1.25rem;               /* taille du titre */
+  color:var(--bar-ink);            /* couleur adaptée à la barre */
 }
+
 .brand-subtitle{
-  margin-top:5px;
+  margin-top:5px; /* petit espace au-dessus */
   font-family:var(--font-smallcaps);
   font-size:.86rem;
   letter-spacing:.16em;
   text-transform:uppercase;
-  color:color-mix(in oklab,var(--bar-ink) 62%,var(--muted) 38%)
+  color:color-mix(in oklab,var(--bar-ink) 62%,var(--muted) 38%);
 }
 
-/* nav centrée */
-.main-nav{display:flex;justify-content:center;padding:8px 0 12px}
+/* ---------- Navigation principale ---------- */
+.main-nav{
+  display:flex;           /* centre la liste horizontalement */
+  justify-content:center; /* centrage */
+  padding:8px 0 12px;     /* espace autour de la nav */
+}
+
 .nav-list{
-  list-style:none;
-  display:flex;
-  gap:18px;
-  margin:0;
-  padding:0;
-  align-items:center
+  list-style:none;   /* retire les puces */
+  display:flex;      /* navigation en ligne */
+  gap:18px;          /* espace entre items */
+  margin:0;          /* pas de marge par défaut */
+  padding:0;         /* pas de padding par défaut */
+  align-items:center;/* aligne verticalement les items */
 }
-.nav-item{position:relative}
 
-/* lien de nav “bouton” */
+.nav-item{
+  position:relative; /* nécessaire pour le menu déroulant */
+}
+
 .nav-link{
-  font-family:var(--font-display);
-  display:inline-block;
-  padding:var(--ui-padY) var(--ui-padX);
-  border-radius:var(--ui-radius);
-  color:var(--bar-ink);
-  border:1px solid transparent;
-  font-weight:600;
-  letter-spacing:.06em;
-  font-variant:small-caps
+  font-family:var(--font-display); /* police de navigation */
+  display:inline-block;            /* pour appliquer padding et bordure */
+  padding:var(--ui-padY) var(--ui-padX); /* zone cliquable */
+  border-radius:var(--ui-radius);  /* arrondi */
+  color:var(--bar-ink);            /* couleur du texte */
+  border:1px solid transparent;    /* bordure invisible de base */
+  font-weight:600;                 /* un peu plus fort */
+  letter-spacing:.06em;            /* espacement léger */
+  font-variant:small-caps;         /* petites capitales */
 }
 
-/* hover : fond + bordure + pas de underline */
 .nav-link:hover{
-  background:color-mix(in oklab,var(--paper) 65%,var(--bar-bg) 35%);
-  border-color:color-mix(in oklab,var(--line) 60%,#000 40%);
-  text-decoration:none
+  background:color-mix(in oklab,var(--paper) 65%,var(--bar-bg) 35%); /* fond au survol */
+  border-color:color-mix(in oklab,var(--line) 60%,#000 40%);         /* bordure visible */
+  text-decoration:none; /* pas de soulignement sur la navigation */
 }
 
-/* dropdown : ajoute une flèche visuelle */
-.has-dropdown>.nav-link::after{
-  content:" ▾";
+/* petite flèche sur les menus déroulants */
+.has-dropdown > .nav-link::after{
+  content:" ▾"; /* flèche descendante */
   font-weight:700;
-  color:color-mix(in oklab,var(--bar-ink) 65%,var(--muted) 35%)
+  color:color-mix(in oklab,var(--bar-ink) 65%,var(--muted) 35%);
 }
 
-/* menu déroulant (caché par défaut) */
+/* menu déroulant */
 .has-dropdown .dropdown{
   position:absolute;
   left:50%;
   transform:translateX(-50%);
   top:100%;
 
-  min-width:240px;
-  list-style:none;
+  min-width:240px; /* largeur minimale du menu */
+  list-style:none; /* pas de puces */
   padding:10px;
   border-radius:12px;
   border:1px solid var(--line);
 
   background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%);
   box-shadow:var(--shadow2);
-  display:none;
-  z-index:50
+  display:none; /* caché par défaut */
+  z-index:50;
 }
 
-/* “zone tampon” invisible pour éviter que le menu se ferme au survol */
+/* petite zone invisible pour éviter la fermeture brutale du menu */
 .has-dropdown::after{
   content:"";
   position:absolute;
@@ -364,137 +374,129 @@ h3{font-family:var(--font-display);margin:0 0 10px}
   transform:translateX(-50%);
   top:calc(100% - 1px);
   width:300px;
-  height:14px
+  height:14px;
 }
 
-/* apparition du dropdown au hover ou focus clavier */
-.has-dropdown:hover .dropdown,.has-dropdown:focus-within .dropdown{display:block}
+.has-dropdown:hover .dropdown,
+.has-dropdown:focus-within .dropdown{
+  display:block; /* affiche le menu au survol ou au focus clavier */
+}
 
-/* liens dans le dropdown */
 .dropdown li a{
   font-family:var(--font-display);
   display:block;
   padding:9px 11px;
   border-radius:10px;
   color:var(--ink);
-  letter-spacing:.03em
+  letter-spacing:.03em;
 }
+
 .dropdown li a:hover{
   background:color-mix(in oklab,var(--paper2) 75%,var(--paper) 25%);
-  text-decoration:none
+  text-decoration:none;
 }
 
-/* état “actif” : page courante */
-.nav-link[aria-current="page"],.nav-link--active{
+/* lien de navigation actif */
+.nav-link[aria-current="page"],
+.nav-link--active{
   background:color-mix(in oklab,var(--bar-bg) 70%,var(--paper) 30%);
   border:1px solid color-mix(in oklab,var(--accent) 35%,var(--line) 65%);
-  box-shadow:0 6px 14px rgba(0,0,0,.08)
+  box-shadow:0 6px 14px rgba(0,0,0,.08);
 }
 
-/* focus clavier visible */
+/* visibilité du focus clavier */
 .nav-link:focus-visible{
   outline:2px solid color-mix(in oklab,var(--accent) 60%,transparent 40%);
-  outline-offset:3px
+  outline-offset:3px;
 }
 
-/* =========================
-   8) Theme toggle (injecté par JS)
-   =========================
-   Bouton en haut à droite du header, avec une “dot” colorée.
-*/
-.theme-toggle{
-  position:absolute;
-  right:14px;
-  top:14px;
 
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-
-  border:1px solid color-mix(in oklab,var(--line) 65%,#000 35%);
-  background:linear-gradient(180deg,color-mix(in oklab,var(--paper) 70%,var(--bar-bg) 30%) 0%,var(--paper2) 100%);
-  color:var(--bar-ink);
-
-  border-radius:999px;
-  padding:8px 12px;
-  cursor:pointer;
-
-  box-shadow:0 6px 18px rgba(0,0,0,.06);
-
-  font-family:var(--font-display);
-  font-variant:small-caps;
-  letter-spacing:.08em
-}
-.theme-toggle:hover{
-  background:linear-gradient(180deg,color-mix(in oklab,var(--paper) 60%,var(--bar-bg) 40%) 0%,var(--paper2) 100%)
-}
-.theme-toggle:active{transform:translateY(1px)}
-.theme-toggle .dot{
-  width:8px;height:8px;border-radius:999px;
-  background:var(--accent);
-  box-shadow:0 0 0 3px color-mix(in oklab,var(--accent) 20%,transparent 80%)
+/* ============================================================
+   7) INTRODUCTION DE LA PAGE D’ACCUEIL
+   ------------------------------------------------------------
+   Cette section améliore la lisibilité du bloc d’ouverture :
+   largeur limitée, texte un peu plus présent, respiration
+   entre les paragraphes.
+   ============================================================ */
+.home-intro{
+  font-size:1.04rem; /* taille légèrement supérieure au texte standard */
+  line-height:1.72;  /* interligne confortable sans exagération */
+  max-width:none;    /* on ne réduit pas toute la carte */
 }
 
-/* =========================
-   9) Home hero image (planche XIXe)
-   =========================
-   Encadrement “planche” + image contenue + caption.
-*/
+.home-intro p{
+  max-width:980px;   /* on limite seulement la longueur des paragraphes */
+}
+
+.home-intro .lead-intro{
+  font-size:1.10rem; /* paragraphe d’accroche un peu plus grand */
+  line-height:1.78;  /* respiration un peu plus ample */
+  margin-bottom:18px;/* espace sous l’accroche */
+}
+
+.home-intro p + p{
+  margin-top:14px;   /* espace vertical entre deux paragraphes */
+}
+
+
+/* ============================================================
+   8) IMAGE HERO DE LA PAGE D’ACCUEIL
+   ------------------------------------------------------------
+   Bloc contenant l’image principale de la home et sa légende.
+   ============================================================ */
 .home-hero-image{
-  margin:18px auto 10px;
-  width:min(920px,94vw);
-  padding:12px;
-  background:#fdfbf7;
-  border:1px solid #d9d1c4;
-  border-radius:10px;
-  box-shadow:0 6px 16px rgba(0,0,0,.08),inset 0 0 0 1px rgba(255,255,255,.6);
-  overflow:hidden
+  margin:18px auto 10px; /* centre et espace le bloc */
+  width:min(920px,94vw); /* largeur maîtrisée */
+  padding:12px;          /* espace intérieur */
+  background:#fdfbf7;    /* fond très clair */
+  border:1px solid #d9d1c4; /* bordure douce */
+  border-radius:10px;    /* coins arrondis */
+  box-shadow:0 6px 16px rgba(0,0,0,.08), inset 0 0 0 1px rgba(255,255,255,.6);
+  overflow:hidden;       /* empêche les débordements */
 }
+
 .home-hero-image img{
   display:block;
   width:100%;
   height:auto;
-  max-height:56vh;
-  object-fit:contain;
-  cursor:zoom-in;
-  filter:contrast(1.06) grayscale(.05)
+  max-height:56vh;    /* limite la hauteur sur grands écrans */
+  object-fit:contain; /* conserve l’image entière visible */
+  cursor:zoom-in;     /* indique qu’on peut cliquer */
+  filter:contrast(1.06) grayscale(.05); /* léger traitement visuel */
 }
+
 .home-hero-image figcaption{
   margin-top:8px;
   padding:0 2px 2px;
-  font-size:.9rem;
-  color:var(--muted);
-  font-style:italic;
-  text-align:left
+  font-size:.9rem;     /* taille de la légende */
+  color:var(--muted);  /* couleur plus discrète */
+  font-style:italic;   /* style de légende */
+  text-align:center;   /* centrage du texte */
 }
 
-/* =========================
-   10) Home kicker
-   =========================
-   Petit texte d’intro en petites capitales.
-   Note : “fix: pas de ::first-line” => j'évite une pseudo-sélection fragile.
-*/
+
+/* ============================================================
+   9) PETITS ÉLÉMENTS DE LA HOME
+   ============================================================ */
 .home-intro .kicker{
   font-variant:small-caps;
   letter-spacing:.06em;
   font-weight:500;
-  margin:0 0 10px 0
+  margin:0 0 10px 0;
 }
 
-/* =========================
-   11) Timeline (grille)
-   =========================
-   Sur desktop : 3 colonnes. En responsive (plus bas) : 1 colonne.
-*/
+
+/* ============================================================
+   10) TIMELINE / CHRONOLOGIE DES LETTRES
+   ============================================================ */
 .timeline{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
+  grid-template-columns:repeat(3,1fr); /* 3 colonnes sur grand écran */
+  gap:16px;                             /* espace entre les cartes */
   padding:18px 6px 8px;
-  margin-top:8px
+  margin-top:8px;
 }
 
-/* item cliquable “carte” */
 .tl-item{
   position:relative;
   display:grid;
@@ -508,61 +510,69 @@ h3{font-family:var(--font-display);margin:0 0 10px}
   border:1px solid #e6dfd3;
   background:#fbfaf7;
 
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 10px 24px rgba(0,0,0,.06);
-  transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7), 0 10px 24px rgba(0,0,0,.06);
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
+
 .tl-item:hover{
   transform:translateY(-2px);
   border-color:#d6c6b2;
   box-shadow:0 14px 30px rgba(0,0,0,.10);
-  text-decoration:none
+  text-decoration:none;
 }
 
-/* point décoratif */
 .tl-dot{
   position:absolute;
   top:25px;
   left:10px;
-  width:9px;height:9px;border-radius:50%;
+  width:9px;
+  height:9px;
+  border-radius:50%;
   background:var(--accent);
-  box-shadow:0 0 0 4px var(--paper)
+  box-shadow:0 0 0 4px var(--paper);
 }
 
-/* styles date / titre / description */
 .tl-date{
   font-family:var(--font-smallcaps);
   font-size:.86rem;
   color:var(--muted);
   letter-spacing:.12em;
   text-transform:uppercase;
-  padding-left:20px
+  padding-left:20px;
 }
+
 .tl-title{
   font-size:1.08rem;
   font-weight:700;
   padding-left:20px;
-  letter-spacing:.02em
+  letter-spacing:.02em;
 }
+
 .tl-desc{
   padding-left:20px;
   font-size:.95rem;
   color:var(--muted);
-  line-height:1.5
+  line-height:1.5;
 }
 
-/* =========================
-   12) Home actions (boutons)
-   =========================
-   Ligne de CTA (liens stylés en boutons)
-*/
-.home-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+
+/* ============================================================
+   11) BOUTONS D’ACTION DE LA HOME
+   ============================================================ */
+.home-actions{
+  display:flex;
+  flex-wrap:wrap; /* permet le retour à la ligne si manque de place */
+  gap:12px;
+  margin-top:16px;
+}
+
 .home-actions .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
 
   padding:10px 14px;
-  border-radius:999px;
+  border-radius:999px; /* forme capsule */
 
   border:1px solid #d6c6b2;
   background:#fff;
@@ -573,21 +583,31 @@ h3{font-family:var(--font-display);margin:0 0 10px}
   line-height:1;
 
   box-shadow:0 6px 16px rgba(0,0,0,.06);
-  transition:transform .15s ease,box-shadow .15s ease,background .15s ease
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
 }
+
 .home-actions .btn:hover{
   transform:translateY(-1px);
-  box-shadow:0 10px 22px rgba(0,0,0,.10)
+  box-shadow:0 10px 22px rgba(0,0,0,.10);
 }
-.home-actions .btn:active{transform:translateY(0)}
-.home-actions .btn--ghost{background:transparent;box-shadow:none}
-.home-actions .btn--ghost:hover{background:#fbfaf7}
 
-/* =========================
-   13) CTA pill (Méthodologie)
-   =========================
-   Petit “badge” cliquable arrondi.
-*/
+.home-actions .btn:active{
+  transform:translateY(0);
+}
+
+.home-actions .btn--ghost{
+  background:transparent;
+  box-shadow:none;
+}
+
+.home-actions .btn--ghost:hover{
+  background:#fbfaf7;
+}
+
+
+/* ============================================================
+   12) PILL CTA DANS LE TEXTE
+   ============================================================ */
 .pill.pill--cta{
   display:inline-block;
   margin:0 .1em;
@@ -600,33 +620,42 @@ h3{font-family:var(--font-display);margin:0 0 10px}
   letter-spacing:.02em;
   text-decoration:none;
   box-shadow:0 2px 8px rgba(0,0,0,.06);
-  transition:transform .12s ease,box-shadow .12s ease
+  transition:transform .12s ease, box-shadow .12s ease;
 }
+
 .pill.pill--cta:hover{
   transform:translateY(-1px);
-  box-shadow:0 6px 16px rgba(0,0,0,.10)
+  box-shadow:0 6px 16px rgba(0,0,0,.10);
 }
 
-/* =========================
-   14) Letters layout
-   =========================
-   Mise en page 2 colonnes :
-   - gauche : panneau (viewer, thumbs, etc.)
-   - droite : texte TEI
-*/
-.ms-layout,.manuscript-layout{
+
+/* ============================================================
+   13) LAYOUT DES PAGES LETTRES
+   ============================================================ */
+.ms-layout,
+.manuscript-layout{
   display:grid;
-  grid-template-columns:minmax(520px,620px) minmax(760px,1fr);
+  grid-template-columns:minmax(520px,620px) minmax(760px,1fr); /* deux colonnes : manuscrit / texte */
   gap:34px;
-  align-items:start
+  align-items:start;
 }
-.ms-panel .ms-panel-head{margin-bottom:10px}
-.ms-hint{font-size:.95rem;color:var(--muted)}
 
-/* zones scrollables (limite en hauteur pour garder l'écran lisible) */
-.viewer-scroll,.ms-panel-scroll{max-height:78vh;overflow:auto;padding-right:6px}
+.ms-panel .ms-panel-head{
+  margin-bottom:10px;
+}
 
-/* panneau texte : style “carte papier” + scroll */
+.ms-hint{
+  font-size:.95rem;
+  color:var(--muted);
+}
+
+.viewer-scroll,
+.ms-panel-scroll{
+  max-height:78vh;
+  overflow:auto;
+  padding-right:6px;
+}
+
 .ms-textPanel{
   max-height:86vh;
   overflow:auto;
@@ -635,19 +664,17 @@ h3{font-family:var(--font-display);margin:0 0 10px}
   border:1px solid var(--line);
   border-radius:var(--radius2);
   box-shadow:var(--shadow);
-  background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%)
+  background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%);
 }
 
-/* =========================
-   15) TEI text
-   =========================
-   Typo “lecture” : justifié + césure + couleur légèrement adoucie.
-*/
+
+/* ============================================================
+   14) TEXTE ISSU DE LA TEI
+   ============================================================ */
 .tei-text{
   font-family:var(--font-serif);
   font-size:1.08rem;
   line-height:1.9;
-
   color:color-mix(in oklab,var(--ink) 92%,var(--muted) 8%);
   text-align:justify;
 
@@ -655,79 +682,87 @@ h3{font-family:var(--font-display);margin:0 0 10px}
   -webkit-hyphens:auto;
   -ms-hyphens:auto;
 
-  text-rendering:optimizeLegibility
+  text-rendering:optimizeLegibility;
 }
-.tei-text p{margin:0 0 12px}
 
-/* =========================
-   16) Notes + blocks TEI
-   =========================
-   Notes en plus petit, grisé, aligné gauche.
-*/
-.tei-note,.tei-note.letterhead{
+.tei-text p{
+  margin:0 0 12px;
+}
+
+
+/* ============================================================
+   15) NOTES ET BLOCS TEI
+   ============================================================ */
+.tei-note,
+.tei-note.letterhead{
   color:var(--muted);
   font-size:.95rem;
   text-align:left;
   hyphens:auto;
-  max-width:none
+  max-width:none;
 }
+
 .tei-note.letterhead{
   margin:0 0 10px;
   padding:0;
   border:0;
-  font-style:italic
+  font-style:italic;
 }
-.tei-block{margin:0 0 10px}
-.tei-salute{margin:0 0 10px}
+
+.tei-block{
+  margin:0 0 10px;
+}
+
+.tei-salute{
+  margin:0 0 10px;
+}
+
 .tei-signed{
   margin:0;
   font-weight:700;
-  letter-spacing:.02em
+  letter-spacing:.02em;
 }
 
-/* =========================
-   17) Micro-typo (petites classes)
-   ========================= */
-.indent{text-indent:1.3em}     /* alinéa */
-.u{text-decoration:underline}  /* souligné */
-.foreign{font-style:italic}    /* mots étrangers */
-.supplied{opacity:.92}         /* texte restitué/ajouté */
-.term{font-style:italic}       /* terme */
-.pc{padding:0 .05em}           /* ponctuation/espacement fin */
 
-/* =========================
-   18) Entity links
-   =========================
-   Liens d'entités : pas couleur “link”, mais underline discret,
-   hover : underline plus visible.
-*/
+/* ============================================================
+   16) MICRO-TYPOGRAPHIE
+   ============================================================ */
+.indent{ text-indent:1.3em; }      /* alinéa de paragraphe */
+.u{ text-decoration:underline; }   /* soulignement */
+.foreign{ font-style:italic; }     /* mot étranger */
+.supplied{ opacity:.92; }          /* texte restitué ou ajouté */
+.term{ font-style:italic; }        /* terme mis en valeur */
+.pc{ padding:0 .05em; }            /* micro-ajustement sur ponctuation */
+
+
+/* ============================================================
+   17) LIENS D’ENTITÉS
+   ============================================================ */
 .entity-link{
   color:var(--ink);
   text-decoration:underline;
   text-decoration-color:color-mix(in oklab,var(--accent) 35%,transparent 65%);
-  text-underline-offset:2px
+  text-underline-offset:2px;
 }
+
 .entity-link:hover{
-  text-decoration-color:color-mix(in oklab,var(--accent) 85%,transparent 15%)
+  text-decoration-color:color-mix(in oklab,var(--accent) 85%,transparent 15%);
 }
 
-/* =========================
-   19) Dropcaps (lettrines)
-   =========================
-   - Par défaut : première lettre du 1er paragraphe devient une lettrine
-   - .no-dropcap permet de neutraliser (JS peut l’ajouter si besoin)
-*/
+
+/* ============================================================
+   18) LETTRINES
+   ============================================================ */
 .tei-text p.no-dropcap::first-letter{
-  float:none!important;
-  font-size:inherit!important;
-  line-height:inherit!important;
-  padding:0!important;
-  margin:0!important;
-  color:inherit!important;
-  font-weight:inherit!important
+  float:none !important;
+  font-size:inherit !important;
+  line-height:inherit !important;
+  padding:0 !important;
+  margin:0 !important;
+  color:inherit !important;
+  font-weight:inherit !important;
 }
 
-/* lettrine sur le premier paragraphe (sauf notes/letterhead) */
 .tei-text p:not(.tei-note):not(.letterhead):first-of-type:not(.no-dropcap)::first-letter{
   float:left;
   font-family:var(--font-display);
@@ -737,10 +772,9 @@ h3{font-family:var(--font-display);margin:0 0 10px}
   padding-top:.08em;
   margin-right:.05em;
   color:var(--accent);
-  font-weight:700
+  font-weight:700;
 }
 
-/* cas où une note letterhead précède le paragraphe “réel” */
 .tei-text .tei-note.letterhead + p:not(.no-dropcap)::first-letter,
 .tei-text .letterhead + p:not(.no-dropcap)::first-letter{
   float:left;
@@ -751,20 +785,30 @@ h3{font-family:var(--font-display);margin:0 0 10px}
   padding-top:.08em;
   margin-right:.05em;
   color:var(--accent);
-  font-weight:700
+  font-weight:700;
 }
 
-/* =========================
-   20) Tabs (sans JS)
-   =========================
-   Technique : inputs radio invisibles + labels.
-   Selon l’input :checked, j'affiche un panel.
-*/
-.tabs{margin-top:10px}
-.tab-input{position:absolute;opacity:0;pointer-events:none}
-.tab-bar{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 12px}
 
-/* boutons (labels) */
+/* ============================================================
+   19) ONGLETS SANS JAVASCRIPT
+   ============================================================ */
+.tabs{
+  margin-top:10px;
+}
+
+.tab-input{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+.tab-bar{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:6px 0 12px;
+}
+
 .tab-btn{
   font-family:var(--font-display);
   border:1px solid var(--line);
@@ -776,182 +820,196 @@ h3{font-family:var(--font-display);margin:0 0 10px}
   color:var(--ink);
   user-select:none;
   font-variant:small-caps;
-  letter-spacing:.08em
+  letter-spacing:.08em;
 }
-.tab-btn:hover{background:color-mix(in oklab,var(--paper2) 75%,var(--paper) 25%)}
 
-/* panels cachés, activés selon quel input est checked */
-.tab-panel{display:none}
-.tabs .tab-input:nth-of-type(1):checked ~ .tab-panels .tab-panel--t{display:block}
-.tabs .tab-input:nth-of-type(2):checked ~ .tab-panels .tab-panel--fr{display:block}
+.tab-btn:hover{
+  background:color-mix(in oklab,var(--paper2) 75%,var(--paper) 25%);
+}
 
-/* style du label actif */
+.tab-panel{
+  display:none;
+}
+
+.tabs .tab-input:nth-of-type(1):checked ~ .tab-panels .tab-panel--t{
+  display:block;
+}
+
+.tabs .tab-input:nth-of-type(2):checked ~ .tab-panels .tab-panel--fr{
+  display:block;
+}
+
 .tabs .tab-input:nth-of-type(1):checked ~ .tab-bar label:nth-child(1),
 .tabs .tab-input:nth-of-type(2):checked ~ .tab-bar label:nth-child(2){
   border-color:color-mix(in oklab,var(--accent) 35%,var(--line) 65%);
-  box-shadow:0 8px 18px rgba(0,0,0,.06)
+  box-shadow:0 8px 18px rgba(0,0,0,.06);
 }
 
-/* colonnes de comparaison (texte/transl) */
 .ms-col{
   border:1px solid var(--line);
   border-radius:14px;
   background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%);
   box-shadow:0 10px 24px rgba(0,0,0,.06);
-  padding:14px
+  padding:14px;
 }
+
 .ms-colTitle{
   font-family:var(--font-display);
   margin:0 0 10px;
   font-size:1.02rem;
   letter-spacing:.06em;
-  font-variant:small-caps
-}
-.ms-col--translation{
-  background:linear-gradient(180deg,var(--paper2) 0%,var(--paper) 100%)
+  font-variant:small-caps;
 }
 
-/* =========================
-   21) Figures
-   =========================
-   Images en bloc avec border + caption.
-*/
-.fig{margin:12px 0 14px}
+/* espace supplémentaire entre "Pays" et "Villes et lieux" dans l’index */
+#places .ms-colTitle:not(:first-of-type){
+  margin-top:28px;
+}
+
+.ms-col--translation{
+  background:linear-gradient(180deg,var(--paper2) 0%,var(--paper) 100%);
+}
+
+
+/* ============================================================
+   20) FIGURES ET LÉGENDES
+   ============================================================ */
+.fig{
+  margin:12px 0 14px;
+}
+
 .fig img{
   width:100%;
   border-radius:14px;
   border:1px solid var(--line);
   background:var(--paper);
-  cursor:zoom-in
+  cursor:zoom-in;
 }
-.caption{margin-top:6px;font-size:.92rem;color:var(--muted);font-style:italic}
 
-/* =========================
-   22) Manuscript overlay + viewer
-   =========================
-   - .ms-wrap contient l’image en position relative
-   - .ms-svg est un calque SVG au-dessus (zones cliquables)
-   - .ms-hit = “polygone” interactif (hover highlight)
-   - .ms-txt = texte SVG (cache/visible)
-*/
-.ms-wrap{position:relative;display:block;width:100%}
-.ms-wrap img{display:block;width:100%;height:auto;margin:0}
+.caption,
+.fig figcaption{
+  margin-top:6px;
+  font-size:.92rem;
+  color:var(--muted);
+  text-align:center;
+  font-style:italic;
+}
 
-/* images du carrousel/stage : contenues dans la hauteur */
-.ms-carousel .ms-wrap img,.ms-stage .ms-wrap img{
+.caption-sub{
+  display:block;   /* force le passage à la ligne sous la première phrase */
+  margin-top:2px;  /* petit espace entre les deux lignes */
+}
+
+
+/* ============================================================
+   21) OVERLAYS MANUSCRITS
+   ============================================================ */
+.ms-wrap{
+  position:relative; /* nécessaire pour poser le SVG par-dessus */
+  display:block;
+  width:100%;
+}
+
+.ms-wrap img{
+  display:block;
+  width:100%;
+  height:auto;
+  margin:0;
+}
+
+.ms-carousel .ms-wrap img,
+.ms-stage .ms-wrap img{
   width:100%;
   max-height:82vh;
   height:auto;
   object-fit:contain;
-  filter:contrast(1.04) saturate(.98)
+  filter:contrast(1.04) saturate(.98);
 }
 
-/* en night : filtre légèrement différent */
-:root[data-theme="night"] .ms-carousel .ms-wrap img,
-:root[data-theme="night"] .ms-stage .ms-wrap img,
-body[data-theme="night"] .ms-carousel .ms-wrap img,
-body[data-theme="night"] .ms-stage .ms-wrap img{
-  filter:contrast(1.06) saturate(1)
-}
-
-/* calque SVG au-dessus de l’image */
 .ms-svg{
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
   z-index:10;
-  pointer-events:none /* par défaut, rien n’est cliquable… */
+  pointer-events:none; /* le SVG lui-même n’intercepte pas les événements */
 }
 
-/* … sauf les shapes .ms-hit : eux reprennent les events */
 .ms-hit{
-  pointer-events:all;
+  pointer-events:all; /* seules les zones interactives réagissent */
   cursor:pointer;
-
-  fill:rgba(106,79,42,0);              /* transparent */
-  stroke:rgba(106,79,42,.25);          /* contour discret */
+  fill:rgba(106,79,42,0);
+  stroke:rgba(106,79,42,.25);
   stroke-width:1.6;
-  transition:.15s
-}
-:root[data-theme="night"] .ms-hit,body[data-theme="night"] .ms-hit{
-  stroke:rgba(215,178,123,.25)
+  transition:.15s;
 }
 
-/* hover/état actif : remplissage + contour plus fort */
-.ms-hit:hover,.ms-hit.is-hover{
+.ms-hit:hover,
+.ms-hit.is-hover{
   fill:rgba(106,79,42,.08);
-  stroke:rgba(106,79,42,.65)
-}
-:root[data-theme="night"] .ms-hit:hover,
-:root[data-theme="night"] .ms-hit.is-hover,
-body[data-theme="night"] .ms-hit:hover,
-body[data-theme="night"] .ms-hit.is-hover{
-  fill:rgba(215,178,123,.10);
-  stroke:rgba(215,178,123,.70)
+  stroke:rgba(106,79,42,.65);
 }
 
-/* texte (dans SVG) caché par défaut */
 .ms-txt{
-  opacity:0;
-  pointer-events:none;
-  user-select:none;
+  opacity:0;               /* caché par défaut */
+  pointer-events:none;     /* le texte n’intercepte pas la souris */
+  user-select:none;        /* évite une sélection gênante */
   font-family:var(--font-serif);
-
   dominant-baseline:hanging;
   paint-order:stroke;
-
-  /* stroke blanc => lisible sur image claire */
-  stroke:rgba(255,255,255,.86);
-  stroke-linejoin:round
+  stroke:rgba(255,255,255,.86); /* contour clair pour mieux lire sur image */
+  stroke-linejoin:round;
 }
-/* en night : stroke plus sombre */
-:root[data-theme="night"] .ms-txt,body[data-theme="night"] .ms-txt{
-  stroke:rgba(0,0,0,.55)
+
+.ms-txt.is-visible{
+  opacity:1 !important; /* rendu visible au survol */
 }
-/* classe ajoutée (JS) pour afficher le texte */
-.ms-txt.is-visible{opacity:1!important}
 
-/* =========================
-   23) Carousel (viewer manuscrits)
-   =========================
-   - stage : image principale
-   - boutons prev/next
-   - thumbs : miniatures cliquables
-*/
-.ms-carousel{display:grid;gap:12px}
 
-/* “cadre” du stage */
+/* ============================================================
+   22) CARROUSEL DES MANUSCRITS
+   ============================================================ */
+.ms-carousel{
+  display:grid;
+  gap:12px;
+}
+
 .ms-stageWrap{
   position:relative;
   border:1px solid var(--line);
   border-radius:16px;
   background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%);
   box-shadow:var(--shadow);
-  padding:10px 8px
+  padding:10px 8px;
 }
 
-/* zone d’affichage */
 .ms-stage{
   position:relative;
   display:flex;
   justify-content:center;
   align-items:center;
-  min-height:340px
+  min-height:340px;
 }
 
-/* slide caché/actif */
-.ms-slide{display:none;width:100%;margin:0}
-.ms-slide.is-active{display:block}
+.ms-slide{
+  display:none;
+  width:100%;
+  margin:0;
+}
 
-/* boutons nav */
+.ms-slide.is-active{
+  display:block;
+}
+
 .ms-navBtn{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
   z-index:30;
 
-  width:40px;height:40px;border-radius:999px;
+  width:40px;
+  height:40px;
+  border-radius:999px;
   border:1px solid var(--line);
 
   background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%);
@@ -964,22 +1022,24 @@ body[data-theme="night"] .ms-hit.is-hover{
 
   display:grid;
   place-items:center;
-  color:var(--ink)
+  color:var(--ink);
 }
-.ms-navBtn:hover{
-  background:color-mix(in oklab,var(--paper2) 75%,var(--paper) 25%)
-}
-.ms-prev{left:10px}
-.ms-next{right:10px}
 
-/* bande de miniatures scrollable horizontalement */
+.ms-navBtn:hover{
+  background:color-mix(in oklab,var(--paper2) 75%,var(--paper) 25%);
+}
+
+.ms-prev{ left:10px; }  /* bouton précédent à gauche */
+.ms-next{ right:10px; } /* bouton suivant à droite */
+
 .ms-thumbs{
   display:flex;
   gap:10px;
   align-items:center;
   overflow:auto;
-  padding:6px 2px 2px
+  padding:6px 2px 2px;
 }
+
 .ms-thumb{
   border:1px solid var(--line);
   background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%);
@@ -987,31 +1047,28 @@ body[data-theme="night"] .ms-hit.is-hover{
   padding:4px;
   cursor:pointer;
   box-shadow:0 6px 14px rgba(0,0,0,.08);
-  flex:0 0 auto
+  flex:0 0 auto;
 }
+
 .ms-thumb img{
   display:block;
   height:54px;
   width:auto;
-  border-radius:10px
+  border-radius:10px;
 }
 
-/* miniature active */
 .ms-thumb.is-active{
   border-color:color-mix(in oklab,var(--accent) 40%,var(--line) 60%);
-  box-shadow:0 8px 20px rgba(106,79,42,.18)
-}
-:root[data-theme="night"] .ms-thumb.is-active,body[data-theme="night"] .ms-thumb.is-active{
-  box-shadow:0 8px 20px rgba(215,178,123,.14)
+  box-shadow:0 8px 20px rgba(106,79,42,.18);
 }
 
-/* =========================
-   24) Index pills + entities
-   =========================
-   - pills : filtres/liens en “capsule”
-   - entity-list : grille d’items
-*/
-.index-toplinks{margin:10px 0 0}
+
+/* ============================================================
+   23) INDEX — PILLS ET CARTES D’ENTITÉS
+   ============================================================ */
+.index-toplinks{
+  margin:10px 0 0;
+}
 
 .pill{
   font-family:var(--font-display);
@@ -1028,11 +1085,14 @@ body[data-theme="night"] .ms-hit.is-hover{
   letter-spacing:.08em;
   font-variant:small-caps;
 
-  box-shadow:0 8px 18px rgba(0,0,0,.06)
+  box-shadow:0 8px 18px rgba(0,0,0,.06);
 }
-.pill:hover{background:var(--btn-hover);text-decoration:none}
 
-/* pill “actif” */
+.pill:hover{
+  background:var(--btn-hover);
+  text-decoration:none;
+}
+
 .pill[aria-current="true"]{
   background:linear-gradient(
     180deg,
@@ -1041,63 +1101,78 @@ body[data-theme="night"] .ms-hit.is-hover{
   );
   border-color:color-mix(in oklab,var(--accent) 45%,var(--btn-border) 55%);
   box-shadow:0 8px 20px rgba(106,79,42,.18);
-  transform:translateY(-1px)
-}
-.pill:focus-visible{
-  outline:2px solid color-mix(in oklab,var(--accent) 60%,transparent 40%);
-  outline-offset:3px
+  transform:translateY(-1px);
 }
 
-/* liste d’entités */
+.pill:focus-visible{
+  outline:2px solid color-mix(in oklab,var(--accent) 60%,transparent 40%);
+  outline-offset:3px;
+}
+
 .entity-list{
   list-style:none;
   padding:0;
   margin:0;
   display:grid;
-  gap:12px
+  gap:12px;
 }
+
 .entity-item{
   border:1px solid var(--line);
   border-radius:14px;
   padding:13px;
   background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%);
-  box-shadow:0 8px 20px rgba(0,0,0,.05)
+  box-shadow:0 8px 20px rgba(0,0,0,.05);
 }
 
-/* item avec portrait (flex) */
-.entity-item--withPortrait{display:flex;gap:14px;align-items:flex-start}
-.entity-content{flex:1 1 auto;min-width:0}
+.entity-item--withPortrait{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+
+.entity-content{
+  flex:1 1 auto;
+  min-width:0;
+}
+
 .entity-title{
   font-family:var(--font-display);
   font-weight:700;
   letter-spacing:.03em;
-  margin-bottom:8px
+  margin-bottom:8px;
 }
-.entity-note{color:var(--muted);max-width:none}
 
-/* portrait rond */
+.entity-note{
+  color:var(--muted);
+  max-width:none;
+}
+
 .entity-portrait{
-  width:66px;height:66px;border-radius:999px;
+  width:66px;
+  height:66px;
+  border-radius:999px;
   object-fit:cover;
   border:1px solid var(--line);
   box-shadow:0 6px 18px rgba(0,0,0,.06);
   flex:0 0 auto;
-  background:var(--paper)
+  background:var(--paper);
 }
+
 .entity-portrait--placeholder{
-  background:color-mix(in oklab,var(--paper) 70%,var(--line) 30%)
+  background:color-mix(in oklab,var(--paper) 70%,var(--line) 30%);
 }
 
-/* sur desktop large : 2 colonnes */
 @media (min-width:900px){
-  .entity-list{grid-template-columns:repeat(2,1fr)}
+  .entity-list{
+    grid-template-columns:repeat(2,1fr);
+  }
 }
 
-/* =========================
-   25) Footer
-   =========================
-   Footer en “barre” cohérente avec le header.
-*/
+
+/* ============================================================
+   24) FOOTER
+   ============================================================ */
 .site-footer{
   border-top:1px solid color-mix(in oklab,var(--line) 55%,#000 45%);
   background:linear-gradient(
@@ -1105,27 +1180,26 @@ body[data-theme="night"] .ms-hit.is-hover{
     color-mix(in oklab,var(--bar-bg) 92%,#fff 8%) 0%,
     color-mix(in oklab,var(--bar-bg2) 92%,#fff 8%) 100%
   );
-  padding:18px 0 24px
+  padding:18px 0 24px;
 }
 
-/* en night : utilise directement les variables du bar */
-:root[data-theme="night"] .site-footer,body[data-theme="night"] .site-footer{
-  background:linear-gradient(180deg,var(--bar-bg) 0%,var(--bar-bg2) 100%)
+.site-footer .container{
+  padding:0;
 }
 
-.site-footer .container{padding:0}
-
-/* grille 3 colonnes (logo / identité / projet) */
 .footer-grid{
   display:grid;
-  grid-template-columns:260px 1.2fr 1fr;
+  grid-template-columns:260px 1.2fr 1fr; /* logo / identité / méta-projet */
   gap:32px;
-  align-items:center
+  align-items:center;
 }
-.footer-col{position:relative}
 
-/* séparateurs verticaux entre colonnes */
-.footer-col--identity::before,.footer-col--project::before{
+.footer-col{
+  position:relative;
+}
+
+.footer-col--identity::before,
+.footer-col--project::before{
   content:"";
   position:absolute;
   left:-18px;
@@ -1133,87 +1207,105 @@ body[data-theme="night"] .ms-hit.is-hover{
   bottom:6px;
   width:1px;
   background:color-mix(in oklab,var(--line) 70%,#000 30%);
-  opacity:.65
+  opacity:.65;
 }
 
-/* logo */
-.footer-col--logo{display:flex;justify-content:flex-start;align-items:center}
+.footer-col--logo{
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+}
+
 .site-footer .footer-logo{
   height:48px;
   width:auto;
   max-width:100%;
   opacity:.95;
   display:block;
-  margin-left:-18px
+  margin-left:-18px;
 }
 
-/* identité centrée */
-.footer-col--identity{text-align:center}
+.footer-col--identity{
+  text-align:center;
+}
+
 .site-footer .footer-title{
   font-family:var(--font-display);
   margin:0 0 6px;
   font-size:1.02rem;
   letter-spacing:.18em;
   font-variant:small-caps;
-  color:var(--bar-ink)
+  color:var(--bar-ink);
 }
+
 .site-footer .footer-subtitle{
   font-family:var(--font-smallcaps);
   margin:0 0 12px;
   font-size:.86rem;
   letter-spacing:.14em;
   text-transform:uppercase;
-  color:color-mix(in oklab,var(--bar-ink) 60%,var(--muted) 40%)
+  color:color-mix(in oklab,var(--bar-ink) 60%,var(--muted) 40%);
 }
 
-/* lien mentions légales */
-.site-footer .footer-legalLink{margin:0 0 12px;font-size:.92rem}
+.site-footer .footer-legalLink{
+  margin:0 0 12px;
+  font-size:.92rem;
+}
+
 .site-footer .footer-legalLink a{
   color:var(--bar-ink);
   text-decoration:underline;
-  text-decoration-color:color-mix(in oklab,var(--bar-ink) 30%,transparent 70%)
-}
-.site-footer .footer-legalLink a:hover{
-  text-decoration-color:color-mix(in oklab,var(--bar-ink) 55%,transparent 45%)
+  text-decoration-color:color-mix(in oklab,var(--bar-ink) 30%,transparent 70%);
 }
 
-/* texte de copyright / meta */
+.site-footer .footer-legalLink a:hover{
+  text-decoration-color:color-mix(in oklab,var(--bar-ink) 55%,transparent 45%);
+}
+
 .site-footer .footer-copy{
   margin:0;
   font-size:.92rem;
-  color:color-mix(in oklab,var(--bar-ink) 60%,var(--muted) 40%)
+  color:color-mix(in oklab,var(--bar-ink) 60%,var(--muted) 40%);
 }
-.footer-col--project{text-align:left}
+
+.footer-col--project{
+  text-align:left;
+}
+
 .site-footer .footer-meta{
   margin:0 0 8px;
   font-size:.92rem;
   color:color-mix(in oklab,var(--bar-ink) 60%,var(--muted) 40%);
-  line-height:1.5
+  line-height:1.5;
 }
-.site-footer .footer-meta:last-child{margin-bottom:0}
 
-/* =========================
-   26) Letter header (portrait)
-   =========================
-   Bandeau haut des pages “lettre” : titre + résumé + portrait rond.
-*/
+.site-footer .footer-meta:last-child{
+  margin-bottom:0;
+}
+
+
+/* ============================================================
+   25) EN-TÊTE DES PAGES LETTRES
+   ============================================================ */
 .letter-header{
   display:grid;
-  grid-template-columns:1fr 240px;
+  grid-template-columns:1fr 240px; /* texte à gauche, portrait à droite */
   grid-template-rows:auto auto;
   column-gap:36px;
   row-gap:6px;
   align-items:center;
   padding:24px 36px;
-  background:#fff
+  background:#fff;
 }
+
 .letter-header h1{
   grid-column:1;
   grid-row:1;
   margin:0;
   font-size:28px;
-  line-height:1.2
+  line-height:1.2;
 }
+
 .letter-header p{
   grid-column:1;
   grid-row:2;
@@ -1221,15 +1313,17 @@ body[data-theme="night"] .ms-hit.is-hover{
   max-width:820px;
   line-height:1.5;
   font-size:.96rem;
-  color:#4b4237
+  color:#4b4237;
 }
+
 .letter-header img{
   grid-column:2;
   grid-row:1 / span 2;
   justify-self:end;
   align-self:center;
 
-  width:210px;height:210px;
+  width:210px;
+  height:210px;
   border-radius:50%;
   object-fit:cover;
 
@@ -1237,112 +1331,156 @@ body[data-theme="night"] .ms-hit.is-hover{
   outline:1px solid #f3efe8;
   background:#fff;
 
-  box-shadow:0 6px 16px rgba(0,0,0,.10)
+  box-shadow:0 6px 16px rgba(0,0,0,.10);
 }
-/* éléments stylés en petites caps */
-.letter-header h1 span,.letter-header h1 time{
+
+.letter-header h1 span,
+.letter-header h1 time{
   font-variant:small-caps;
   letter-spacing:.06em;
-  color:#6e5b45
+  color:#6e5b45;
 }
-/* petite ligne décorative sous le titre */
+
 .letter-header h1::after{
   content:"";
   display:block;
   width:110px;
   height:1px;
   margin:12px 0 8px;
-  background:#d6cfc3
+  background:#d6cfc3;
 }
 
-/* =========================
-   27) Responsive
-   =========================
-   Ajustements progressifs selon largeur écran.
-*/
+
+/* ============================================================
+   26) RESPONSIVE
+   ------------------------------------------------------------
+   Adaptation progressive selon la largeur de l’écran.
+   ============================================================ */
 @media (max-width:1100px){
-  .ms-layout,.manuscript-layout{
+  .ms-layout,
+  .manuscript-layout{
     grid-template-columns:minmax(420px,520px) minmax(560px,1fr);
-    gap:26px
+    gap:26px;
   }
-  .ms-textPanel{padding:22px 24px}
-  .ms-stage{min-height:320px}
+
+  .ms-textPanel{
+    padding:22px 24px;
+  }
+
+  .ms-stage{
+    min-height:320px;
+  }
 }
 
 @media (max-width:980px){
-  html,body{font-size:16.5px}
+  html,
+  body{
+    font-size:17px; /* on réduit un peu la base sur écran moyen */
+  }
 
   .container{
     width:min(980px,94vw);
-    padding:14px 0 46px
+    padding:14px 0 46px;
   }
 
-  main.container:has(.ms-layout),main.container:has(.manuscript-layout),
+  main.container:has(.ms-layout),
+  main.container:has(.manuscript-layout),
   body.letter-page main.container{
-    width:min(980px,94vw)
+    width:min(980px,94vw);
   }
 
-  /* lettres/manuscrits passent en 1 colonne */
-  .ms-layout,.manuscript-layout{grid-template-columns:1fr}
+  .ms-layout,
+  .manuscript-layout{
+    grid-template-columns:1fr; /* une seule colonne sur tablette */
+  }
 
-  /* footer en colonne */
-  .footer-grid{grid-template-columns:1fr;gap:14px;text-align:center}
-  .footer-col--identity::before,.footer-col--project::before{display:none}
-  .footer-col--project{text-align:center}
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+    text-align:center;
+  }
 
-  .site-footer .footer-logo{height:46px;margin-left:0}
-  .ms-carousel .ms-wrap img,.ms-stage .ms-wrap img{max-height:80vh}
-  .ms-textPanel{padding:18px}
+  .footer-col--identity::before,
+  .footer-col--project::before{
+    display:none;
+  }
+
+  .footer-col--project{
+    text-align:center;
+  }
+
+  .site-footer .footer-logo{
+    height:46px;
+    margin-left:0;
+  }
+
+  .ms-carousel .ms-wrap img,
+  .ms-stage .ms-wrap img{
+    max-height:80vh;
+  }
+
+  .ms-textPanel{
+    padding:18px;
+  }
 }
 
 @media (max-width:900px){
-  /* letter header en colonne + portrait centré */
   .letter-header{
     grid-template-columns:1fr;
-    grid-template-rows:auto auto auto
+    grid-template-rows:auto auto auto;
   }
+
   .letter-header img{
     grid-column:1;
     grid-row:3;
     justify-self:center;
-    width:180px;height:180px;
-    margin-top:12px
+    width:180px;
+    height:180px;
+    margin-top:12px;
   }
 }
 
 @media (max-width:700px){
-  /* nav : wrap */
   .nav-list{
     gap:10px;
     flex-wrap:wrap;
     justify-content:center;
-    padding:0 14px
+    padding:0 14px;
   }
-  /* dropdown aligné à gauche sur petits écrans */
-  .has-dropdown .dropdown{left:0;transform:none}
 
-  /* timeline en 1 colonne */
-  .timeline{grid-template-columns:1fr}
-  .home-hero-image{width:94vw}
+  .has-dropdown .dropdown{
+    left:0;
+    transform:none;
+  }
 
-  /* thumbs / boutons un peu plus petits */
-  .ms-thumb img{height:52px}
-  .ms-navBtn{width:36px;height:36px}
+  .timeline{
+    grid-template-columns:1fr; /* une colonne sur mobile */
+  }
 
-  /* toggle compact */
-  .theme-toggle{right:10px;top:10px;padding:7px 10px}
+  .home-hero-image{
+    width:94vw;
+  }
+
+  .ms-thumb img{
+    height:52px;
+  }
+
+  .ms-navBtn{
+    width:36px;
+    height:36px;
+  }
 }
 
-/* =========================
-   28) Navigation entre lettres
-   =========================
-   Deux liens (prev/next) espacés avec justify-content:space-between
-*/
+
+/* ============================================================
+   27) NAVIGATION ENTRE LES LETTRES
+   ============================================================ */
 .letter-nav{
   display:flex;
   justify-content:space-between;
   margin-top:40px;
 }
+
 .letter-prev,
 .letter-next{
   padding:10px 16px;
@@ -1354,17 +1492,16 @@ body[data-theme="night"] .ms-hit.is-hover{
   font-variant:small-caps;
   letter-spacing:.05em;
 }
+
 .letter-prev:hover,
 .letter-next:hover{
-  background:var(--paper2)
+  background:var(--paper2);
 }
 
-/* =========================================================
-   29) INDEX — BARRE DE RECHERCHE (propre + “bibliophile”)
-   =========================================================
-   Grille : label / input / bouton clear.
-   Sur mobile : label passe au-dessus.
-*/
+
+/* ============================================================
+   28) BARRE DE RECHERCHE DE L’INDEX
+   ============================================================ */
 .index-search{
   display:grid;
   grid-template-columns:auto 1fr auto;
@@ -1376,50 +1513,47 @@ body[data-theme="night"] .ms-hit.is-hover{
 
   border:1px solid var(--line);
   border-radius:14px;
-  background:linear-gradient(180deg, var(--paper) 0%, var(--paper2) 100%);
+  background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%);
   box-shadow:0 10px 22px rgba(0,0,0,.06);
 }
 
-/* label “Recherche” */
 .index-search__label{
   font-family:var(--font-smallcaps);
   font-variant:small-caps;
   letter-spacing:.10em;
   color:var(--muted);
-  white-space:nowrap; /* évite le retour à la ligne */
+  white-space:nowrap;
 }
 
-/* champ de recherche */
 .index-search__input{
   width:100%;
   min-width:0;
 
   padding:10px 12px;
   border-radius:12px;
-  border:1px solid color-mix(in oklab, var(--line) 78%, #000 22%);
-  background:color-mix(in oklab, var(--paper) 85%, var(--bar-bg) 15%);
+  border:1px solid color-mix(in oklab,var(--line) 78%,#000 22%);
+  background:color-mix(in oklab,var(--paper) 85%,var(--bar-bg) 15%);
   color:var(--ink);
   font:inherit;
 }
 
-/* placeholder plus discret */
-.index-search__input::placeholder{color:var(--muted2)}
-
-/* focus : outline accent + border accentuée */
-.index-search__input:focus{
-  outline:2px solid color-mix(in oklab, var(--accent) 55%, transparent 45%);
-  outline-offset:2px;
-  border-color:color-mix(in oklab, var(--accent) 25%, var(--line) 75%);
+.index-search__input::placeholder{
+  color:var(--muted2);
 }
 
-/* bouton clear (X) */
+.index-search__input:focus{
+  outline:2px solid color-mix(in oklab,var(--accent) 55%,transparent 45%);
+  outline-offset:2px;
+  border-color:color-mix(in oklab,var(--accent) 25%,var(--line) 75%);
+}
+
 .index-search__clear{
   width:42px;
   height:42px;
 
   border-radius:12px;
-  border:1px solid color-mix(in oklab, var(--line) 78%, #000 22%);
-  background:linear-gradient(180deg, var(--paper) 0%, var(--paper2) 100%);
+  border:1px solid color-mix(in oklab,var(--line) 78%,#000 22%);
+  background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%);
   color:var(--muted);
 
   cursor:pointer;
@@ -1433,59 +1567,56 @@ body[data-theme="night"] .ms-hit.is-hover{
   transition:transform .12s ease, box-shadow .12s ease, background .12s ease, color .12s ease;
 }
 
-/* hover : un peu plus “présent” */
 .index-search__clear:hover{
-  background:color-mix(in oklab, var(--paper2) 70%, var(--paper) 30%);
+  background:color-mix(in oklab,var(--paper2) 70%,var(--paper) 30%);
   color:var(--ink);
   box-shadow:0 12px 24px rgba(0,0,0,.10);
   transform:translateY(-1px);
 }
 
-/* active : revient à plat */
 .index-search__clear:active{
   transform:translateY(0);
   box-shadow:0 8px 18px rgba(0,0,0,.06);
 }
 
-/* mobile : label au-dessus */
 @media (max-width:700px){
   .index-search{
     grid-template-columns:1fr auto;
     grid-template-rows:auto auto;
   }
+
   .index-search__label{
     grid-column:1 / -1;
   }
 }
 
-/* ===========================
-   30) Page Mentions légales
-   (ciblée via pageClass = "page-legal")
-   ===========================
-   Objectif : resserrer la lecture (interlignes/espacements) pour une page
-   “texte administratif” moins aérée que les pages “édition”.
-*/
+
+/* ============================================================
+   29) PAGE "MENTIONS LÉGALES"
+   ------------------------------------------------------------
+   Cette page a un texte plus administratif.
+   On resserre donc légèrement l’interligne.
+   ============================================================ */
 .page-legal .card h2{
-  margin-top: 1.6rem;     /* plus d’espace avant une section */
-  margin-bottom: 0.4rem;  /* mais titre proche du texte */
+  margin-top:1.6rem;
+  margin-bottom:0.4rem;
 }
 
 .page-legal .card p{
-  line-height: 1.35;         /* interligne normal (moins “littéraire”) */
-  margin: 0.35rem 0 0.85rem; /* espacement contrôlé entre paragraphes */
+  line-height:1.35;
+  margin:0.35rem 0 0.85rem;
 }
 
-/* paragraphe en “stack” (avec <br>) : lignes plus serrées */
 .page-legal .card p.stack{
-  line-height: 1.15;
-  margin: 0.35rem 0 0.95rem;
+  line-height:1.15;
+  margin:0.35rem 0 0.95rem;
 }
 
-/* listes */
 .page-legal .card ul{
-  margin: 0.35rem 0 0.95rem;
-  padding-left: 1.1rem;
+  margin:0.35rem 0 0.95rem;
+  padding-left:1.1rem;
 }
+
 .page-legal .card li{
-  margin: 0.25rem 0;
+  margin:0.25rem 0;
 }

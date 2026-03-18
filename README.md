@@ -8,8 +8,7 @@ Projet réalisé dans le cadre du cours
 **« Technique et chaîne de publication électronique avec XSLT »**  
 à l’**École nationale des chartes – PSL**.
 
-Encadrement pédagogique : **Jean-Damien Généro**
-
+Encadrement pédagogique : **Jean-Damien Généro**  
 Auteur : **Clara Martin**
 
 ---
@@ -20,27 +19,30 @@ Ce projet propose une **édition numérique de trois lettres d’Oscar Wilde** r
 
 Le site associe :
 
-- les **fac-similés des manuscrits**
-- une **transcription encodée en TEI-XML**
-- une **traduction française**
+- les **fac-similés des manuscrits**  
+- une **transcription encodée en TEI-XML**  
+- une **traduction française**  
 - un **index des entités nommées** (personnes, lieux, organisations, œuvres)
 
 Le corpus permet d’observer l’évolution de la situation personnelle et littéraire d’Oscar Wilde à travers trois moments distincts de sa vie.
 
-1. **Avant la prison : stratégie éditoriale et publication de ses œuvres**  
-   La lettre de 1894 témoigne de la période où Wilde est au sommet de sa carrière littéraire et mondaine à Londres. Il entretient des relations suivies avec ses éditeurs et correspondants afin d’assurer la diffusion de ses œuvres et de contrôler leur publication. Cette correspondance reflète ses préoccupations éditoriales et sa place dans la vie culturelle londonienne de la fin de l’époque victorienne.
+### Avant la prison : stratégie éditoriale et publication de ses œuvres
 
-2. **La rupture de 1895 : condamnation et emprisonnement**  
-   L’arrestation et la condamnation de Wilde en 1895 marquent une rupture brutale dans sa trajectoire personnelle et littéraire. Bien que le corpus ne contienne pas de lettre écrite pendant l’incarcération, cet événement constitue le point de bascule historique qui sépare la période de succès littéraire de la période d’exil et de marginalisation.
+La lettre de 1894 témoigne de la période où Wilde est au sommet de sa carrière littéraire et mondaine à Londres. Il entretient des relations suivies avec ses éditeurs et correspondants afin d’assurer la diffusion de ses œuvres et de contrôler leur publication. Cette correspondance reflète ses préoccupations éditoriales et sa place dans la vie culturelle londonienne de la fin de l’époque victorienne.
 
-3. **Après la libération en 1897 et l’exil en France : reconstruction et marginalisation**  
-   Les lettres postérieures à sa libération témoignent de la situation de Wilde après son emprisonnement. Installé principalement en France sous le pseudonyme **Sebastian Melmoth**, il tente de reconstruire sa vie littéraire malgré l’isolement social et les difficultés matérielles. Ces correspondances reflètent la transformation de sa position dans le monde littéraire après le scandale et la prison.
+### La rupture de 1895 : condamnation et emprisonnement
+
+L’arrestation et la condamnation de Wilde en 1895 marquent une rupture brutale dans sa trajectoire personnelle et littéraire. Bien que le corpus ne contienne pas de lettre écrite pendant l’incarcération, cet événement constitue le point de bascule historique qui sépare la période de succès littéraire de la période d’exil et de marginalisation.
+
+### Après la libération en 1897 et l’exil en France : reconstruction et marginalisation
+
+Les lettres postérieures à sa libération témoignent de la situation de Wilde après son emprisonnement. Installé principalement en France sous le pseudonyme **Sebastian Melmoth**, il tente de reconstruire sa vie littéraire malgré l’isolement social et les difficultés matérielles. Ces correspondances reflètent la transformation de sa position dans le monde littéraire après le scandale et la prison.
 
 Ces lettres permettent ainsi d’observer le contraste entre la période de succès précédant le procès et la situation de Wilde après sa libération.
 
 ---
 
-## Contexte historique
+# Contexte historique
 
 **Oscar Wilde (1854–1900)** est l’un des écrivains majeurs de la fin de l’époque victorienne. Dramaturge, essayiste et romancier, il connaît un grand succès dans les années 1890 grâce à plusieurs comédies devenues emblématiques :
 
@@ -49,8 +51,7 @@ Ces lettres permettent ainsi d’observer le contraste entre la période de succ
 - *An Ideal Husband* (1895)  
 - *The Importance of Being Earnest* (1895)
 
-
-### Pourquoi Wilde est condamné
+## Pourquoi Wilde est condamné
 
 En 1895, Wilde est poursuivi pour **« gross indecency »**, une infraction définie par l’amendement Labouchere du *Criminal Law Amendment Act* (1885).
 
@@ -62,8 +63,7 @@ Après deux procès retentissants en 1895, Wilde est reconnu coupable et condamn
 
 Il est incarcéré successivement dans les prisons de Pentonville, Wandsworth et **Reading Gaol**.
 
-
-### Après la prison
+## Après la prison
 
 À sa libération en **mai 1897**, Wilde quitte l’Angleterre et s’installe principalement en France sous le nom de **Sebastian Melmoth**, où il vit jusqu’à sa mort en 1900.
 
@@ -73,7 +73,7 @@ Les lettres présentées dans cette édition couvrent cette période charnière 
 
 # Corpus
 
-Le corpus comprend trois lettres :
+Le corpus comprend trois lettres.
 
 ### 1 — Lettre à John Lane  
 **Worthing, août 1894**
@@ -82,15 +82,13 @@ Destinataire : éditeur britannique et fondateur de **The Bodley Head**.
 
 Sujet :
 
-- correction d’épreuves
-- publication de ses pièces
-- questions de copyright américain
-- stratégie éditoriale
+- correction d’épreuves  
+- publication de ses pièces  
+- questions de copyright américain  
+- stratégie éditoriale  
 
 Institution conservatrice : **The Morgan Library & Museum (New York)**  
 https://www.themorgan.org/collection/oscar-wilde/manuscripts-letters/45
-
----
 
 ### 2 — Lettre au Major Nelson  
 **Berneval-sur-Mer, 28 mai 1897**
@@ -99,14 +97,12 @@ Destinataire : gouverneur de **Reading Gaol**.
 
 Sujet :
 
-- gratitude pour le traitement reçu en prison
-- réflexion morale sur la détention
-- critique du système carcéral
+- gratitude pour le traitement reçu en prison  
+- réflexion morale sur la détention  
+- critique du système carcéral  
 
 Institution conservatrice : **New York Public Library**  
 https://www.nypl.org/events/exhibitions/galleries/other-peoples-mail/item/14910
-
----
 
 ### 3 — Lettre à Henrietta Stannard  
 **Berneval-sur-Mer, mai 1897**
@@ -115,42 +111,42 @@ Destinataire : romancière britannique.
 
 Sujet :
 
-- sa situation après la prison
-- sa solitude en France
+- sa situation après la prison  
+- sa solitude en France  
 - l’adoption du pseudonyme **Sebastian Melmoth**
 
-Institution conservatrice : **Trinity College Dublin – Digital Collections**
+Institution conservatrice : **Trinity College Dublin – Digital Collections**  
 https://digitalcollections.tcd.ie/concern/works/z316q211n
 
 ---
 
 # Objectifs scientifiques
 
-Le projet répond à plusieurs objectifs :
+Ce projet poursuit plusieurs objectifs liés à l’édition numérique et à la structuration des données textuelles.
 
-### édition numérique
+### Édition numérique
 
-présenter une édition lisible et structurée des lettres
+Proposer une édition lisible et structurée de trois lettres d’Oscar Wilde, associant fac-similés, transcription et traduction.
 
-### modélisation des données textuelles
+### Modélisation des données textuelles
 
-utiliser **TEI-XML** pour représenter :
+Utiliser **TEI-XML** afin de représenter la structure des lettres et d’encoder différents types d’informations :
 
-- structure des lettres
-- entités nommées
-- phénomènes textuels
+- la structure documentaire des lettres  
+- les entités nommées (personnes, lieux, organisations, œuvres)  
+- certains phénomènes textuels  
 
-### publication web automatisée
+### Publication web automatisée
 
-transformer le corpus en site web grâce à **XSLT**
+Générer automatiquement le site web à partir du corpus TEI grâce à une transformation **XSLT**.
 
-### navigation documentaire
+### Navigation documentaire
 
-permettre une exploration par :
+Permettre une exploration du corpus par différents modes de navigation :
 
-- entités nommées
-- index
-- liens internes
+- consultation des lettres  
+- index des entités nommées  
+- liens internes entre les textes et les notices
 
 ---
 
@@ -233,25 +229,21 @@ Structure simplifiée du projet :
 
 ```
 oscar-wilde-et-la-prison/
-├── corpus.xml
+├── corpus.xml # corpus TEI
 ├── xslt/
-│   └── tei2site.xsl
+│ └── tei2site.xsl # transformation XSLT
 │
 ├── assets/
-│   ├── css/
-│   │   └── style.css
-│   │
-│   ├── js/
-│   │   └── site.js
-│   │
-│   └── img/
+│ ├── css/
+│ ├── js/
+│ └── img/
 │
-└── out/
-    ├── index.html
-    ├── lane.html
-    ├── nelson.html
-    ├── stannard.html
-    └── index-entities.html
+├── docs/ # site publié (GitHub Pages)
+│ ├── index.html
+│ ├── lane.html
+│ ├── nelson.html
+│ ├── stannard.html
+│ └── index-entities.html
 ```
 
 # Compétences mobilisées
