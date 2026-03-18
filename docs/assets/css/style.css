@@ -426,6 +426,8 @@ h3{
 
 .home-intro p{
   max-width:980px;   /* on limite seulement la longueur des paragraphes */
+  text-align:justify; /* texte justifié */
+  hyphens:auto;       /* autorise la coupure des mots si besoin */
 }
 
 .home-intro .lead-intro{
