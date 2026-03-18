@@ -8,17 +8,14 @@
   exclude-result-prefixes="tei xs f">
 
   <!-- Feuille XSLT du projet
-
-    Cette feuille sert à transformer un document TEI-XML
-    en plusieurs pages XHTML :
+    Cette feuille sert à transformer un document TEI-XML en plusieurs pages XHTML :
     - index.html
     - lane.html
     - nelson.html
     - stannard.html
     - index-entities.html
     - methodologie.html
-    - mentions-legales.html
-  -->
+    - mentions-legales.html -->
 
   <xsl:output method="xhtml" encoding="UTF-8" indent="yes"/>
 
@@ -27,8 +24,7 @@
   <!-- ========================================================= -->
 
   <!-- Paramètre de sortie
-    $outDir indique le dossier où seront écrites les pages HTML générées (ici : docs/)
-  -->
+    $outDir indique le dossier où seront écrites les pages HTML générées (ici : docs/) -->
   <xsl:param name="outDir" select="'docs/'"/>
 
   <!-- Base des assets (css/js/images) utilisée dans les pages générées
@@ -47,8 +43,7 @@
   <!-- MÉTADONNÉES DES LETTRES -->
   <!-- ========================================================= -->
 
-  <!-- Je centralise les métadonnées des lettres.
-
+  <!-- Je centralise les métadonnées des lettres
     Chaque <letter> contient :
     - key       : identifiant court interne
     - divId     : xml:id du <div> TEI correspondant dans le corpus
@@ -57,8 +52,7 @@
     - date      : date lisible affichée
     - desc      : résumé éditorial
     - imgPrefix : préfixe des images de fac-similé
-    - pages     : liste des pages manuscrites
-  -->
+    - pages     : liste des pages manuscrites -->
   <xsl:variable name="letters">
     <letter key="lane" divId="lane-letter" file="lane.html"
             title="John Lane" date="Août 1894"
