@@ -260,21 +260,6 @@ Ce projet met en œuvre :
 - structuration de corpus
 
 
-# Bibliographie
-
-- Ellmann, Richard.  
-*Oscar Wilde*. Knopf, 1988.
-
-- Holland, Merlin & Hart-Davis, Rupert (eds.).  
-*The Complete Letters of Oscar Wilde*. Fourth Estate, 2000.
-
-- Murray, Isobel (ed.).  
-*The Soul of Man and Prison Writings*. Oxford University Press, 1990.
-
-- Wilde, Oscar.  
-*The Ballad of Reading Gaol*. 1898.
-
-
 # Licence
 
 Encodage TEI, transformation XSLT et site web :  
