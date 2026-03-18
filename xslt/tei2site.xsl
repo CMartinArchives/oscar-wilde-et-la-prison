@@ -7,8 +7,7 @@
   xmlns:f="urn:local:functions"
   exclude-result-prefixes="tei xs f">
 
-  <!--
-    Feuille XSLT principale du projet.
+  <!-- Feuille XSLT du projet
 
     Cette feuille sert à transformer un document TEI-XML
     en plusieurs pages XHTML :
@@ -19,91 +18,36 @@
     - index-entities.html
     - methodologie.html
     - mentions-legales.html
-
-    Idée générale :
-    1) on part du fichier TEI source
-    2) on récupère les lettres et les métadonnées
-    3) on fabrique automatiquement plusieurs pages web
-    4) on transforme aussi les balises TEI en HTML lisible
-
-    J’utilise XSLT 2.0 car j’ai besoin de fonctions utiles comme :
-    - tokenize()
-    - for-each-group
-    - result-document
   -->
 
-  <!--
-    Je produis du XHTML (et pas du HTML “loose”) pour :
-    - garantir une sérialisation stable (balises toujours bien fermées)
-    - éviter les surprises avec SVG (overlays de zones)
-    - garder un rendu propre et reproductible
-
-    method="xhtml" :
-    -> sortie en XHTML
-
-    encoding="UTF-8" :
-    -> encodage Unicode, pour garder correctement les accents
-       et les caractères spéciaux
-
-    indent="yes" :
-    -> on demande une sortie plus lisible si le processeur le permet
-  -->
   <xsl:output method="xhtml" encoding="UTF-8" indent="yes"/>
 
   <!-- ========================================================= -->
-  <!-- PARAMÈTRES (config du build) -->
+  <!-- PARAMÈTRES -->
   <!-- ========================================================= -->
 
-  <!--
-    Paramètre de sortie.
-
-    $outDir indique le dossier où seront écrites les pages HTML générées.
-    Ici : docs/
-
-    Exemples :
-    - docs/index.html
-    - docs/lane.html
-    - docs/index-entities.html
+  <!-- Paramètre de sortie
+    $outDir indique le dossier où seront écrites les pages HTML générées (ici : docs/)
   -->
   <xsl:param name="outDir" select="'docs/'"/>
 
-  <!--
-    Base des assets (css / js / images) utilisée dans les pages générées.
-
+  <!-- Base des assets (css/js/images) utilisée dans les pages générées
     Exemple :
-    si $assetsBase = 'assets'
-    alors :
-    - assets/css/style.css
-    - assets/js/site.js
-    - assets/img/...
-
-    Ce chemin est relatif aux pages HTML générées.
-  -->
+      si $assetsBase = 'assets'
+      alors : assets/css/style.css -->
   <xsl:param name="assetsBase" select="'assets'"/>
 
-  <!--
-    Titre principal du site.
-    C’est une variable fixe, réutilisée dans le <title>, le header et le footer.
-  -->
+  <!-- Titre principal du site (variable fixe) -->
   <xsl:variable name="siteTitle" select="'OSCAR WILDE'"/>
 
-  <!--
-    Sous-titre du site.
-    Lui aussi est réutilisé dans plusieurs pages.
-  -->
+  <!-- Sous-titre du site -->
   <xsl:variable name="siteSubtitle" select="'LETTRES AUTOUR DE LA PRISON (1894–1897)'"/>
 
   <!-- ========================================================= -->
-  <!-- MÉTADONNÉES DES LETTRES (source “editoriale” interne) -->
+  <!-- MÉTADONNÉES DES LETTRES -->
   <!-- ========================================================= -->
-  <!--
-    Ici je définis un petit “jeu de données interne” à la feuille XSLT.
 
-    Je centralise les métadonnées des lettres :
-    - ça évite la duplication
-    - ça permet la génération multipages automatique
-    - ça alimente la chronologie de l’accueil
-    - ça contrôle la pagination des fac-similés (carrousel)
+  <!-- Je centralise les métadonnées des lettres.
 
     Chaque <letter> contient :
     - key       : identifiant court interne
@@ -114,10 +58,6 @@
     - desc      : résumé éditorial
     - imgPrefix : préfixe des images de fac-similé
     - pages     : liste des pages manuscrites
-
-    Important :
-    Ce bloc n’est pas dans le XML source.
-    C’est une structure ajoutée dans la feuille XSLT pour piloter le site.
   -->
   <xsl:variable name="letters">
     <letter key="lane" divId="lane-letter" file="lane.html"
@@ -149,25 +89,12 @@ son retrait progressif de la vie publique."
   <!-- ========================================================= -->
   <!-- PORTRAITS / VIGNETTES (INDEX) -->
   <!-- ========================================================= -->
-  <!--
-    Ces variables servent à associer des identifiants TEI à des fichiers image.
 
-    En clair :
-    - dans le TEI, une personne a un xml:id comme "pers_wilde"
-    - ici, je dis quelle image lui correspond
+  <!-- Ces variables servent à associer des identifiants TEI à des fichiers image.
+    Dans le TEI, une personne a un xml:id comme "pers_wilde" et je dis quelle image lui correspond
+    (affichage de l’index et parfois affichage des pages de lettres) ? -->
 
-    Cela sert surtout à l’affichage de l’index,
-    et parfois à l’affichage des pages de lettres.
-
-    Important :
-    ce ne sont pas des données TEI,
-    mais des correspondances internes au site.
-  -->
-
-  <!--
-    Portraits des personnes.
-    Dossier utilisé : assets/img/persons/
-  -->
+  <!-- Portraits des personnes (dossier assets/img/persons/) -->
   <xsl:variable name="personPortraits">
     <p id="pers_wilde"    file="oscarwilde.jpeg" />
     <p id="pers_lane"     file="johnlane.jpeg" />
@@ -176,13 +103,9 @@ son retrait progressif de la vie publique."
     <p id="pers_constance_wilde" file="constancewilde.jpeg" />
     <p id="pers_ricketts" file="charlesricketts.jpeg" />
     <p id="pers_jane_wilde" file="janewilde.jpeg" />
-    <!-- pas d’image pour pers_nelson et pers_mathews -->
   </xsl:variable>
 
-  <!--
-    Miniatures des lieux.
-    Ici les fichiers sont rangés dans le même dossier d’images.
-  -->
+  <!--  Miniatures des lieux (même dossier d’images) -->
   <xsl:variable name="placeThumbs">
     <p id="place_worthing"      file="worthing.jpeg"/>
     <p id="place_berneval"      file="berneval.jpeg"/>
@@ -194,17 +117,12 @@ son retrait progressif de la vie publique."
     <p id="place_liverpool"     file="liverpool.jpeg"/>
   </xsl:variable>
 
-  <!--
-    Miniatures des organisations.
-  -->
+  <!-- Miniatures des organisations -->
   <xsl:variable name="orgThumbs">
     <p id="org_bodley_head" file="bodleyhead.jpeg"/>
   </xsl:variable>
 
-  <!--
-    Miniatures ou images des œuvres.
-    J’y mets aussi certaines références bibliographiques.
-  -->
+  <!-- Miniatures ou images des œuvres -->
   <xsl:variable name="workThumbs">
     <p id="work_mr_wh"               file="portraitofmrwh.jpeg"/>
     <p id="work_woman_no_importance" file="womanofnoimportance.jpeg"/>
@@ -218,65 +136,34 @@ son retrait progressif de la vie publique."
   <!-- ========================================================= -->
   <!-- FONCTIONS UTILITAIRES -->
   <!-- ========================================================= -->
-  <!--
-    Cette partie contient des fonctions XSLT.
 
-    Une fonction sert à éviter de répéter le même code partout.
-
-    Ici, elles servent surtout à :
+  <!-- Cette partie contient des fonctions XSLT.
+    Elles servent à :
     - retrouver le fichier HTML d’une lettre
     - retrouver le titre lisible d’une lettre
-    - définir un ordre de tri “éditorial”
-    - distinguer les pays des autres lieux
-  -->
+    - définir un ordre de tri
+    - distinguer les pays des autres lieux -->
 
-  <!--
-    f:letter-file()
-
-    Entrée :
-    - un identifiant de div de lettre (divId)
-
-    Sortie :
-    - le nom du fichier HTML correspondant (ex. lane.html)
-
-    Cette fonction sert surtout dans l’index,
-    pour fabriquer les liens “Cité.e dans : ...”.
-  -->
+  <!-- f:letter-file() : sert dans l’index pour fabriquer les liens “Cité.e dans : ...”
+    Entrée : un identifiant de div de lettre (divId)
+    Sortie : nom du fichier HTML correspondant (ex. lane.html) -->
   <xsl:function name="f:letter-file" as="xs:string?">
     <xsl:param name="divId" as="xs:string?"/>
     <xsl:sequence select="string(($letters/letter[@divId=$divId]/@file)[1])"/>
   </xsl:function>
 
-  <!--
-    f:letter-title()
-
-    Entrée :
-    - l’identifiant TEI de la lettre
-
-    Sortie :
-    - le titre humain / lisible de la lettre
-
-    Ex. :
-    lane-letter -> John Lane
-  -->
+  <!-- f:letter-title() : ex lane-letter -> John Lane
+    Entrée : l’identifiant TEI de la lettre
+    Sortie : le titre humain / lisible de la lettre -->
   <xsl:function name="f:letter-title" as="xs:string?">
     <xsl:param name="divId" as="xs:string?"/>
     <xsl:sequence select="string(($letters/letter[@divId=$divId]/@title)[1])"/>
   </xsl:function>
 
-  <!--
-    f:person-rank()
-
-    Cette fonction sert à définir un ordre d’importance éditorial des personnes.
-
-    Pourquoi ?
-    Parce qu’un simple tri alphabétique n’est pas toujours le plus utile.
-    Ici je veux que l’index commence par les figures les plus centrales
-    pour le corpus : Wilde, Lane, Nelson, Stannard, etc.
-
-    Plus le nombre renvoyé est petit, plus la personne passe tôt dans la liste.
-    Si une personne n’est pas prévue, je mets 999 pour qu’elle arrive à la fin.
-  -->
+  <!-- f:person-rank() : sert à définir un ordre d’importance éditorial des personnes
+    L’index commence par les figures les plus centrales pour le corpus : Wilde, Lane, Nelson, Stannard, etc
+    Plus le nombre renvoyé est petit, plus la personne passe tôt dans la liste
+    Si une personne n’est pas prévue, je mets 999 pour qu’elle arrive à la fin -->
   <xsl:function name="f:person-rank" as="xs:integer">
     <xsl:param name="pid" as="xs:string"/>
     <xsl:sequence select="
@@ -293,22 +180,11 @@ son retrait progressif de la vie publique."
     "/>
   </xsl:function>
 
-  <!--
-    f:is-country-place()
+  <!-- f:is-country-place() : sert à distinguer les pays des villes ou autres lieux
+    et donc de faire deux sous-parties dans l’index des lieux
 
-    Cette fonction sert à distinguer :
-    - les pays
-    - les villes / autres lieux
-
-    Cela permet ensuite de faire deux sous-parties dans l’index des lieux.
-
-    Logique utilisée :
     1) si le lieu n’a pas de settlement, il peut être un pays
-    2) on vérifie aussi que son nom correspond à une petite liste de pays attendus
-
-    C’est une heuristique simple :
-    ce n’est pas une vérité absolue, mais pour ce corpus cela suffit.
-  -->
+    2) on vérifie aussi que son nom correspond à une petite liste de pays attendus -->
   <xsl:function name="f:is-country-place" as="xs:boolean">
     <xsl:param name="place" as="element(tei:place)"/>
     <xsl:variable name="n" select="normalize-space(string(($place/tei:placeName)[1]))"/>
@@ -321,30 +197,22 @@ son retrait progressif de la vie publique."
   <!-- ========================================================= -->
   <!-- POINT D’ENTRÉE : /tei:TEI -->
   <!-- ========================================================= -->
-  <!--
-    C’est le point de départ principal de la transformation.
 
-    Quand le processeur rencontre la racine /tei:TEI :
+  <!-- Quand le processeur rencontre la racine /tei:TEI :
     - il garde cette racine dans une variable ($root)
     - il génère plusieurs fichiers avec xsl:result-document
     - dans chaque fichier, il appelle un template qui produit le contenu
-
-    Donc :
-    un seul XML d’entrée -> plusieurs fichiers HTML en sortie
-  -->
+    un XML d’entrée -> plusieurs fichiers HTML en sortie -->
   <xsl:template match="/tei:TEI">
 
-    <!--
-      Je stocke la racine TEI dans $root.
-      Cela permet d’y revenir facilement plus loin,
-      par exemple dans la boucle qui fabrique les pages de lettres.
-    -->
+    <!-- Je stocke la racine TEI dans $root.
+      pour y revenir plus loin (par exemple dans la boucle qui fabrique les pages de lettres) -->
     <xsl:variable name="root" select="."/>
 
+
     <!-- ================= ACCUEIL ================= -->
-    <!--
-      Génération de la page d’accueil : docs/index.html
-    -->
+
+    <!-- Génération de la page d’accueil : docs/index.html -->
     <xsl:result-document href="{concat($outDir,'index.html')}">
       <xsl:call-template name="page-shell">
         <xsl:with-param name="pageTitle" select="'Accueil'"/>
@@ -355,41 +223,30 @@ son retrait progressif de la vie publique."
       </xsl:call-template>
     </xsl:result-document>
 
+
     <!-- ================= LETTRES ================= -->
-    <!--
-      Pour chaque entrée de $letters :
+
+    <!-- Pour chaque entrée de $letters :
       - je prends les métadonnées
       - je retrouve le <div> TEI correspondant grâce à @xml:id
       - je crée une page HTML dédiée
-
-      Donc :
-      1 entrée <letter> dans la variable = 1 page HTML générée
-    -->
+      1 entrée <letter> dans la variable = 1 page HTML générée -->
     <xsl:for-each select="$letters/letter">
 
-      <!--
-        $meta = la lettre “courante” dans la boucle
-        (métadonnées internes XSLT)
-      -->
+      <!-- $meta = la lettre “courante” dans la boucle (métadonnées internes XSLT) -->
       <xsl:variable name="meta" select="."/>
 
-      <!--
-        $letterDiv = le div TEI correspondant à cette lettre,
-        trouvé dans le corps du texte.
+      <!-- $letterDiv = le div TEI correspondant à cette lettre, trouvé dans le corps du texte.
 
         Explication du chemin :
         - $root/tei:text/tei:body : on va dans le corps du document
         - tei:div[@xml:id = $meta/@divId] : on prend le div dont l’xml:id
           correspond à celui annoncé dans les métadonnées internes
-        - [1] : sécurité, on garde le premier trouvé
-      -->
+        - [1] : sécurité, on garde le premier trouvé -->
       <xsl:variable name="letterDiv"
         select="$root/tei:text/tei:body/tei:div[@xml:id = $meta/@divId][1]"/>
 
-      <!--
-        Création du fichier HTML de la lettre.
-        Ex. docs/lane.html
-      -->
+      <!-- Création du fichier HTML de la lettre. (ex : docs/lane.html) -->
       <xsl:result-document href="{concat($outDir,$meta/@file)}">
         <xsl:call-template name="page-shell">
           <xsl:with-param name="pageTitle" select="$meta/@title"/>
@@ -404,10 +261,10 @@ son retrait progressif de la vie publique."
       </xsl:result-document>
     </xsl:for-each>
 
+
     <!-- ================= INDEX ================= -->
-    <!--
-      Génération de la page d’index des entités.
-    -->
+
+    <!-- Génération de la page d’index des entités -->
     <xsl:result-document href="{concat($outDir,'index-entities.html')}">
       <xsl:call-template name="page-shell">
         <xsl:with-param name="pageTitle" select="'Index'"/>
@@ -418,10 +275,10 @@ son retrait progressif de la vie publique."
       </xsl:call-template>
     </xsl:result-document>
 
+
     <!-- ================= MÉTHODOLOGIE ================= -->
-    <!--
-      Génération de la page de méthodologie.
-    -->
+
+    <!-- Génération de la page de méthodologie -->
     <xsl:result-document href="{concat($outDir,'methodologie.html')}">
       <xsl:call-template name="page-shell">
         <xsl:with-param name="pageTitle" select="'Méthodologie'"/>
@@ -432,25 +289,18 @@ son retrait progressif de la vie publique."
       </xsl:call-template>
     </xsl:result-document>
 
-    <!-- ================= MENTIONS LÉGALES ================= -->
-    <!--
-      Génération de la page des mentions légales.
 
-      Ici je n’appelle pas un template séparé :
-      j’injecte directement le contenu HTML dans le paramètre "content".
-      C’est pratique pour une page surtout “statique”.
-    -->
+    <!-- ================= MENTIONS LÉGALES ================= -->
+
+    <!-- Génération de la page des mentions légales.
+      Ici je n’appelle pas un template séparé mais j’injecte le contenu HTML dans le paramètre "content" -->
     <xsl:result-document href="{concat($outDir,'mentions-legales.html')}">
       <xsl:call-template name="page-shell">
         <xsl:with-param name="pageTitle" select="'Mentions légales'"/>
         <xsl:with-param name="pageClass" select="'page-legal'"/>
         <xsl:with-param name="content">
 
-          <!--
-            Contenu HTML “pur” injecté dans le shell :
-            je garde ce bloc entièrement “page-level” (section card)
-            pour qu’il n’ait pas besoin d’un template dédié.
-          -->
+          <!-- Contenu HTML injecté dans le shell pour qu’il n’ait pas besoin d’un template dédié (page statique)-->
           <section class="card">
 
             <h1 class="page-title">Mentions légales</h1>
@@ -556,119 +406,53 @@ son retrait progressif de la vie publique."
 
   </xsl:template>
 
+
   <!-- ========================================================= -->
   <!-- SHELL HTML (structure commune à toutes les pages) -->
   <!-- ========================================================= -->
-  <!--
-    page-shell :
+
+  <!-- page-shell :
     - écrit le HTML complet (head + header/nav + footer)
-    - reçoit un fragment “content” en paramètre, inséré dans <main>
-
-    Objectif :
-    éviter de réécrire 10 fois la même structure.
-
-    Donc ce template joue le rôle de “gabarit” commun à tout le site.
-  -->
+    - reçoit “content” en paramètre, qui est inséré dans <main> -->
   <xsl:template name="page-shell">
 
-    <!--
-      pageTitle :
-      titre propre à la page courante
-      Ex. Accueil, John Lane, Index...
-    -->
+    <!-- pageTitle : titre propre à la page courante (Accueil, John Lane, Index...) -->
     <xsl:param name="pageTitle"/>
 
-    <!--
-      content :
-      contenu spécifique à la page
-      Il sera injecté dans la balise <main>.
-    -->
+    <!-- content : contenu spécifique à la page qui sera injecté dans la balise <main> -->
     <xsl:param name="content"/>
 
-    <!--
-      pageClass :
-      classe CSS optionnelle placée sur <body>
-      pour permettre des styles différents selon les pages.
-    -->
+    <!-- pageClass : classe CSS optionnelle placée sur <body> pour permettre des styles différents selon les pages -->
     <xsl:param name="pageClass" select="''"/>
 
     <html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
       <head>
-        <!--
-          Encodage de la page HTML.
-        -->
+
+        <!-- Encodage de la page HTML -->
         <meta charset="utf-8"/>
 
-        <!--
-          Titre de l’onglet du navigateur.
-          Forme :
-          OSCAR WILDE — Accueil
-          OSCAR WILDE — John Lane
-          etc.
-        -->
+        <!-- Titre de l’onglet du navigateur (OSCAR WILDE — Accueil etc.) -->
         <title><xsl:value-of select="$siteTitle"/> — <xsl:value-of select="$pageTitle"/></title>
 
-        <!--
-          Adaptation mobile / responsive.
-        -->
+        <!-- Adaptation mobile -->
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-        <!--
-          Open Graph :
-          métadonnées utilisées quand on partage le lien sur des réseaux
-          ou dans certaines applications.
-
-          Cela permet d’afficher :
-          - un titre
-          - une description
-          - une image d’aperçu
-        -->
-        <meta property="og:title" content="Oscar Wilde — Lettres autour de la prison (1894–1897)"/>
-        <meta property="og:description" content="Édition numérique TEI des lettres d’Oscar Wilde autour de son emprisonnement."/>
-        <meta property="og:image" content="https://cmartinarchives.github.io/oscar-wilde-et-la-prison/assets/img/social-preview.png"/>
-        <meta property="og:image:width" content="1200"/>
-        <meta property="og:image:height" content="630"/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:url" content="https://cmartinarchives.github.io/oscar-wilde-et-la-prison/"/>
-
-        <!--
-          Aperçu Twitter / X.
-          Même idée que pour Open Graph.
-        -->
-        <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:title" content="Oscar Wilde — Lettres autour de la prison (1894–1897)"/>
-        <meta name="twitter:description" content="Édition numérique TEI des lettres d’Oscar Wilde autour de son emprisonnement."/>
-        <meta name="twitter:image" content="https://cmartinarchives.github.io/oscar-wilde-et-la-prison/assets/img/social-preview.png"/>
-
-        <!--
-          Icône du site (favicon).
-        -->
+        <!-- Icône du site (favicon) -->
         <link rel="icon" type="image/png" sizes="32x32" href="{$assetsBase}/img/favicon32.png"/>
 
-        <!--
-          Feuille CSS principale du site.
-        -->
+        <!-- Feuille CSS principale du site -->
         <link rel="stylesheet" href="{$assetsBase}/css/style.css"/>
 
-        <!--
-          JavaScript principal du site.
-          defer="defer" :
-          le script est chargé sans bloquer le parsing du HTML
-          et s’exécute après.
-        -->
+        <!-- JavaScript principal du site
+          defer="defer" : le script est chargé sans bloquer le parsing du HTML et s’exécute après -->
         <script src="{$assetsBase}/js/site.js" defer="defer"></script>
       </head>
 
-      <!--
-        Le body reçoit éventuellement une classe propre à la page.
-      -->
+      <!-- Le body reçoit une classe propre à la page -->
       <body class="{$pageClass}">
         <header class="site-header">
 
-          <!--
-            En-tête visuel du site :
-            logo / signature + titre + sous-titre
-          -->
+          <!-- En-tête visuel du site : logo / signature + titre + sous-titre -->
           <div class="masthead">
             <a href="index.html" class="brand">
               <img src="{$assetsBase}/img/Oscar_Wilde_Signature.png"
@@ -680,10 +464,7 @@ son retrait progressif de la vie publique."
             </a>
           </div>
 
-          <!--
-            Navigation principale.
-            Elle est répétée sur toutes les pages grâce au shell.
-          -->
+          <!-- Navigation principale, répétée sur toutes les pages grâce au shell -->
           <nav class="main-nav">
             <ul class="nav-list">
               <li><a class="nav-link" href="index.html">Accueil</a></li>
@@ -712,18 +493,14 @@ son retrait progressif de la vie publique."
           </nav>
         </header>
 
-        <!--
-          Zone principale du contenu.
-          C’est ici qu’on insère le contenu spécifique à chaque page.
-        -->
+        <!-- Zone principale du contenu où on insère le contenu spécifique à chaque page -->
         <main class="container">
+
           <!-- Insertion du contenu spécifique à la page -->
           <xsl:sequence select="$content"/>
         </main>
 
-        <!--
-          Pied de page commun.
-        -->
+        <!-- Pied de page -->
         <footer class="site-footer">
           <div class="container footer-grid footer-grid--compact">
             <div class="footer-col footer-col--left footer-col--logo">
@@ -768,20 +545,15 @@ son retrait progressif de la vie publique."
   <!-- ========================================================= -->
   <!-- ACCUEIL -->
   <!-- ========================================================= -->
-  <!--
-    home-page :
+
+  <!-- home-page :
     - présente le contexte historique
     - affiche une chronologie des lettres alimentée par $letters
     - donne des repères chronologiques et bibliographiques
-
-    C’est un template surtout “éditorial” :
-    il contient beaucoup de HTML écrit directement dans la feuille XSLT.
-  -->
+    C’est un template surtout éditorial donc il contient beaucoup de HTML écrit directement dans la feuille XSLT -->
   <xsl:template name="home-page">
 
-    <!--
-      Carte d’introduction de la page d’accueil.
-    -->
+    <!-- Carte d’introduction de la page d’accueil -->
     <section class="card home-intro">
       <h1 class="hero-title">Oscar Wilde et la prison (1894–1897)</h1>
 
@@ -822,9 +594,7 @@ son retrait progressif de la vie publique."
         biographiques et culturels évoqués dans les lettres.
       </p>
 
-      <!--
-        Liens d’action principaux de la page d’accueil.
-      -->
+      <!-- Liens d’action principaux de la page d’accueil -->
       <div class="home-actions" role="navigation" aria-label="Accès rapides">
         <a class="btn" href="lane.html">Commencer la lecture</a>
         <a class="btn btn--ghost" href="index-entities.html">Explorer l’index</a>
@@ -832,10 +602,7 @@ son retrait progressif de la vie publique."
       </div>
     </section>
 
-    <!--
-      Bloc chronologie.
-      Il se remplit automatiquement grâce à la variable $letters.
-    -->
+    <!-- Bloc chronologie, qui se remplit automatiquement grâce à la variable $letters. -->
     <section class="card">
       <h2>Chronologie des lettres</h2>
 
@@ -853,10 +620,7 @@ son retrait progressif de la vie publique."
 
       <div class="timeline">
 
-        <!--
-          Pour chaque lettre définie dans $letters,
-          je crée une carte chronologique cliquable.
-        -->
+        <!-- Pour chaque lettre définie dans $letters, je crée une carte chronologique cliquable -->
         <xsl:for-each select="$letters/letter">
           <a class="tl-item" href="{@file}">
             <span class="tl-dot"></span>
@@ -868,9 +632,7 @@ son retrait progressif de la vie publique."
       </div>
     </section>
 
-    <!--
-      Image d’illustration sur la page d’accueil.
-    -->
+    <!-- Image d’illustration sur la page d’accueil -->
     <figure class="home-hero-image viewer">
       <img src="{$assetsBase}/img/WildeTrial1.jpg" alt="Oscar Wilde au procès"/>
       <figcaption>
@@ -969,28 +731,23 @@ son retrait progressif de la vie publique."
 
   </xsl:template>
 
+
   <!-- ========================================================= -->
   <!-- PAGE LETTRE -->
   <!-- ========================================================= -->
-  <!--
-    letter-page :
+
+  <!-- letter-page :
     - affiche le header de lettre (titre/date/desc + portrait si dispo)
     - affiche une zone manuscrit (carrousel)
     - affiche un panneau texte (tabs transcription/traduction si traduction existe)
-    - ajoute une navigation prev/next en bas
-  -->
+    - ajoute une navigation prev/next en bas -->
   <xsl:template name="letter-page">
     <xsl:param name="meta"/>
     <xsl:param name="letterDiv"/>
 
-    <!--
-      Je vérifie d’abord que le <div> TEI de la lettre a bien été trouvé.
-
-      Si $letterDiv est vide :
-      -> je montre un message d’erreur dans la page
-      Sinon :
-      -> je construis normalement la page lettre
-    -->
+    <!-- Je vérifie que le <div> TEI de la lettre a bien été trouvé
+      Si $letterDiv est vide je montre un message d’erreur dans la page
+      Sinon je construis normalement la page lettre -->
     <xsl:choose>
       <xsl:when test="empty($letterDiv)">
         <section class="card">
@@ -1002,14 +759,9 @@ son retrait progressif de la vie publique."
       <xsl:otherwise>
         <section class="card letter-header">
 
-          <!--
-            Portrait de la page lettre :
-            je ne l’affiche que pour Lane et Stannard (images disponibles),
-            Nelson n’a pas d’image dans le mapping.
-
-            Ici je fabrique d’abord un identifiant de personne ($pid),
-            puis je regarde si une image existe dans $personPortraits.
-          -->
+          <!-- Portrait de la page lettre (que pour Lane et Stannard (images disponibles)
+            Je fabrique d’abord un identifiant de personne ($pid),
+            puis je regarde si une image existe dans $personPortraits -->
           <xsl:variable name="pid">
             <xsl:choose>
               <xsl:when test="string($meta/@key)='lane'">pers_lane</xsl:when>
@@ -1018,9 +770,7 @@ son retrait progressif de la vie publique."
             </xsl:choose>
           </xsl:variable>
 
-          <!--
-            Recherche du fichier image correspondant.
-          -->
+          <!-- Recherche du fichier image correspondant -->
           <xsl:variable name="portraitFile" select="string($personPortraits/p[@id=$pid]/@file)"/>
 
           <h1 class="page-title">
@@ -1028,14 +778,10 @@ son retrait progressif de la vie publique."
             <span class="muted"> — <xsl:value-of select="$meta/@date"/></span>
           </h1>
 
-          <!--
-            Résumé éditorial de la lettre.
-          -->
+          <!-- Résumé éditorial de la lettre -->
           <p class="lead"><xsl:value-of select="$meta/@desc"/></p>
 
-          <!--
-            J’affiche le portrait seulement si un nom de fichier existe.
-          -->
+          <!-- J’affiche le portrait si un nom de fichier existe -->
           <xsl:if test="$portraitFile != ''">
             <img class="letter-portrait"
                  src="{$assetsBase}/img/persons/{$portraitFile}"
@@ -1044,11 +790,9 @@ son retrait progressif de la vie publique."
           </xsl:if>
         </section>
 
-        <!--
-          Grande zone en deux parties :
+        <!-- Grande zone en deux parties :
           - manuscrit à gauche / ou dans un panneau
-          - texte à droite / ou dans un autre panneau
-        -->
+          - texte à droite / ou dans un autre panneau -->
         <section class="ms-layout manuscript-layout">
           <aside class="card ms-panel viewer">
             <div class="ms-panel-head">
@@ -1056,19 +800,15 @@ son retrait progressif de la vie publique."
               <p class="muted ms-hint">Survole les zones pour afficher le texte reconnu.</p>
             </div>
 
-            <!--
-              Appel du carrousel d’images.
-            -->
+            <!-- Carrousel d’images -->
             <xsl:call-template name="images-carousel">
               <xsl:with-param name="meta" select="$meta"/>
             </xsl:call-template>
           </aside>
 
           <article class="card ms-textPanel">
-            <!--
-              Appel du panneau de texte :
-              transcription + éventuellement traduction.
-            -->
+
+            <!-- Appel du panneau de texte : transcription + éventuellement traduction -->
             <xsl:call-template name="text-panel">
               <xsl:with-param name="meta" select="$meta"/>
               <xsl:with-param name="letterDiv" select="$letterDiv"/>
@@ -1076,10 +816,7 @@ son retrait progressif de la vie publique."
           </article>
         </section>
 
-        <!--
-          Navigation entre les lettres.
-          Elle dépend de la lettre courante.
-        -->
+        <!-- Navigation entre les lettres (dépend de la lettre courante) -->
         <nav class="letter-nav" aria-label="Navigation entre les lettres">
           <xsl:choose>
             <xsl:when test="string($meta/@key)='lane'">
@@ -1116,50 +853,31 @@ son retrait progressif de la vie publique."
     </xsl:choose>
   </xsl:template>
 
+
   <!-- ========================================================= -->
   <!-- TEXTE + TRADUCTION (ONGLETS EN/FR) -->
   <!-- ========================================================= -->
-  <!--
-    text-panel :
+
+  <!-- text-panel :
     - isole les nœuds de transcription (= tout sauf div[@type='translation'])
-    - récupère la traduction si elle existe
-    - si traduction : affiche des onglets radio (EN/FR)
-    - sinon : transcription seule
-  -->
+    - si traduction : affiche des onglets radio (EN/FR) -->
   <xsl:template name="text-panel">
     <xsl:param name="meta"/>
     <xsl:param name="letterDiv"/>
 
-    <!--
-      transcriptionNodes :
-      Objectif : récupérer tout ce qui constitue la transcription,
-      c’est-à-dire tout le contenu de $letterDiv SAUF le div de traduction.
+    <!-- transcriptionNodes : pour récupérer tout ce qui constitue la transcription 
+      (contenu de $letterDiv SAUF le div de traduction)
 
-      Pourquoi node() et pas * ?
-      - node() prend aussi les nœuds texte (espaces, retours) entre éléments
-      - * ne prend que les éléments
-
-      Donc node() est plus fidèle au contenu réel.
-
-      Filtre :
-      [not(self::tei:div[@type='translation'])]
-      -> on enlève seulement le bloc de traduction
-    -->
+      node() prend aussi les nœuds texte (espaces, retours) entre éléments et pas que les éléments
+      [not(self::tei:div[@type='translation'])] (enlève seulement le bloc de traduction) -->
     <xsl:variable name="transcriptionNodes"
       select="$letterDiv/node()[not(self::tei:div[@type='translation'])]"/>
 
-    <!--
-      translationDiv :
-      je vais chercher le premier div de traduction correspondant à cette lettre.
-
-      Explication :
-      - root($letterDiv)//tei:div[@type='translation']
-        -> je cherche tous les div de traduction dans le document source
-      - [tokenize(normalize-space(@corresp), '\s+') = concat('#', $letterDiv/@xml:id)]
-        -> je garde celui qui renvoie à cette lettre précise via @corresp
-      - [1]
-        -> sécurité : si plusieurs blocs existent, je prends le premier
-    -->
+    <!-- translationDiv : cherche le premier div de traduction correspondant à cette lettre
+      - root($letterDiv)//tei:div[@type='translation'] : cherche tous les div de traduction dans le document source
+      - [tokenize(normalize-space(@corresp), '\s+') = concat('#', $letterDiv/@xml:id)] :
+      garde celui qui renvoie à cette lettre précise via @corresp
+      - [1] : si plusieurs blocs existent, je prends le premier -->
     <xsl:variable name="translationDiv"
   select="(root($letterDiv)//tei:div[@type='translation']
             [tokenize(normalize-space(@corresp), '\s+') = concat('#', $letterDiv/@xml:id)]
@@ -1168,77 +886,58 @@ son retrait progressif de la vie publique."
     <header class="ms-textHead">
       <h2>Texte</h2>
 
-      <!--
-        Le petit message d’aide n’apparaît que si une traduction existe.
-      -->
+      <!-- Le message d’aide n’apparaît que si une traduction existe -->
       <xsl:if test="exists($translationDiv)">
         <p class="muted ms-hint">Choisis l’affichage : Transcription (EN) ou Traduction (FR).</p>
       </xsl:if>
     </header>
 
     <xsl:choose>
-      <!--
-        Cas 1 : il existe une traduction
-        -> je construis un système d’onglets
-      -->
+
+      <!-- Cas 1 : il existe une traduction donc je construis un système d’onglets -->
       <xsl:when test="exists($translationDiv)">
 
-        <!--
-          Je crée des identifiants uniques pour les boutons radio et labels,
-          à partir de la clé de la lettre (lane, nelson, stannard).
-        -->
+        <!-- Je crée des identifiants uniques pour les boutons radio et labels,
+        à partir de la clé de la lettre (lane, nelson, stannard). -->
         <xsl:variable name="tabName" select="concat('tabs-', string($meta/@key))"/>
         <xsl:variable name="idEn" select="concat('tab-en-', string($meta/@key))"/>
         <xsl:variable name="idFr" select="concat('tab-fr-', string($meta/@key))"/>
 
         <div class="tabs ms-tabs">
-          <!--
-            Deux boutons radio :
-            - EN sélectionné par défaut
-            - FR pour la traduction
-          -->
+          <!-- Deux boutons radio :
+            - EN par défaut
+            - FR pour la traduction -->
           <input class="tab-input" type="radio" name="{$tabName}" id="{$idEn}" checked="checked"/>
           <input class="tab-input" type="radio" name="{$tabName}" id="{$idFr}"/>
 
-          <!--
-            Barre d’onglets visible.
-          -->
+          <!-- Barre d’onglets visible -->
           <div class="tab-bar">
             <label class="tab-btn" for="{$idEn}">Transcription (EN)</label>
             <label class="tab-btn" for="{$idFr}">Traduction (FR)</label>
           </div>
 
-          <!--
-            Panneaux de contenu.
-          -->
+          <!-- Panneaux de contenu -->
           <div class="tab-panels">
 
-            <!--
-              Onglet transcription.
-            -->
+            <!--  Onglet transcription -->
             <div class="tab-panel tab-panel--t">
               <section class="ms-col ms-col--transcription">
                 <h3 class="ms-colTitle">Transcription</h3>
                 <div class="tei-text">
-                  <!--
-                    On applique les templates TEI -> HTML
-                    au contenu de transcription.
-                  -->
+
+                  <!-- On applique les templates TEI -> HTML au contenu de transcription -->
                   <xsl:apply-templates select="$transcriptionNodes"/>
                 </div>
               </section>
             </div>
 
-            <!--
-              Onglet traduction.
-            -->
+            <!-- Onglet traduction -->
             <div class="tab-panel tab-panel--fr">
               <section class="ms-col ms-col--translation">
                 <h3 class="ms-colTitle">Traduction (FR)</h3>
                 <div class="tei-text tei-text--translation">
-                  <!--
-                    On applique les templates au contenu de la traduction.
-                  -->
+
+                  <!-- On applique les templates au contenu de la traduction -->
                   <xsl:apply-templates select="$translationDiv/node()"/>
                 </div>
               </section>
@@ -1247,10 +946,7 @@ son retrait progressif de la vie publique."
         </div>
       </xsl:when>
 
-      <!--
-        Cas 2 : pas de traduction
-        -> on affiche seulement la transcription
-      -->
+      <!-- Cas 2 : pas de traduction donc on affiche seulement la transcription -->
       <xsl:otherwise>
         <section class="ms-col ms-col--transcription">
           <h3 class="ms-colTitle">Transcription</h3>
@@ -1262,33 +958,25 @@ son retrait progressif de la vie publique."
     </xsl:choose>
   </xsl:template>
 
+
   <!-- ========================================================= -->
-  <!-- VIEWER IMAGES : CARROUSEL + THUMBS -->
+  <!-- VIEWER IMAGES : CARROUSEL ET THUMBS -->
   <!-- ========================================================= -->
-  <!--
-    images-carousel :
+
+  <!-- images-carousel :
     - tokenise @pages (“01 02a 02b …”)
     - construit une slide par page (img + svg overlay)
     - construit une rangée de miniatures (thumbs)
 
-    Les overlays SVG sont initialisés côté JavaScript
-    via l’attribut data-overlay="...".
-  -->
+    Les overlays SVG sont initialisés côté JavaScript via l’attribut data-overlay="..." -->
   <xsl:template name="images-carousel">
     <xsl:param name="meta"/>
 
-    <!--
-      Je découpe la chaîne @pages en une séquence de tokens.
-      Exemple :
-      "01 02a 02b 03"
-      devient :
-      "01", "02a", "02b", "03"
-    -->
+    <!-- Je découpe la chaîne @pages en une séquence de tokens
+      "01 02a 02b 03" devient "01", "02a", "02b", "03" -->
     <xsl:variable name="pages" select="tokenize(normalize-space(string($meta/@pages)),'\s+')"/>
 
-    <!--
-      data-carousel permet au JavaScript de savoir quel carrousel il manipule.
-    -->
+    <!-- data-carousel permet au JavaScript de savoir quel carrousel il manipule -->
     <div class="ms-carousel" data-carousel="{string($meta/@key)}">
       <div class="ms-stageWrap">
         <button class="ms-navBtn ms-prev" type="button" aria-label="Page précédente">‹</button>
@@ -1296,19 +984,14 @@ son retrait progressif de la vie publique."
 
         <div class="ms-stage" role="region" aria-label="Visionneuse manuscrit">
 
-          <!--
-            Pour chaque page manuscrite :
+          <!-- Pour chaque page manuscrite :
             - je crée une figure
             - j’ajoute l’image
-            - j’ajoute un SVG vide qui recevra les zones interactives
-          -->
+            - j’ajoute un SVG vide qui recevra les zones interactives -->
           <xsl:for-each select="$pages">
             <xsl:variable name="tok" select="normalize-space(.)"/>
 
-            <!--
-              Clé utilisée pour les overlays.
-              Ex. lane_01, lane_02a...
-            -->
+            <!-- Clé utilisée pour les overlays (lane_01, lane_02a) -->
             <xsl:variable name="key" select="concat($meta/@imgPrefix,$tok)"/>
 
             <figure class="fig ms-slide">
@@ -1322,9 +1005,7 @@ son retrait progressif de la vie publique."
         </div>
       </div>
 
-      <!--
-        Rangée de miniatures permettant d’aller vite à une page donnée.
-      -->
+      <!-- Rangée de miniatures permettant d’aller vite à une page donnée -->
       <div class="ms-thumbs" aria-label="Miniatures">
         <xsl:for-each select="$pages">
           <xsl:variable name="tok" select="normalize-space(.)"/>
@@ -1336,26 +1017,16 @@ son retrait progressif de la vie publique."
     </div>
   </xsl:template>
 
+
   <!-- ========================================================= -->
   <!-- INDEX ENTITÉS -->
   <!-- ========================================================= -->
-  <!--
-    entities-page :
+
+  <!-- entities-page :
     - affiche un sommaire (ancres)
-    - construit 4 sections : personnes / lieux / organisations / œuvres
-    - pour chaque entité : titre + note + liens “Cité.e dans : …”
-    - quand une image existe dans les mappings (*Thumbs / Portraits), elle est affichée
-
-    Important :
-    Le bloc <xsl:if test="exists($hits)"> ne peut pas être placé hors des boucles.
-    Pourquoi ?
-    Parce que $hits et les identifiants ($pid, $plid, $oid, $wid)
-    sont des variables locales créées dans chaque for-each.
-
-    Donc :
-    - dans la boucle = OK
-    - en dehors = erreur de portée de variable
-  -->
+    - 4 sections : personnes / lieux / organisations / œuvres
+    - pour chaque entité : titre + note + liens "Cité.e dans : blabla"
+    - quand une image existe dans les mappings (*Thumbs / Portraits), elle est affichée -->
   <xsl:template name="entities-page">
 
     <!-- ======= En-tête page index ======= -->
@@ -1379,23 +1050,17 @@ son retrait progressif de la vie publique."
       <ul class="entity-list">
         <xsl:for-each select="//tei:listPerson/tei:person">
 
-          <!--
-            Tri :
+          <!-- Tri
             1) d’abord l’ordre éditorial défini dans f:person-rank()
-            2) ensuite l’ordre alphabétique
-          -->
+            2) ensuite l’ordre alphabétique -->
           <xsl:sort select="f:person-rank(string(@xml:id))"
                     data-type="number" order="ascending"/>
           <xsl:sort select="lower-case(normalize-space(string-join(.//tei:persName[1]//text(),' ')))"/>
 
-          <!--
-            Identifiant XML de la personne.
-          -->
+          <!-- Identifiant XML de la personne -->
           <xsl:variable name="pid" select="string(@xml:id)"/>
 
-          <!--
-            Fichier portrait s’il existe.
-          -->
+          <!-- Fichier portrait -->
           <xsl:variable name="portraitFile" select="string($personPortraits/p[@id=$pid]/@file)"/>
 
           <li class="entity-item entity-item--withPortrait" id="{$pid}">
@@ -1407,28 +1072,20 @@ son retrait progressif de la vie publique."
                      loading="lazy"/>
               </xsl:when>
               <xsl:otherwise>
-                <!--
-                  Si pas d’image : placeholder vide pour garder une mise en page régulière.
-                -->
+
+                <!-- Si pas d’image : placeholder vide -->
                 <div class="entity-portrait entity-portrait--placeholder" aria-hidden="true"></div>
               </xsl:otherwise>
             </xsl:choose>
 
             <div class="entity-content">
 
-              <!--
-                Nom affiché de la personne.
-                Je prends le premier persName.
-              -->
+              <!-- Nom affiché de la personne (premier persName) -->
               <div class="entity-title">
                 <xsl:value-of select="normalize-space(string-join(.//tei:persName[1]//text(),' '))"/>
               </div>
 
-              <!--
-                Petite notice.
-                Priorité à la note française si elle existe.
-                Sinon : première note disponible.
-              -->
+              <!-- Petite notice et priorité à la note française si elle existe -->
               <p class="entity-note">
                 <xsl:choose>
                   <xsl:when test="exists(.//tei:note[starts-with(@xml:lang,'fr')][1])">
@@ -1441,23 +1098,14 @@ son retrait progressif de la vie publique."
                 </xsl:choose>
               </p>
 
-              <!--
-                Liens “Cité.e dans : …”
-
+              <!-- Liens “Cité.e dans : …”
                 Je cherche toutes les occurrences de cette personne dans le texte :
                 /tei:TEI/tei:text//tei:persName[@ref = concat('#',$pid)]
-
-                Exemple :
-                si $pid = "pers_wilde"
-                alors je cherche :
-                @ref = "#pers_wilde"
-              -->
+                si $pid = "pers_wilde" alors je cherche @ref = "#pers_wilde" -->
               <xsl:variable name="hits"
                 select="/tei:TEI/tei:text//tei:persName[@ref = concat('#',$pid)]"/>
 
-              <!--
-                On n’affiche la ligne “Cité.e dans : ...” que s’il existe au moins une occurrence.
-              -->
+              <!-- On n’affiche la ligne “Cité.e dans : ...” que s’il existe au moins une occurrence -->
               <xsl:if test="exists($hits)">
                 <p class="entity-note">
                   <strong>Cité.e dans :</strong><xsl:text> </xsl:text>
@@ -1466,54 +1114,30 @@ son retrait progressif de la vie publique."
                     select="$hits"
                     group-by="string((ancestor::tei:div[@type='letter'][1]/@xml:id)[1])">
 
-                    <!--
-                      Ici je groupe les occurrences par lettre.
-
-                      Explication :
-                      une même entité peut apparaître plusieurs fois dans une lettre.
-                      Je ne veux pas afficher 12 fois la même lettre dans l’index.
-                      Donc je fais un regroupement par xml:id de la lettre ancêtre.
-                    -->
+                    <!-- Ici je groupe les occurrences par lettre (regroupement par xml:id de la lettre ancêtre) -->
                     <xsl:variable name="letterDivId" select="current-grouping-key()"/>
 
-                    <!--
-                      Nom du fichier HTML correspondant à cette lettre.
-                    -->
+                    <!-- Nom du fichier HTML correspondant à cette lettre -->
                     <xsl:variable name="file" select="f:letter-file($letterDivId)"/>
 
-                    <!--
-                      Titre humain de cette lettre.
-                    -->
+                    <!-- Titre "humain" de cette lettre -->
                     <xsl:variable name="label" select="f:letter-title($letterDivId)"/>
 
-                    <!--
-                      Première occurrence de l’entité dans cette lettre.
-                      Elle sert à reconstruire l’ancre vers la page de lettre.
-                    -->
+                    <!-- Première occurrence de l’entité dans cette lettre pur reconstruire l’ancre vers la page de lettre -->
                     <xsl:variable name="firstHit" select="current-group()[1]"/>
 
-                    <!--
-                      occId :
-                      identifiant d’ancre calculé exactement comme dans la page lettre.
-
-                      Pourquoi cela marche ?
-                      Parce que generate-id($firstHit) est calculé sur le même nœud source
-                      que dans le template de rendu des occurrences.
-                    -->
+                    <!-- occId : identifiant d’ancre calculé exactement comme dans la page lettre.
+                    generate-id($firstHit) est calculé sur le même nœud source que dans le template de rendu des occurrences -->
                     <xsl:variable name="occId"
                       select="concat('occ-',$pid,'-',generate-id($firstHit))"/>
 
-                    <!--
-                      Si un fichier existe, je crée le lien.
-                    -->
+                    <!-- Si un fichier existe, je crée le lien -->
                     <xsl:if test="$file != ''">
                       <a class="entity-link" href="{concat($file,'#',$occId)}">
                         <xsl:value-of select="$label"/>
                       </a>
 
-                      <!--
-                        Séparateur entre plusieurs lettres.
-                      -->
+                      <!-- Séparateur entre plusieurs lettres -->
                       <xsl:if test="position() != last()">
                         <xsl:text> · </xsl:text>
                       </xsl:if>
@@ -1536,9 +1160,7 @@ son retrait progressif de la vie publique."
     <section class="card" id="places">
       <h2>Lieux</h2>
 
-      <!--
-        Première sous-partie : les pays.
-      -->
+      <!-- Première sous-partie : les pays -->
       <h3 class="ms-colTitle">Pays</h3>
       <ul class="entity-list">
         <xsl:for-each select="//tei:listPlace/tei:place[f:is-country-place(.)]">
@@ -1577,9 +1199,7 @@ son retrait progressif de la vie publique."
                 </xsl:choose>
               </p>
 
-              <!--
-                Toutes les occurrences de ce lieu dans le texte.
-              -->
+              <!-- Toutes les occurrences de ce lieu dans le texte -->
               <xsl:variable name="hits"
                 select="/tei:TEI/tei:text//tei:placeName[@ref = concat('#',$plid)]"/>
 
@@ -1596,9 +1216,7 @@ son retrait progressif de la vie publique."
                     <xsl:variable name="label" select="f:letter-title($letterDivId)"/>
                     <xsl:variable name="firstHit" select="current-group()[1]"/>
 
-                    <!--
-                      Reconstruction de l’ancre vers la première occurrence.
-                    -->
+                    <!-- Reconstruction de l’ancre vers la première occurrence -->
                     <xsl:variable name="occId"
                       select="concat('occ-',$plid,'-',generate-id($firstHit))"/>
 
@@ -1621,9 +1239,7 @@ son retrait progressif de la vie publique."
         </xsl:for-each>
       </ul>
 
-      <!--
-        Deuxième sous-partie : villes et autres lieux.
-      -->
+      <!-- Deuxième sous-partie : villes et autres lieux -->
       <h3 class="ms-colTitle">Villes et lieux</h3>
       <ul class="entity-list">
         <xsl:for-each select="//tei:listPlace/tei:place[not(f:is-country-place(.))]">
@@ -1792,11 +1408,7 @@ son retrait progressif de la vie publique."
       <ul class="entity-list">
         <xsl:for-each select="//tei:listBibl/tei:bibl">
 
-          <!--
-            Tri :
-            priorité au titre anglais si disponible,
-            sinon au premier titre trouvé.
-          -->
+          <!-- Tri : priorité au titre anglais si disponible -->
           <xsl:sort select="lower-case(normalize-space(string((.//tei:title[@xml:lang='en'])[1])))"/>
           <xsl:sort select="lower-case(normalize-space(string((.//tei:title)[1])))"/>
 
@@ -1841,9 +1453,7 @@ son retrait progressif de la vie publique."
                 </xsl:choose>
               </p>
 
-              <!--
-                Toutes les occurrences de cette œuvre dans le texte.
-              -->
+              <!-- Toutes les occurrences de cette œuvre dans le texte -->
               <xsl:variable name="hits"
                 select="/tei:TEI/tei:text//tei:title[@ref = concat('#',$wid)]"/>
 
@@ -1888,14 +1498,10 @@ son retrait progressif de la vie publique."
 <!-- ========================================================= -->
 <!-- MÉTHODOLOGIE -->
 <!-- ========================================================= -->
-<!--
-  methodologie-page :
-  - page “statique” en HTML pur (dans le shell)
-  - intro + navigation interne + sections
 
-  Comme pour l’accueil, il s’agit surtout d’un contenu éditorial rédigé directement
-  dans le XSLT.
--->
+<!-- methodologie-page :
+  - page statique en HTML pur (dans le shell)
+  - intro + navigation interne + sections -->
 <xsl:template name="methodologie-page">
 
   <section class="card">
@@ -1918,10 +1524,7 @@ son retrait progressif de la vie publique."
       et à un index d’entités nommées.
     </p>
 
-    <!--
-      Navigation interne à la page Méthodologie.
-      Ce sont simplement des ancres HTML.
-    -->
+    <!-- Navigation interne à la page Méthodologie (ancres HTML) -->
     <nav class="method-tabs" aria-label="Sommaire méthodologie">
       <a class="pill" href="#meth-corpus">Corpus</a>
       <a class="pill" href="#meth-tei">Encodage TEI</a>
@@ -2104,31 +1707,21 @@ son retrait progressif de la vie publique."
   <!-- ========================================================= -->
   <!-- TEI -> HTML (rendu des éléments TEI dans le panneau texte) -->
   <!-- ========================================================= -->
-  <!--
-    Ici je définis les templates de transformation des balises TEI en HTML.
 
-    Idée :
+  <!-- Je définis les templates de transformation des balises TEI en HTML.
     - chaque élément TEI important reçoit un rendu HTML
     - certaines entités deviennent des liens vers l’index
-    - certains éléments sont juste enveloppés dans une balise HTML utile
-  -->
+    - certains éléments sont juste enveloppés dans une balise HTML utile -->
 
-  <!--
-    fw = front matter / here used as letterhead
-    Ici je rends l’en-tête de lettre dans un bloc HTML dédié.
-  -->
+  <!-- fw = front matter / here used as letterhead (je rends l’en-tête de lettre dans un bloc HTML dédié) -->
   <xsl:template match="tei:fw[@type='letterhead']">
     <div class="tei-note letterhead">
       <xsl:apply-templates/>
     </div>
   </xsl:template>
 
-  <!--
-    Paragraphe TEI -> paragraphe HTML.
-
-    Si le paragraphe possède un attribut d’indentation,
-    j’ajoute une classe CSS "indent".
-  -->
+  <!-- Paragraphe TEI -> paragraphe HTML
+    Si le paragraphe possède un attribut d’indentation, j’ajoute une classe CSS "indent" -->
   <xsl:template match="tei:p">
     <p>
       <xsl:if test="@rend='indentation' or @type='indentation'">
@@ -2138,80 +1731,43 @@ son retrait progressif de la vie publique."
     </p>
   </xsl:template>
 
-  <!--
-    tei:lb = line break (retour à la ligne)
-
-    Je ne le rends pas toujours comme un <br/>.
-    Pourquoi ?
-    Parce que dans un manuscrit, un saut de ligne n’a pas toujours
-    une vraie valeur de lecture moderne.
-
-    Donc :
+  <!-- tei:lb = line break
     - dans l’en-tête ou l’ouverture : je garde la ligne
-    - dans le texte courant : je mets souvent juste un espace
-  -->
+    - dans le texte courant : je mets souvent juste un espace -->
   <xsl:template match="tei:lb">
 
-    <!--
-      lb = line break en TEI.
-      Dans un manuscrit, ça peut être :
-      - un vrai retour à la ligne “visuel” (entête, adresse, ouverture)
-      - ou juste une contrainte de mise en page du manuscrit (fin de ligne)
-
-      Ici, je choisis de conserver le <br/> uniquement dans les zones
-      où la mise en forme en lignes a un sens éditorial (letterhead / opener).
-      Ailleurs, je remplace par un espace pour éviter des cassures artificielles.
-    -->
+    <!-- lb = line break en TEI
+      J'ai choisi de conserver le <br/> uniquement dans les zones
+      où la mise en forme en lignes a un sens éditorial (letterhead / opener) -->
 
     <xsl:choose>
 
-      <!--
-        Cas 1 : deux lb consécutifs
-        -> je n’ajoute rien
-
-        Cela évite de produire des retours redondants.
-      -->
+      <!-- Cas 1 : deux lb consécutifs -> je n’ajoute rien (sinon redondance) -->
       <xsl:when test="following-sibling::*[1][self::tei:lb]">
         <xsl:text></xsl:text>
       </xsl:when>
-
-      <!--
-        Cas 2 : dans un letterhead
-        -> vrai <br/>
-      -->
+ 
+      <!-- Cas 2 : dans un letterhead -> vrai <br/> -->
       <xsl:when test="ancestor::tei:fw[@type='letterhead']">
         <br/>
       </xsl:when>
 
-      <!--
-        Cas 3 : dans une note de type letterhead
-        -> vrai <br/>
-      -->
+      <!-- Cas 3 : dans une note de type letterhead -> vrai <br/> -->
       <xsl:when test="ancestor::tei:note[@type='letterhead']">
         <br/>
       </xsl:when>
 
-      <!--
-        Cas 4 : dans l’opener
-        -> vrai <br/>
-      -->
+      <!-- Cas 4 : dans l’opener -> vrai <br/> -->
       <xsl:when test="ancestor::tei:opener">
         <br/>
       </xsl:when>
 
-      <!--
-        Cas 5 : dans le closer
-        -> je préfère un espace
-        pour éviter des coupures trop dures en HTML
-      -->
+      <!-- Cas 5 : dans le closer -> je préfère un espace (pour éviter des coupures trop dures en HTML) -->
       <xsl:when test="ancestor::tei:closer">
         <xsl:text> </xsl:text>
       </xsl:when>
 
-      <!--
-        Cas par défaut :
-        -> espace simple
-      -->
+      <!-- Cas par défaut : -> espace simple -->
       <xsl:otherwise>
         <xsl:text> </xsl:text>
       </xsl:otherwise>
@@ -2219,105 +1775,73 @@ son retrait progressif de la vie publique."
     </xsl:choose>
   </xsl:template>
 
-  <!--
-    Soulignement TEI -> span avec classe CSS "u"
-  -->
+  <!-- Soulignement TEI -> span avec classe CSS "u" -->
   <xsl:template match="tei:hi[@rend='underline']">
     <span class="u"><xsl:apply-templates/></span>
   </xsl:template>
 
-  <!--
-    Mot étranger
-  -->
+  <!-- Mot étranger -->
   <xsl:template match="tei:foreign">
     <span class="foreign"><xsl:apply-templates/></span>
   </xsl:template>
 
-  <!--
-    supplied = ajout éditorial fourni
-  -->
+  <!-- supplied = ajout éditorial -->
   <xsl:template match="tei:supplied">
     <span class="supplied"><xsl:apply-templates/></span>
   </xsl:template>
 
-  <!--
-    term = terme mis à part
-  -->
+  <!-- term = terme mis à part -->
   <xsl:template match="tei:term">
     <span class="term"><xsl:apply-templates/></span>
   </xsl:template>
 
-  <!--
-    pc = punctuation character / ponctuation balisée
-  -->
+  <!-- pc = ponctuation balisée -->
   <xsl:template match="tei:pc">
     <span class="pc"><xsl:apply-templates/></span>
   </xsl:template>
 
-  <!--
-    note de type letterhead
-  -->
+  <!-- note de type letterhead -->
   <xsl:template match="tei:note[@type='letterhead']">
     <div class="tei-note letterhead">
       <xsl:apply-templates/>
     </div>
   </xsl:template>
 
-  <!--
-    note générique
-  -->
+  <!-- note générique -->
   <xsl:template match="tei:note">
     <div class="tei-note">
       <xsl:apply-templates/>
     </div>
   </xsl:template>
 
-  <!--
-    opener et closer :
-    je les rends dans un bloc HTML générique.
-  -->
+  <!-- opener et closer (je les rends dans un bloc HTML générique) -->
   <xsl:template match="tei:opener|tei:closer">
     <div class="tei-block">
       <xsl:apply-templates/>
     </div>
   </xsl:template>
 
-  <!--
-    Salutation
-  -->
+  <!-- Salutation -->
   <xsl:template match="tei:salute">
     <p class="tei-salute"><xsl:apply-templates/></p>
   </xsl:template>
 
-  <!--
-    Signature
-  -->
+  <!-- Signature -->
   <xsl:template match="tei:signed">
     <p class="tei-signed"><xsl:apply-templates/></p>
   </xsl:template>
 
-  <!--
-    seg :
-    je ne crée pas de balise spéciale,
-    je laisse juste passer le contenu.
-  -->
+  <!-- seg : je ne crée pas de balise spéciale mais je laisse juste passer le contenu -->
   <xsl:template match="tei:seg">
     <xsl:apply-templates/>
   </xsl:template>
 
-  <!--
-    addName :
-    nom ajouté / mention ajoutée
-  -->
+  <!-- addName : nom ajouté/mention ajoutée -->
   <xsl:template match="tei:addName">
     <span class="addName"><xsl:apply-templates/></span>
   </xsl:template>
 
-  <!--
-    date :
-    je rends cela avec une balise HTML <time>
-    et si @when existe, je le mets dans l’attribut datetime.
-  -->
+  <!-- date : une balise HTML <time> et si @when existe, je le mets dans l’attribut datetime -->
   <xsl:template match="tei:date">
     <time>
       <xsl:if test="@when">
@@ -2327,15 +1851,11 @@ son retrait progressif de la vie publique."
     </time>
   </xsl:template>
 
-  <!--
-    choice :
+  <!-- choice :
     je préfère afficher :
     - expan si elle existe
     - sinon reg si elle existe
-    - sinon le contenu brut
-
-    Cela sert à montrer une forme développée ou régularisée.
-  -->
+    - sinon le contenu brut -->
   <xsl:template match="tei:choice">
     <xsl:choose>
       <xsl:when test="tei:expan">
@@ -2350,31 +1870,12 @@ son retrait progressif de la vie publique."
     </xsl:choose>
   </xsl:template>
 
+
   <!-- ====== ENTITÉS (liens vers index) ====== -->
 
-  <!--
-    CORRECTION IMPORTANTE DU PROBLÈME SIGNALÉ
+  <!-- si un titre possède @ref="#quelquechose" alors il devient un lien vers : index-entities.html#quelquechose
+    Et j’ajoute un id d’ancre local sur l’occurrence pour que l’index puisse renvoyer précisément vers cette occurrence -->
 
-    Avant :
-    le template visait seulement
-    tei:title[@type='work' and @ref]
-
-    Problème :
-    dans le build, certains titres avec @ref n’étaient pas pris comme prévu,
-    donc dans lane.html on obtenait seulement du texte,
-    sans lien vers index-entities.html#...
-
-    Correction :
-    je fais maintenant matcher tout tei:title qui a @ref.
-
-    Résultat attendu :
-    si un titre possède @ref="#quelquechose",
-    alors il devient un lien vers :
-    index-entities.html#quelquechose
-
-    Et j’ajoute aussi un id d’ancre local sur l’occurrence,
-    pour que l’index puisse renvoyer précisément vers cette occurrence.
-  -->
   <!-- Œuvres : lien vers l’index si @ref -->
   <xsl:template match="tei:title[@ref]">
 
@@ -2407,29 +1908,18 @@ son retrait progressif de la vie publique."
     <em><xsl:apply-templates/></em>
   </xsl:template>
 
-  <!--
-    persName avec @ref :
-    je transforme l’occurrence en lien vers l’index
-    si @ref est une référence interne (commence par #).
-  -->
+  <!-- persName avec @ref : je transforme l’occurrence en lien vers l’index
+  si @ref est une référence interne (commence par #) -->
   <xsl:template match="tei:persName[@ref]">
 
-    <!--
-      @ref contient normalement une référence interne TEI du type "#pers_wilde".
-      Je la stocke telle quelle dans $t.
-    -->
+    <!-- @ref contient normalement une référence interne TEI du type "#pers_wilde"
+      Je la stocke dans $t -->
     <xsl:variable name="t" select="string(@ref)"/>
 
-    <!--
-      Je récupère la partie après le '#':
-      "#pers_wilde" -> "pers_wilde"
-    -->
+    <!-- Je récupère la partie après le '#': "#pers_wilde" -> "pers_wilde" -->
     <xsl:variable name="id" select="substring-after($t,'#')"/>
 
-    <!--
-      occId :
-      identifiant HTML placé sur l’occurrence dans la page lettre.
-    -->
+    <!-- occId : identifiant HTML placé sur l’occurrence dans la page lettre -->
     <xsl:variable name="occId" select="concat('occ-',$id,'-',generate-id(.))"/>
 
     <xsl:choose>
@@ -2445,10 +1935,7 @@ son retrait progressif de la vie publique."
 
   </xsl:template>
 
-  <!--
-    placeName avec @ref :
-    même logique que pour les personnes.
-  -->
+  <!-- placeName avec @ref : pareil que pour les personnes -->
   <xsl:template match="tei:placeName[@ref]">
     <xsl:variable name="t" select="string(@ref)"/>
     <xsl:variable name="id" select="substring-after($t,'#')"/>
@@ -2466,10 +1953,7 @@ son retrait progressif de la vie publique."
     </xsl:choose>
   </xsl:template>
 
-  <!--
-    orgName avec @ref :
-    même logique.
-  -->
+  <!-- orgName avec @ref : pareil -->
   <xsl:template match="tei:orgName[@ref]">
     <xsl:variable name="t" select="string(@ref)"/>
     <xsl:variable name="id" select="substring-after($t,'#')"/>
@@ -2487,11 +1971,9 @@ son retrait progressif de la vie publique."
     </xsl:choose>
   </xsl:template>
 
-  <!--
-    ref avec @target :
+  <!-- ref avec @target :
     - si la cible commence par # -> lien vers l’index
-    - sinon -> lien externe ou autre lien direct
-  -->
+    - sinon -> lien externe ou autre lien direct -->
   <xsl:template match="tei:ref[@target]">
     <xsl:variable name="t" select="string(@target)"/>
     <xsl:choose>
@@ -2508,28 +1990,17 @@ son retrait progressif de la vie publique."
     </xsl:choose>
   </xsl:template>
 
-  <!--
-    Fallback pour les entités sans @ref :
-    elles ne deviennent pas des liens,
-    mais restent stylées comme entités.
-  -->
+  <!-- Fallback pour les entités sans @ref : elles ne deviennent pas des liens, mais restent stylées comme entités. -->
   <xsl:template match="tei:persName|tei:placeName|tei:orgName">
     <span class="entity"><xsl:apply-templates/></span>
   </xsl:template>
 
-  <!--
-    div TEI :
-    par défaut je ne crée pas de wrapper HTML spécial ici,
-    je laisse simplement descendre vers les enfants.
-  -->
+  <!-- div TEI : par défaut je ne crée pas de wrapper HTML spécial ici, je laisse juste descendre vers les enfants. -->
   <xsl:template match="tei:div">
     <xsl:apply-templates/>
   </xsl:template>
 
-  <!--
-    Texte brut :
-    je copie sa valeur telle quelle.
-  -->
+  <!-- Texte brut : copie telle quelle -->
   <xsl:template match="text()">
     <xsl:value-of select="."/>
   </xsl:template>
