@@ -529,7 +529,6 @@ son retrait progressif de la vie publique."
               <p class="footer-meta">
                 Fac-similés des manuscrits, transcription et traduction accompagnées d’un index d’entités nommées.
               </p>
-              </p>
             </div>
           </div>
         </footer>
