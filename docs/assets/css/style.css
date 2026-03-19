@@ -425,9 +425,9 @@ h3{
 }
 
 .home-intro p{
-  max-width:980px;   /* on limite seulement la longueur des paragraphes */
-  text-align:justify; /* texte justifié */
-  hyphens:auto;       /* autorise la coupure des mots si besoin */
+  max-width:980px;   /* limite la largeur des paragraphes pour améliorer la lisibilité */
+  margin:auto;       /* centre le bloc de texte dans la carte */
+  text-align:justify;/* texte justifié comme dans une édition imprimée */
 }
 
 .home-intro .lead-intro{
