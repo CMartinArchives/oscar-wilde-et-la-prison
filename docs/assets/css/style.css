@@ -210,15 +210,14 @@ body.letter-page main.container{
    arrondis pour rappeler un feuillet/panneau.
    ============================================================ */
 .card{
-  background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%); /* fond légèrement nuancé rappelant une feuille */
-  border:1px solid var(--line);      /* bordure discrète autour de la carte */
-  border-radius:var(--radius2);      /* coins arrondis doux pour l’aspect “feuillet” */
-  box-shadow:var(--shadow);          /* ombre légère pour détacher la carte du fond */
+  background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%); /* fond légèrement nuancé */
+  border:1px solid var(--line);      /* bordure discrète */
+  border-radius:var(--radius2);      /* arrondi assez doux */
+  box-shadow:var(--shadow);          /* ombre légère */
 
-  padding:18px 14px;                 /* espace intérieur : 18px haut/bas, 14px gauche/droite
-                                        (réduit légèrement la marge visible sur les côtés) */
+  padding:22px 32px;                 /* espace intérieur : plus d’air à gauche et à droite */
 
-  margin:14px 0;                     /* espace vertical entre les différentes cartes */
+  margin:14px 0;                     /* espace entre les cartes */
 }
 
 .hero-title,
@@ -424,13 +423,11 @@ h3{
 .home-intro{
   font-size:1.04rem; /* taille légèrement supérieure au texte standard */
   line-height:1.72;  /* interligne confortable sans exagération */
-  max-width:none;    /* on ne réduit pas toute la carte */
+  max-width:none;    /* ne réduit pas tout le premier encart */
 }
 
 .home-intro p{
-  max-width:980px;   /* limite la largeur des paragraphes pour améliorer la lisibilité */
-  margin:auto;       /* centre le bloc de texte dans la carte */
-  text-align:justify;/* texte justifié comme dans une édition imprimée */
+  text-align:justify; /* texte justifié */
 }
 
 .home-intro .lead-intro{
