@@ -524,10 +524,11 @@ son retrait progressif de la vie publique."
 
             <div class="footer-col footer-col--right footer-col--project">
               <p class="footer-meta">
-                Édition numérique : fac-similés, transcription, index d’entités nommées
+                Édition numérique des lettres d’Oscar Wilde autour de la prison (1894-1897).
               </p>
               <p class="footer-meta">
-                Encodage TEI-XML / Transformation XSLT / Mise en page CSS
+                Fac-similés des manuscrits, transcription et traduction accompagnées d’un index d’entités nommées.
+              </p>
               </p>
             </div>
           </div>
