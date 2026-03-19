@@ -210,12 +210,15 @@ body.letter-page main.container{
    arrondis pour rappeler un feuillet/panneau.
    ============================================================ */
 .card{
-  background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%); /* fond légèrement nuancé */
-  border:1px solid var(--line);      /* bordure discrète */
-  border-radius:var(--radius2);      /* arrondi assez doux */
-  box-shadow:var(--shadow);          /* ombre légère */
-  padding:18px;                      /* espace intérieur */
-  margin:14px 0;                     /* espace entre les cartes */
+  background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%); /* fond légèrement nuancé rappelant une feuille */
+  border:1px solid var(--line);      /* bordure discrète autour de la carte */
+  border-radius:var(--radius2);      /* coins arrondis doux pour l’aspect “feuillet” */
+  box-shadow:var(--shadow);          /* ombre légère pour détacher la carte du fond */
+
+  padding:18px 14px;                 /* espace intérieur : 18px haut/bas, 14px gauche/droite
+                                        (réduit légèrement la marge visible sur les côtés) */
+
+  margin:14px 0;                     /* espace vertical entre les différentes cartes */
 }
 
 .hero-title,
