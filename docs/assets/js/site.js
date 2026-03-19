@@ -224,7 +224,6 @@
     for (const line of lines) {
       if (!line || !Array.isArray(line.points) || line.points.length < 3) continue;
 
-      // Zone interactive
       const poly = el("polygon");
       poly.setAttribute("points", pointsToAttr(line.points));
       poly.classList.add("ms-hit");
@@ -232,7 +231,6 @@
 
       if (line.id) poly.dataset.lineId = line.id;
 
-      // Texte affiché au survol
       const txt = el("text");
       txt.textContent = line.text || "";
 
@@ -269,7 +267,6 @@
     for (const box of boxes) {
       if (!box || typeof box.x !== "number" || typeof box.y !== "number") continue;
 
-      // Zone interactive
       const rect = el("rect");
       rect.setAttribute("x", box.x);
       rect.setAttribute("y", box.y);
@@ -278,7 +275,6 @@
       rect.classList.add("ms-hit");
       rect.setAttribute("pointer-events", "all");
 
-      // Texte affiché au survol
       const txt = el("text");
       txt.textContent = box.t || "";
 
@@ -369,16 +365,8 @@
   }
 
   // =========================================================
-  // CARROUSEL + ZOOM
+  // CARROUSEL
   // =========================================================
-
-  // ---------------------------------------------------------
-  // Initialise un carrousel de manuscrits
-  // - active une slide à la fois
-  // - gère prev/next
-  // - gère clic sur miniatures
-  // - initialise l’overlay de la slide active
-  // ---------------------------------------------------------
   function initCarousel(carousel) {
     const slides = $$(".ms-slide", carousel);
     const thumbs = $$(".ms-thumb", carousel);
@@ -434,17 +422,139 @@
     $$(".ms-wrap[data-overlay]").forEach((wrap) => initWrap(wrap));
   }
 
-  // ---------------------------------------------------------
-  // Zoom des images :
-  // ouvre l’image dans un nouvel onglet au clic
-  // ---------------------------------------------------------
-  function initImageZoom() {
-    $$(".ms-wrap img, figure.viewer img, .fig img").forEach((img) => {
-      img.addEventListener("click", () => {
-        window.open(img.src, "_blank", "noopener");
-      });
-    });
+  // =========================================================
+// ZOOM DES IMAGES
+// ---------------------------------------------------------
+// Au clic :
+// - ouverture dans un overlay plein écran
+// - bouton fermer
+// - fermeture avec Échap
+// - fermeture en cliquant sur le fond sombre
+// - zoom avec la molette
+// =========================================================
+function initImageZoom() {
+
+  // Images classiques du site
+  const clickableImages = $$(
+    "figure.viewer img, .fig img, .letter-portrait, .entity-portrait"
+  );
+
+  // Manuscrits (cas spécial car SVG au-dessus)
+  const manuscriptWraps = $$(".ms-wrap");
+
+  let currentOverlay = null;
+  let currentImg = null;
+  let currentScale = 1;
+
+  function applyZoom() {
+    if (!currentImg) return;
+    currentImg.style.transform = `scale(${currentScale})`;
   }
+
+  function onKeyDown(e) {
+    if (e.key === "Escape") {
+      closeOverlay();
+    }
+  }
+
+  function closeOverlay() {
+    if (!currentOverlay) return;
+
+    document.removeEventListener("keydown", onKeyDown);
+    currentOverlay.remove();
+
+    currentOverlay = null;
+    currentImg = null;
+    currentScale = 1;
+  }
+
+  function openOverlay(src, altText = "") {
+    closeOverlay();
+
+    currentScale = 1;
+
+    const overlay = document.createElement("div");
+    overlay.className = "img-overlay";
+
+    const figure = document.createElement("div");
+    figure.className = "img-overlay-figure";
+
+    const closeBtn = document.createElement("button");
+    closeBtn.className = "img-overlay-close";
+    closeBtn.type = "button";
+    closeBtn.setAttribute("aria-label", "Fermer l’image agrandie");
+    closeBtn.textContent = "×";
+
+    const img = document.createElement("img");
+    img.className = "img-overlay-img";
+    img.src = src;
+    img.alt = altText;
+
+    figure.appendChild(img);
+    overlay.appendChild(closeBtn);
+    overlay.appendChild(figure);
+    document.body.appendChild(overlay);
+
+    currentOverlay = overlay;
+    currentImg = img;
+
+    applyZoom();
+
+    closeBtn.addEventListener("click", closeOverlay);
+
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) {
+        closeOverlay();
+      }
+    });
+
+    overlay.addEventListener(
+      "wheel",
+      (e) => {
+        e.preventDefault();
+
+        const zoomStep = 0.12;
+
+        if (e.deltaY < 0) {
+          currentScale += zoomStep;
+        } else {
+          currentScale -= zoomStep;
+        }
+
+        currentScale = Math.max(0.6, Math.min(currentScale, 4));
+        applyZoom();
+      },
+      { passive: false }
+    );
+
+    document.addEventListener("keydown", onKeyDown);
+  }
+
+  // Cas 1 : images normales
+  clickableImages.forEach((img) => {
+    img.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openOverlay(img.src, img.alt || "");
+    });
+  });
+
+  // Cas 2 : manuscrits avec SVG par-dessus
+  manuscriptWraps.forEach((wrap) => {
+    wrap.addEventListener("click", (e) => {
+
+      if (e.target.closest(".ms-navBtn, .ms-thumb")) return;
+
+      const img = wrap.querySelector("img");
+      if (!img) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+      openOverlay(img.src, img.alt || "");
+    });
+  });
+
+}
 
   // =========================================================
   // NAV ACTIVE
@@ -475,8 +585,6 @@
     const isEntitiesPage = location.pathname.includes("index-entities");
     if (!isEntitiesPage) return;
 
-    // Normalise les chaînes pour rendre la recherche plus souple
-    // (minuscules + suppression des accents)
     const normalize = (s) =>
       (s || "")
         .toLowerCase()
@@ -486,7 +594,6 @@
     const topLinks = $(".index-toplinks");
     const firstCard = $(".card");
 
-    // Si la barre de recherche n’existe pas encore, on l’injecte
     if (!$("#indexSearch")) {
       const searchWrap = document.createElement("div");
       searchWrap.className = "index-search";
@@ -508,7 +615,6 @@
     const clearBtn = $(".index-search__clear");
     const items = $$(".entity-item");
 
-    // Pré-calcule le texte de recherche de chaque carte
     const cache = items.map((li) => {
       const title = normalize($(".entity-title", li)?.textContent);
       const note = normalize($(".entity-note", li)?.textContent);
@@ -535,7 +641,6 @@
       applyFilter("");
     });
 
-    // Gestion de la pill active selon le hash
     const pills = $$(".index-toplinks .pill");
 
     function setActivePill() {
