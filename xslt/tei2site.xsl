@@ -1624,13 +1624,11 @@ son retrait progressif de la vie publique."
     <p>
       Les pages générées reposent sur une structure HTML sémantique
       (titres, sections, listes). La mise en page est assurée par une
-      feuille CSS dédiée qui définit la typographie, la grille de lecture,
-      l’adaptation aux différents écrans et un mode nuit.
+      feuille CSS dédiée qui définit la typographie, la grille de lecture et l’adaptation aux différents écrans.
     </p>
 
     <p>
-      Le JavaScript ajoute plusieurs fonctionnalités : activation d’un mode
-      nuit mémorisé, navigation entre les pages manuscrites par carrousel,
+      Le JavaScript ajoute plusieurs fonctionnalités : navigation entre les pages manuscrites par carrousel,
       zoom des images et recherche dynamique dans l’index des entités.
     </p>
 
