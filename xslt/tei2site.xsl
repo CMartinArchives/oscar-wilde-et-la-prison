@@ -86,7 +86,7 @@ son retrait progressif de la vie publique."
 
   <!-- Ces variables servent à associer des identifiants TEI à des fichiers image.
     Dans le TEI, une personne a un xml:id comme "pers_wilde" et je dis quelle image lui correspond
-    (affichage de l’index et parfois affichage des pages de lettres) ? -->
+    (affichage de l’index et parfois affichage des pages de lettres) -->
 
   <!-- Portraits des personnes (dossier assets/img/persons/) -->
   <xsl:variable name="personPortraits">
